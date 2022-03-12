@@ -29,7 +29,7 @@ header {
   position: fixed;
   width: 100%;
 }
-nav {
+header nav {
   display: flex;
   height: 100%;
   align-items: center;
@@ -85,7 +85,22 @@ a {
 }
 /* Sidebar */
 .sidebar {
-  /* position: ; */
-  /* margin-top: 90px; */
+  height: 100vh;
+  width: 90px;
   background-color: var(--med);
 }
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+.sidebar img {
+  width: 60px;
+  height: 60px;
+  margin: 16px;
+  border: 1px solid var(--light);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
