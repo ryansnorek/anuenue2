@@ -1,6 +1,12 @@
+import { useContext } from "react";
+
+import { expandContext } from "../contexts";
+
 function SideBar() {
+    const { setExpandSearchBar } = useContext(expandContext);
+
     return (
-        <section className="sidebar">
+        <section className="sidebar" onClick={() => setExpandSearchBar(false)}>
             <div>menu</div>
             <nav>
                 <img src="" alt="1"/>

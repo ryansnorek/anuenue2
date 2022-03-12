@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+
+import { expandContext } from "../contexts";
 import useForm from "../hooks/useForm";
 
 function Header() {
   const inputRef = useRef();
-  const [expand, setExpand] = useState(false);
+  const { expandSearchBar, setExpandSearchBar } = useContext(expandContext);
   const [formValues, handleChange, clearForm] = useForm({ search: "" });
-  const handleClick = () => setExpand(!expand);
+  const handleClick = () => setExpandSearchBar(!expandSearchBar);
   const handleSubmit = (e) => clearForm(e);
 
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [expand])
+  }, [expandSearchBar])
 
   return (
     <header>
@@ -25,7 +27,7 @@ function Header() {
             src="../images/search.png"
             alt="search"
           />
-          {expand && (
+          {expandSearchBar && (
             <form onSubmit={handleSubmit}>
               <input
                 ref={inputRef}

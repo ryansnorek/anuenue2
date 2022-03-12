@@ -1,12 +1,18 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import SideBar from "./components/Sidebar";
 
+import { expandContext } from "./contexts";
+
 function App() {
+  const [expandSearchBar, setExpandSearchBar] = useState(false);
   return (
-    <div>
-      <Header />
-      <SideBar />
-    </div>
+    <expandContext.Provider value={{ expandSearchBar, setExpandSearchBar }}>
+      <div>
+        <Header />
+        <SideBar />
+      </div>
+    </expandContext.Provider>
   );
 }
 
