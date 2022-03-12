@@ -3,7 +3,8 @@ import { useState } from "react";
 
 function Header() {
   const [expand, setExpand] = useState(false);
-  const handleChange = () => {};
+  const [formValue, setFormValue] = useState("");
+  const handleChange = () => setFormValue(...formValue);
   return (
     <header>
       <nav>
@@ -16,7 +17,12 @@ function Header() {
           />
           {expand && (
             <form>
-              <input type="search" name="search" onChange={handleChange} />
+              <input
+                type="search"
+                name="search"
+                value={formValue}
+                onChange={handleChange}
+              />
             </form>
           )}
         </div>
