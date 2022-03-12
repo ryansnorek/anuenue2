@@ -25,6 +25,8 @@ code {
 header {
   background-color: var(--dark);
   height: 90px;
+  position: fixed;
+  width: 100%;
 }
 nav {
   display: flex;
