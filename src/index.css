@@ -43,11 +43,33 @@ a {
   color: var(--light);
   text-decoration: none;
   padding: 3%;
+  font-size: 1rem;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+.search-bar form input {
+  font-size: 2.9rem;
+  border-radius: 6px;
+  background-color: var(--dark);
+  outline-color: rgb(233, 231, 231, .3);
+  color: var(--light);
+  border: 1px solid lightgrey;
+  animation: grow-right 0.616s ease-out;
+}
+@keyframes grow-right {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 .search {
   filter: invert(90%);
   width: 60px;
-  margin: 6px;
+  margin: 12px;
 }
 .search:hover {
   cursor: pointer;
