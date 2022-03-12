@@ -1,6 +1,6 @@
 function SideBar() {
     return (
-        <section>
+        <section className="sidebar">
             <div>menu</div>
             <nav>
                 <img src="" alt="1"/>
