@@ -1,7 +1,7 @@
-function Item() {
+function Item({ contentName }) {
   return (
-    <section className="item">
-      <h1>Item Title</h1>
+    <section className={`item ${contentName}`}>
+      <h1>Item Title {contentName}</h1>
       <p>item description desceoprpeor jflaksnf aklndan </p>
     </section>
   );

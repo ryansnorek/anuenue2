@@ -66,9 +66,9 @@ a {
   outline-color: rgb(233, 231, 231, .3);
   color: var(--light);
   border: 1px solid lightgrey;
-  animation: grow-right 0.616s ease-out;
+  animation: grow-bar-right 0.616s ease-out;
 }
-@keyframes grow-right {
+@keyframes grow-bar-right {
   from {
     width: 0%;
   }
@@ -115,10 +115,43 @@ a {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
-
-  background-color: red;
+  /* justify-content: center; */
 }
 .item {
   margin-top: 90px;
+  width: 100%;
+  background-color: grey;
+  animation: grow-item-right 1s ease-out,
+             fade-in 1s ease-out;
+}
+@keyframes grow-item-right {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.one {
+  background-color: red;
+}
+.two {
+  background-color: orange;
+}
+.three {
+  background-color: yellow;
+}
+.four {
+  background-color: blue;
+}
+.five {
+  background-color: purple;
 }

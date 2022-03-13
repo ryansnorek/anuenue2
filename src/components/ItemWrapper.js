@@ -1,19 +1,20 @@
 import { useContext } from "react";
 
 import { expandContext } from "../contexts";
+import Item from "./Item";
 
 function ItemWrapper() {
-    const { visibleContent } = useContext(expandContext);
+  const { visibleContent } = useContext(expandContext);
 
-
-    return (
-        <main className="item-wrapper">
-            <section className="item">
-                <h1>Item Title</h1>
-                <p>item description desceoprpeor jflaksnf aklndan </p>
-            </section>
-        </main>
-    );
-};
+  return (
+    <main className="item-wrapper">
+      {visibleContent === "one" && <Item contentName={visibleContent}/>}
+      {visibleContent === "two" && <Item contentName={visibleContent}/>}
+      {visibleContent === "three" && <Item contentName={visibleContent}/>}
+      {visibleContent === "four" && <Item contentName={visibleContent}/>}
+      {visibleContent === "five" && <Item contentName={visibleContent}/>}
+    </main>
+  );
+}
 
 export default ItemWrapper;

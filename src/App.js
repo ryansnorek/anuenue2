@@ -7,7 +7,7 @@ import { expandContext } from "./contexts";
 
 function App() {
   const [expandSearchBar, setExpandSearchBar] = useState(false);
-  const [visibleContent, setVisibleContent] = useState(0);
+  const [visibleContent, setVisibleContent] = useState("");
 
   return (
     <expandContext.Provider
