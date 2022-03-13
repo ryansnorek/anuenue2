@@ -121,13 +121,29 @@ a {
   margin-top: 90px;
   width: 100%;
   background-color: grey;
-  animation: grow-item-right 1s ease-out
+  animation: grow-item-right 1s ease-out;
+  display: flex;
+
 }
 .left {
   border: 1px solid grey;
   width: 55%;
   position: absolute;
   animation: fade-in 0.618s ease-in;
+}
+.right {
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+  animation: fade-in 0.618s ease-in;
+}
+.right img {
+  border-radius: 3px;
+  width: 166px;
+  height: 210px;
 }
 @keyframes grow-item-right {
   from {
