@@ -15,7 +15,7 @@ function Header() {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [expandSearchBar])
+  }, [expandSearchBar]);
 
   return (
     <header>
@@ -24,7 +24,7 @@ function Header() {
           <img
             className="search"
             onClick={handleClick}
-            src="../images/search.png"
+            src="../images/icons/search.png"
             alt="search"
           />
           {expandSearchBar && (
@@ -41,7 +41,11 @@ function Header() {
         </div>
         <div className="nav-bar">
           <Link to="/bag">Bag</Link>
-          <div className="logo">Logo</div>
+          <img
+            className="logo"
+            src="../images/icons/anuenue_logo.png"
+            alt="logo"
+          />
         </div>
       </nav>
     </header>
