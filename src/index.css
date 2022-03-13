@@ -123,8 +123,7 @@ a {
 .item {
   margin-top: 90px;
   width: 100%;
-  background-color: grey;
-  animation: grow-item-right 1s ease-out;
+  animation: move-item-right 0.9s ease-in-out;
   display: flex;
 }
 .item h1 {
@@ -133,39 +132,41 @@ a {
   padding: 0 1rem;
 }
 .left {
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   width: 55%;
-
-  position: absolute;
-  /* width: 100%; */
-
-  animation: fade-in 0.618s ease-in;
-  animation: fade-in 0.618s ease-in;
+  padding: 0 3%;
+  text-align: right;
 }
-
 .right {
-  border: 1px solid black;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-
-  /* position: fixed; */
-  /* width: 40%; */
-
+  /* border: 1px solid black; */
+  position: fixed;
   right: 0;
-  animation: fade-in 0.618s ease-in;
+  animation: fade-in 1.618s ease;
 }
-.right img {
+.main-image {
   border-radius: 3px;
-  width: 166px;
-  height: 210px;
+  width: 350px;
+  height: 400px;
 }
-@keyframes grow-item-right {
+.alternate-images {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+.alternate-images img {
+  width: 100px;
+  height: 100px;
+}
+.alternate-images img:hover {
+  /* box-shadow: 0 3px 12px var(--dark); */
+  cursor: pointer;
+}
+@keyframes move-item-right {
   from {
-    width: 0%;
+    margin-left: -100%
   }
   to {
-    width: 100%;
+    margin-left: 0
   }
 }
 @keyframes fade-in {
@@ -189,5 +190,5 @@ a {
   background-color: rgb(189, 144, 172);
 }
 .five {
-  background-color: rgb(130, 118, 236);
+  background-color: rgb(236, 118, 118);
 }
