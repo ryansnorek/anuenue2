@@ -2,8 +2,8 @@
   --dark: #1b1b1b;
   --med: #eeeded;
   --light: rgb(247, 247, 247);
-  --tint: rgb(199, 184, 177);
-  --landing: rgb(221, 214, 214);
+  --tint: #8f857b;
+  --landing: #f3eeeb;
 }
 body {
   margin: 0;
@@ -140,7 +140,9 @@ a {
 }
 .intro-card {
   display: flex;
-  margin-left: 9%;
+  width: 100%;
+  padding: 9%;
+  background-color: var(--light);
 }
 .intro-card img {
   height: 400px;
