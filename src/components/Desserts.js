@@ -3,7 +3,7 @@ import { data } from "../data";
 function Desserts() {
 
   return (
-      <main className="landing">
+      <div className="desserts">
         <section className="top-item">
           <div className="text-wrapper">
             <div className="text">
@@ -20,7 +20,7 @@ function Desserts() {
         <section className="items">
             
         </section>
-      </main>
+      </div>
   );
 }
 export default Desserts;

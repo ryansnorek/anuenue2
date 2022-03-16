@@ -1,12 +1,26 @@
-
+import { data } from "../data";
 
 function Landing() {
-
-
   return (
-      <main className="landing">
-          landing
-      </main>
+    <main className="landing">
+      <section className="intro">
+        <h2>Illuminate your gullet</h2>
+        <div className="items">
+          <div className="item">
+            <img src={data.five.img} alt="balls" />
+            <h4>Power Bitch Balls</h4>
+          </div>
+          <div className="item">
+            <img src={data.six.img} alt="burrito" />
+            <h4>Green Brrrrito</h4>
+          </div>
+          <div className="item">
+            <img src={data.two.img} alt="bread" />
+            <h4>All Your Bread Are Belong To Us</h4>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 export default Landing;

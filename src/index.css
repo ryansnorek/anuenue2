@@ -1,8 +1,9 @@
 :root {
   --dark: #1b1b1b;
   --med: #eeeded;
-  --light: rgb(243, 243, 243);
+  --light: rgb(247, 247, 247);
   --tint: rgb(199, 184, 177);
+  --landing: rgb(221, 214, 214);
 }
 body {
   margin: 0;
@@ -58,7 +59,7 @@ header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 3%;
+  padding: 0 5%;
 }
 a {
   color: var(--dark);
@@ -108,15 +109,38 @@ a {
   transition: 0.3s ease-in-out;
 }
 /* Landing -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.landing-wrapper {
-  margin-top: 200px;
-  width: 100%;
-  position: absolute;
-  height: 100vh;
-  overflow: scroll;
-  transition: 0.3s ease-in-out;
-}
 .landing {
+  height: 1000px;
+}
+.intro {
+  width: 100%;
+  height: 90%;
+  background-color: var(--landing);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.intro h2 {
+  margin: 5%;
+  font-size: 2rem;
+}
+.intro .items {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.intro .items .item {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.intro .items .item img {
+  height: 300px;
+  width: 220px;
+}
+
+/* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.desserts {
   height: 100%;
   height: 1000px;
   background-color: var(--light);
