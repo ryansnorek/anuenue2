@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useContext } from "react";
 
-import { expandContext } from "../contexts";
+import { effectsContext } from "../contexts";
 import useForm from "../hooks/useForm";
 
 function Header() {
   const inputRef = useRef();
-  const { expandSearchBar, setExpandSearchBar } = useContext(expandContext);
+  const { expandSearchBar, setExpandSearchBar, scrollBreakPoint } = useContext(effectsContext);
   const [formValues, handleChange, clearForm] = useForm({ search: "" });
   const handleClick = () => setExpandSearchBar(!expandSearchBar);
   const handleSubmit = (e) => clearForm(e);
@@ -17,10 +17,14 @@ function Header() {
     }
   }, [expandSearchBar]);
 
+
+
   return (
-    <header>
+    <header className={`${scrollBreakPoint && "scrolled-header"}`}>
+      <img className={`logo ${scrollBreakPoint && "scrolled-logo"}`} src="../images/icons/anuenue_logo.png" alt="logo" />
+
       <nav>
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <img
             className="search"
             onClick={handleClick}
@@ -38,14 +42,13 @@ function Header() {
               />
             </form>
           )}
-        </div>
+        </div> */}
         <div className="nav-bar">
-          <Link to="/bag">Bag</Link>
-          <img
-            className="logo"
-            src="../images/icons/anuenue_logo.png"
-            alt="logo"
-          />
+          <img className="social" src="../images/icons/insta.png" alt="logo" />
+          <Link to="/about">About</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/cats">Cats</Link>
         </div>
       </nav>
     </header>

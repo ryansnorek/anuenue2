@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const expandContext = createContext();
+export const effectsContext = createContext();

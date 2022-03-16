@@ -1,31 +1,33 @@
 import { useState } from "react";
-import ItemWrapper from "./components/ItemWrapper";
 import Header from "./components/Header";
-import SideBar from "./components/Sidebar";
+import Landing from "./components/Landing";
 
-import { expandContext } from "./contexts";
+import { effectsContext } from "./contexts";
 
 function App() {
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [visibleContent, setVisibleContent] = useState("");
+  const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
+
 
   return (
-    <expandContext.Provider
+    <effectsContext.Provider
       value={{
         expandSearchBar,
         setExpandSearchBar,
         visibleContent,
         setVisibleContent,
+        scrollBreakPoint,
+        setScrollBreakPoint
       }}
     >
       <div>
         <Header />
-        <div className="main">
-          <SideBar />
-          <ItemWrapper />
-        </div>
+        <main>
+          <Landing />
+        </main>
       </div>
-    </expandContext.Provider>
+    </effectsContext.Provider>
   );
 }
 
