@@ -110,33 +110,45 @@ a {
 }
 /* Landing -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .landing {
-  height: 1000px;
+  height: 100%;
 }
-.intro {
+.trending {
   width: 100%;
-  height: 90%;
+  height: 110vh;
   background-color: var(--landing);
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.intro h2 {
+.trending h2 {
   margin: 5%;
   font-size: 2rem;
 }
-.intro .items {
+.trending .items {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
-.intro .items .item {
+.trending .items .item {
   width: 220px;
   display: flex;
   flex-direction: column;
 }
-.intro .items .item img {
+.trending .items .item img {
   height: 300px;
   width: 220px;
+}
+.intro-card {
+  display: flex;
+  margin-left: 9%;
+}
+.intro-card img {
+  height: 400px;
+}
+.intro-card .text-wrapper {
+  width: 40%;
+  font-size: 1.2rem;
+  background-color: var(--tint);
 }
 
 /* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */
