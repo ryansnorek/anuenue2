@@ -178,6 +178,7 @@ a {
   height: max-content;
   margin: 0;
   background-color: var(--light);
+  padding-bottom: 9%;
 }
 .shop .item-container {
   width: 100%;
