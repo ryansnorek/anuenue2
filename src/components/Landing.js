@@ -9,15 +9,15 @@ function Landing() {
         <h2>Illuminate your gullet</h2>
         <div className="items">
           <div className="item">
-            <img src={data.five.img} alt="balls" />
+            <img src={data.power_bitch_balls.img} alt="balls" />
             <h4>Power Bitch Balls</h4>
           </div>
           <div className="item">
-            <img src={data.six.img} alt="burrito" />
+            <img src={data.green_burrito.img} alt="burrito" />
             <h4>Green Brrrrito</h4>
           </div>
           <div className="item">
-            <img src={data.two.img} alt="bread" />
+            <img src={data.all_your_breads.img} alt="bread" />
             <h4>All Your Bread Are Belong To Us</h4>
           </div>
         </div>

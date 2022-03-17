@@ -23,6 +23,9 @@ body {
 * {
   /* border: 1px solid grey; */
 }
+img {
+  border-radius: 2px;
+}
 .wrapper {
   margin-top: 200px;
   width: 100%;
@@ -125,8 +128,9 @@ a {
   flex-direction: column;
 }
 .trending h2 {
-  /* margin: 5%; */
   font-size: 2rem;
+  padding: 1%;
+  box-shadow: 0 0 2px var(--dark);
 }
 .trending h4 {
   font-size: 1rem;
@@ -167,6 +171,43 @@ a {
 }
 .intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
+}
+
+/* Shop -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.shop {
+  height: 100%;
+  margin: 0;
+}
+.shop .item-container {
+  width: 100%;
+  display: flex;
+}
+.shop section .item {
+  width: 30%;
+  margin: 0 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item .text {
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.item .text h5 {
+  margin: 0;
+  padding: 3%;
+}
+.shop section h2 {
+  font-size: 1.6rem;
+  padding: 2%;
+  margin: 0;
+}
+.shop section img {
+  height: 400px;
+  width: 400px;
 }
 
 /* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */

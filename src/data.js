@@ -1,5 +1,5 @@
 export const data = {
-    one: {
+    chonky_chip: {
       name: "Chonky Chip",
       id: 420,
       keyDescription: "Chewy, salty",
@@ -15,7 +15,7 @@ export const data = {
         quantity: 0,
         price: 3,
     },
-    two: {
+    all_your_breads: {
       name: "All Your Bread Are Belong To Us",
       id: 421,
       keyDescription: "Chewy, dense",
@@ -31,7 +31,7 @@ export const data = {
         quantity: 0,
         price: 7,
     },
-    three: {
+    based_brownies: {
       name: "Based Brownies",
       id: 422,
       keyDescription: "Dense, dark, satiating",
@@ -47,7 +47,7 @@ export const data = {
         quantity: 0,
         price: 4,
     },
-    four: {
+    champs_elycakes: {
       name: "Champ's Elycakes",
       id: 423,
       keyDescription: "Delicate, floral, airy",
@@ -63,7 +63,7 @@ export const data = {
         quantity: 0,
         price: 6,
     },
-    five: {
+    power_bitch_balls: {
       name: "Power Bitch Balls",
       id: 425,
       keyDescription: "Chewy, scrumcious",
@@ -79,7 +79,7 @@ export const data = {
         quantity: 0,
         price: 10,
     },
-    six: {
+    green_burrito: {
       name: "Green Brrrrito",
       id: 426,
       keyDescription: "Yummy",
@@ -95,7 +95,7 @@ export const data = {
         quantity: 0,
         price: 8,
     },
-    seven: {
+    they_cookies: {
       name: "They Cookies",
       id: 427,
       keyDescription: "Crumbly, politically correct",

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom"
 
-import Desserts from "./components/Desserts";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
+import Shop from "./components/Shop";
 
 import { effectsContext } from "./contexts";
 
@@ -35,7 +35,7 @@ function App() {
       <div className={`wrapper ${scrollBreakPoint && "scrolled-landing"}`} onScroll={handleScroll}>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/desserts" element={<Desserts />}/>
+          <Route path="/shop" element={<Shop />}/>
         </Routes>
       </div>
     </effectsContext.Provider>
