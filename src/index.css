@@ -153,8 +153,9 @@ a {
   opacity: .9;
 }
 .trending .items .item img {
-  height: 350px;
-  width: 350px;
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
 }
 .intro-card {
@@ -193,7 +194,7 @@ a {
 }
 .shop section .item {
   width: 27%;
-  margin: 0;
+  margin: 1.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,8 +224,9 @@ a {
   margin: 0 6%;
 }
 .shop section img {
-  height: 350px;
-  width: 350px;
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
 }
 
