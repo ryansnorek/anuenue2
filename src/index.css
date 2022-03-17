@@ -183,10 +183,11 @@ a {
 .shop .item-container {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 .shop section .item {
   width: 30%;
-  margin: 0 3%;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,7 +213,7 @@ a {
 .shop section h2 {
   font-size: 1.6rem;
   padding: 2%;
-  margin: 0;
+  margin: 0 6%;
 }
 .shop section img {
   height: 350px;
