@@ -2,7 +2,7 @@
   --dark: #1b1b1b;
   --med: #eeeded;
   --light: rgb(247, 247, 247);
-  --tint: #8f857b;
+  --tint: #ddd4cc;
   --landing: #f3eeeb;
 }
 body {
@@ -149,6 +149,7 @@ a {
 }
 .intro-card {
   display: flex;
+  justify-content: center;
   padding: 9%;
   background-color: var(--light);
 }
@@ -156,8 +157,8 @@ a {
   height: 400px;
 }
 .intro-card .text-wrapper {
-  width: 40%;
   font-size: 1.2rem;
+  width: 400px;
   background-color: var(--tint);
   font-family: 'Nothing You Could Do', cursive;
 }

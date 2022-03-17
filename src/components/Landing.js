@@ -22,14 +22,14 @@ function Landing() {
           </div>
         </div>
       </section>
-      <section className="intro-card">
-        <img src="../images/pepe_chef.jpeg" alt="dessert" />
+      <section className="intro-card">  
+        <img src="../images/intro.png" alt="dessert" />
         <div className="text-wrapper">
           <div className="text">
             <h3>Why hello there</h3>
             <p>
-              Fancy meeting you here. I'm Pepe and this is 
-              what I do. I can't wait to show you my abilitees
+              Fancy meeting you here. I'm Erica and this is 
+              what I do. I can't wait to show you my delectibles
             </p>
           </div>
         </div>
