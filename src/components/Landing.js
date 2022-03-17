@@ -1,5 +1,6 @@
 import { data } from "../data";
 import Desserts from "./Desserts";
+import Footer from "./Footer";
 
 function Landing() {
   return (
@@ -33,7 +34,7 @@ function Landing() {
           </div>
         </div>
       </section>
-      <Desserts />
+        <Footer />
     </main>
   );
 }

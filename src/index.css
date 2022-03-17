@@ -220,3 +220,21 @@ a {
 .scrolled-landing {
   margin-top: 90px;
 }
+
+/* Footer -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.contact-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--light);
+}
+.contact-wrapper a {
+  background-color: var(--dark);
+  color: var(--light);
+  margin-bottom: 6%;  
+  padding: 1% 2%;
+  border-radius: 3px;
+}
+.contact-wrapper a:hover {
+  opacity: .8;
+}
