@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useRef, useEffect, useContext } from "react";
 
 import { effectsContext } from "../contexts";
@@ -6,6 +7,7 @@ import useForm from "../hooks/useForm";
 
 function Header() {
   const inputRef = useRef();
+  const navigate = useNavigate();
   const { expandSearchBar, setExpandSearchBar, scrollBreakPoint } =
     useContext(effectsContext);
   const [formValues, handleChange, clearForm] = useForm({ search: "" });
@@ -21,6 +23,7 @@ function Header() {
   return (
     <header className={`${scrollBreakPoint && "scrolled-header"}`}>
       <img
+        onClick={() => navigate("/")}
         className={`logo ${scrollBreakPoint && "scrolled-logo"}`}
         src="../images/icons/anuenue_logo.png"
         alt="logo"

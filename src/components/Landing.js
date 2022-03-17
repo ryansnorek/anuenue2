@@ -23,6 +23,7 @@ function Landing() {
         </div>
       </section>
       <section className="intro-card">  
+      <div className="card">
         <img src="../images/intro.png" alt="dessert" />
         <div className="text-wrapper">
           <div className="text">
@@ -32,6 +33,7 @@ function Landing() {
               what I do. I can't wait to show you my delectibles
             </p>
           </div>
+        </div>
         </div>
       </section>
         <Footer />

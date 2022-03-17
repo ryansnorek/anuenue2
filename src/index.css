@@ -3,7 +3,7 @@
   --med: #eeeded;
   --light: rgb(247, 247, 247);
   --tint: #ddd4cc;
-  --landing: #f3eeeb;
+  --landing: #efeee9;
 }
 body {
   margin: 0;
@@ -119,7 +119,7 @@ a {
 .trending {
   width: 100%;
   height: 110vh;
-  background-color: var(--tint);
+  background-color: var(--landing);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -150,16 +150,19 @@ a {
 .intro-card {
   display: flex;
   justify-content: center;
-  padding: 9%;
+  padding: 6%;
   background-color: var(--light);
+}
+.intro-card .card {
+  display: flex;
+  width: 66%;
+  box-shadow: 0 0 2px var(--dark);
 }
 .intro-card img {
   height: 400px;
 }
 .intro-card .text-wrapper {
   font-size: 1.2rem;
-  width: 400px;
-  background-color: var(--tint);
 }
 .intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
@@ -234,7 +237,7 @@ a {
 .contact-wrapper a {
   background-color: var(--dark);
   color: var(--light);
-  margin-bottom: 6%;  
+  margin-bottom: 5%;  
   padding: 1% 2%;
   border-radius: 3px;
 }
