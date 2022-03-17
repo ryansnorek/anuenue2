@@ -20,7 +20,6 @@ function Landing() {
             <h4>All Your Bread Are Belong To Us</h4>
           </div>
         </div>
-        <h3>Trending</h3>
       </section>
       <section className="intro-card">
         <img src="../images/pepe_chef.jpeg" alt="dessert" />

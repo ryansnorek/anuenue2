@@ -17,6 +17,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
+
 }
 * {
   /* border: 1px solid grey; */
@@ -50,14 +52,14 @@ header {
 }
 header nav {
   display: flex;
+  justify-content: flex-end;
   height: 100%;
   width: 100%;
 }
 .nav-bar {
-  width: 100%;
+  width: 500px;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   padding: 0 5%;
 }
@@ -67,6 +69,7 @@ a {
   padding: 3%;
   font-size: 1rem;
   margin: 0 3%;
+  font-family: 'Inter', sans-serif;
 }
 .social {
   width: 30px;
@@ -124,6 +127,9 @@ a {
   margin: 5%;
   font-size: 2rem;
 }
+.trending h4 {
+  font-size: 1rem;
+}
 .trending .items {
   width: 100%;
   display: flex;
@@ -133,6 +139,8 @@ a {
   width: 220px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .trending .items .item img {
   height: 300px;
@@ -151,6 +159,7 @@ a {
   width: 40%;
   font-size: 1.2rem;
   background-color: var(--tint);
+  font-family: 'Nothing You Could Do', cursive;
 }
 
 /* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */
