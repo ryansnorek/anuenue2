@@ -131,8 +131,6 @@ a {
   font-size: 2rem;
   padding: 1%;
 } 
-
-
 .intro-card {
   display: flex;
   justify-content: center;
@@ -161,6 +159,11 @@ a {
   margin: 0;
   background-color: var(--light);
   padding-bottom: 9%;
+}
+.shop-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .item-container {
   width: 100%;
@@ -194,17 +197,20 @@ a {
   margin: 0;
 }
 .trending h2,
-.desserts h2 {
+.shop-items h2 {
   font-size: 1.6rem;
   padding: 2%;
   margin: 0 6%;
 }
 .trending img,
-.desserts img {
+.shop-items img {
   height: 60%;
   width: 100%;
   object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
+}
+.shop-items .item {
+  margin: 0 2%;
 }
 
 /* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */

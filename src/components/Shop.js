@@ -6,7 +6,7 @@ function Shop() {
   return (
     <>
       <div className="shop">
-        <section className="desserts">
+        <section className="shop-items">
           <h2>Desserts</h2>
           <div className="item-container">
             <Item item={data.chonky_chip} />
@@ -14,7 +14,7 @@ function Shop() {
             <Item item={data.they_cookies} />
           </div>
         </section>
-        <section className="desserts">
+        <section className="shop-items">
           <h2>Pepe Choice</h2>
           <div className="item-container">
             <Item item={data.power_bitch_balls} />
