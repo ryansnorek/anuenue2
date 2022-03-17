@@ -160,6 +160,8 @@ a {
   font-size: 1.2rem;
   width: 400px;
   background-color: var(--tint);
+}
+.intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
 }
 
