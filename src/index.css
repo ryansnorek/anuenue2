@@ -130,7 +130,6 @@ a {
 .trending h2 {
   font-size: 2rem;
   padding: 1%;
-  box-shadow: 0 0 2px var(--dark);
 }
 .trending h4 {
   font-size: 1rem;
@@ -187,12 +186,13 @@ a {
   background-color: var(--light);
   padding-bottom: 9%;
 }
-.shop .item-container {
+.item-container {
+  margin-top: 0;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.shop section .item {
+.item {
   width: 27%;
   margin: 1.5%;
   display: flex;
@@ -200,7 +200,7 @@ a {
   align-items: center;
   transition: 0.3s ease-in-out;
 }
-.shop section .item:hover {
+.item:hover {
   cursor: pointer;
   opacity: .9;
 }
@@ -218,12 +218,14 @@ a {
 .item .text p {
   margin: 0;
 }
-.shop section h2 {
+.trending h2,
+.desserts h2 {
   font-size: 1.6rem;
   padding: 2%;
   margin: 0 6%;
 }
-.shop section img {
+.trending img,
+.desserts img {
   height: 60%;
   width: 100%;
   object-fit: cover;
