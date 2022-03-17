@@ -62,6 +62,7 @@ header nav {
   display: flex;
   align-items: center;
   padding: 0 5%;
+  margin-right: 12%;
 }
 a {
   color: var(--dark);
@@ -148,7 +149,6 @@ a {
 }
 .intro-card {
   display: flex;
-  /* width: 100%; */
   padding: 9%;
   background-color: var(--light);
 }
