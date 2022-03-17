@@ -46,7 +46,9 @@ function Header() {
               </form>
             )}
           </div> */}
+          <a href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
           <img className="social" src="../images/icons/insta.png" alt="logo" />
+          </a>
           <Link to="/about">About</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/gallery">Gallery</Link>

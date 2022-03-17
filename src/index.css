@@ -148,7 +148,7 @@ a {
 }
 .intro-card {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   padding: 9%;
   background-color: var(--light);
 }
