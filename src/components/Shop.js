@@ -1,4 +1,5 @@
 import { data } from "../data";
+import Item from "./Item";
 
 function Shop() {
   return (
@@ -6,27 +7,17 @@ function Shop() {
       <section className="desserts">
         <h2>Desserts</h2>
         <div className="item-container">
-          <div className="item">
-            <img src={data.chonky_chip.img} alt="chonky chip" />
-            <div className="text">
-              <h5>{data.chonky_chip.name}</h5>
-              <p>{data.chonky_chip.price}</p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={data.based_brownies.img} alt="chonky chip" />
-            <div className="text">
-              <h5>{data.based_brownies.name}</h5>
-              <p>{data.based_brownies.price}</p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={data.they_cookies.img} alt="chonky chip" />
-            <div className="text">
-              <h5>{data.they_cookies.name}</h5>
-              <p>{data.they_cookies.price}</p>
-            </div>
-          </div>
+            <Item item={data.chonky_chip}/>
+            <Item item={data.based_brownies}/>
+            <Item item={data.they_cookies}/>
+        </div>
+      </section>
+      <section className="desserts">
+        <h2>Pepe Choice</h2>
+        <div className="item-container">
+            <Item item={data.power_bitch_balls}/>
+            <Item item={data.all_your_breads}/>
+            <Item item={data.champs_elycakes}/>
         </div>
       </section>
     </div>
