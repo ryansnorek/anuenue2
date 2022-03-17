@@ -206,8 +206,9 @@ a {
   margin: 0;
 }
 .shop section img {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
+  box-shadow: 0 0 2px var(--dark);
 }
 
 /* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */
