@@ -28,7 +28,7 @@ function Header() {
         src="../images/icons/anuenue_logo.png"
         alt="logo"
       />
-      <nav>
+      <nav className="web">
         <div className="nav-bar">
           {/* <div className="search-bar">
             <img
@@ -53,13 +53,14 @@ function Header() {
           <Link to="/gallery">Gallery</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/bag">
-              {<img className="icon bag" src="../images/icons/bag.png" alt="bag" />}
+            {<img className="icon bag" src="../images/icons/bag.png" alt="bag" />}
           </Link>
-          <a href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
+          <a className="IG" href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
           <img className="icon" src="../images/icons/insta.png" alt="logo" />
           </a>
         </div>
       </nav>
+
     </header>
   );
 }
