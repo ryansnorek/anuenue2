@@ -307,6 +307,9 @@ a {
   .intro-card .card {
     width: 80%;
   }
+  footer {
+    margin-top: 10%;
+  }
 }
 @media (max-width: 500px) {
   .wrapper {
@@ -349,9 +352,6 @@ a {
   .intro-card .text-wrapper {
     font-size: .9rem;
     padding: 5%;
-  }
-  footer {
-    margin-top: 10%;
   }
 }
 @media (max-width: 400px) {
