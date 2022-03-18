@@ -25,7 +25,7 @@ body {
   /* border: 1px solid grey; */
 }
 img {
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .wrapper {
   margin-top: 200px;
@@ -124,15 +124,12 @@ a {
   height: 100%;
 }
 .trending {
-  width: 100%;
-  height: 110vh;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .trending h2 {
   font-size: 2rem;
-  padding: 1%;
   user-select: none;
 } 
 .intro-card {
@@ -140,6 +137,7 @@ a {
   justify-content: center;
   padding-top: 6%;
   padding-bottom: 3%;
+  height: 60%;
 }
 .intro-card .card {
   display: flex;
@@ -147,7 +145,7 @@ a {
   box-shadow: 0 0 2px var(--dark);
 }
 .intro-card img {
-  height: 400px;
+  width: auto;
 }
 .intro-card .text-wrapper {
   font-size: 1.2rem;
@@ -156,6 +154,7 @@ a {
 .intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
 }
+/* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
 
 /* Shop -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .shop {
@@ -168,12 +167,24 @@ a {
   flex-direction: column;
   align-items: center;
 }
+.shop-items h2 {
+  font-size: 1.6rem;
+  padding: 2%;
+  margin: 0 6%;
+}
+/* Item -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.item-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
 .item-container {
-  width: 100%;
+  width: 85%;
   display: flex;
   justify-content: center;
 }
 .item {
+  width: 100%;
   margin: 1.5%;
   display: flex;
   flex-direction: column;
@@ -183,6 +194,12 @@ a {
 .item:hover {
   cursor: pointer;
   opacity: .9;
+}
+.item img {
+  height: 55%;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 2px var(--dark);
 }
 .item .text {
   font-size: 1.2rem;
@@ -198,42 +215,7 @@ a {
 .item .text p {
   margin: 0;
 }
-.trending h2,
-.shop-items h2 {
-  font-size: 1.6rem;
-  padding: 2%;
-  margin: 0 6%;
-}
-.trending img,
-.shop-items img {
-  height: 55%;
-  width: 100%;
-  object-fit: cover;
-  box-shadow: 0 0 2px var(--dark);
-}
-.shop-items .item {
-  margin: 0 2%;
-}
-/* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
 
-
-
-/* Item -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.item-wrapper {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-}
-.item {
-  margin-top: 90px;
-  width: 100%;
-  display: flex;
-}
-.item h1 {
-  font-size: 3rem;
-  margin: 0;
-  padding: 0 1rem;
-}
 /* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .modal-container {
   position: absolute;
