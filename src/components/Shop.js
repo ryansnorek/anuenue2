@@ -1,11 +1,22 @@
 import { data } from "../data";
-import Item from "./Item";
+import { useContext } from "react";
+import { effectsContext } from "../contexts";
+
+import Item from "./common/Item";
+import ItemModal from "./common/ItemModal";
 import Footer from "./Footer";
 
 function Shop() {
+  const { modalItem } = useContext(effectsContext);
+  console.log(modalItem);
   return (
     <>
       <div className="shop">
+        {modalItem && (
+          <div className="modal-container">
+            <ItemModal modalItem={modalItem} />
+          </div>
+        )}
         <section className="shop-items">
           <h2>Desserts</h2>
           <div className="item-container">

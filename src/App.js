@@ -4,10 +4,12 @@ import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import Shop from "./components/Shop";
+import Bag from "./components/Bag";
 
 import { effectsContext } from "./contexts";
 
 function App() {
+  const [modalItem, setModalItem] = useState("");
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [visibleContent, setVisibleContent] = useState("");
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
@@ -23,6 +25,8 @@ function App() {
   return (
     <effectsContext.Provider
       value={{
+        modalItem,
+        setModalItem,
         expandSearchBar,
         setExpandSearchBar,
         visibleContent,
@@ -35,7 +39,8 @@ function App() {
       <div className={`wrapper ${scrollBreakPoint && "scrolled-landing"}`} onScroll={handleScroll}>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/shop" element={<Shop />}/>
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/bag" element={<Bag />} />
         </Routes>
       </div>
     </effectsContext.Provider>

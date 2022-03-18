@@ -8,6 +8,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  background-color: var(--light);
   line-height: 1.5;
   font-size: 62.5%;
   max-width: 100%;
@@ -71,13 +72,16 @@ a {
   color: var(--dark);
   text-decoration: none;
   padding: 3%;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0 3%;
   font-family: 'Raleway', sans-serif;
 }
-.social {
+.icon {
   width: 30px;
   margin-right: 3%;
+}
+.bag {
+  width: 23px;
 }
 .search-bar {
   display: flex;
@@ -122,7 +126,6 @@ a {
 .trending {
   width: 100%;
   height: 110vh;
-  background-color: var(--light);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -130,13 +133,13 @@ a {
 .trending h2 {
   font-size: 2rem;
   padding: 1%;
+  user-select: none;
 } 
 .intro-card {
   display: flex;
   justify-content: center;
   padding-top: 6%;
   padding-bottom: 3%;
-  background-color: var(--light);
 }
 .intro-card .card {
   display: flex;
@@ -157,7 +160,6 @@ a {
 .shop {
   height: max-content;
   margin: 0;
-  background-color: var(--light);
   padding-bottom: 9%;
 }
 .shop-items {
@@ -171,7 +173,6 @@ a {
   justify-content: center;
 }
 .item {
-  width: 27%;
   margin: 1.5%;
   display: flex;
   flex-direction: column;
@@ -204,7 +205,7 @@ a {
 }
 .trending img,
 .shop-items img {
-  height: 60%;
+  height: 55%;
   width: 100%;
   object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
@@ -212,31 +213,10 @@ a {
 .shop-items .item {
   margin: 0 2%;
 }
+/* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
 
-/* Desserts -=-==-=-=-=--=-=-=-==--=-=-=-= */
-/* .desserts {
-  height: 100%;
-  background-color: var(--light);
-} */
-.top-item {
-  display: flex;
-  align-items: center;
-  margin: 0 5%;
-  height: 420px;
-  font-size: 1rem;
-}
-.top-item .text-wrapper {
-  background-color: var(--tint);
-  height: 320px;
-}
-.text-wrapper .text {
-  padding: 12%;
-}
-.top-item img {
-  margin-top: 42px;
-  height: 420px;
-  width: 320px;
-}
+
+
 /* Item -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .item-wrapper {
   height: 100vh;
@@ -253,10 +233,25 @@ a {
   margin: 0;
   padding: 0 1rem;
 }
-.main-image {
+/* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.modal-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  box-shadow: 0 0 2px var(--dark);
+  background-color: var(--light);
+  width: 66%;
+  height: 66%;
   border-radius: 3px;
-  width: 350px;
-  height: 400px;
+  z-index: 2;
+}
+.modal-item-container {
+  padding: 12%;
 }
 
 /* Scroll -=-==-=-=-=--=-=-=-==--=-=-=-= */

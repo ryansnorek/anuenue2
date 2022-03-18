@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { effectsContext } from "../../contexts";
+
 function Item({ item }) {
+  const { setModalItem } = useContext(effectsContext)
   return (
-    <div className="item">
+    <div className="item" onClick={() => setModalItem(item)}>
       <img src={item.img} alt="chonky chip" />
       <div className="text">
         <h5>{item.name}</h5>

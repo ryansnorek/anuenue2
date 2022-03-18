@@ -1,5 +1,5 @@
 import { data } from "../data";
-import Item from "./Item";
+import Item from "./common/Item";
 import Footer from "./Footer";
 
 function Landing() {

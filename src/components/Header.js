@@ -49,13 +49,15 @@ function Header() {
               </form>
             )}
           </div> */}
-          <a href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
-          <img className="social" src="../images/icons/insta.png" alt="logo" />
-          </a>
           <Link to="/about">About</Link>
-          <Link to="/shop">Shop</Link>
           <Link to="/gallery">Gallery</Link>
-          <Link to="/cats">Cats</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/bag">
+              {<img className="icon bag" src="../images/icons/bag.png" alt="bag" />}
+          </Link>
+          <a href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
+          <img className="icon" src="../images/icons/insta.png" alt="logo" />
+          </a>
         </div>
       </nav>
     </header>
