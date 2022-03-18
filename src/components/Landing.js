@@ -1,10 +1,21 @@
 import { data } from "../data";
+import { useContext } from "react";
+import { effectsContext } from "../contexts";
+
 import Item from "./common/Item";
 import Footer from "./Footer";
+import ItemModal from "./common/ItemModal";
 
 function Landing() {
+  const { modalItem } = useContext(effectsContext);
+
   return (
     <main className="landing">
+      {modalItem && (
+        <div className="modal-container">
+          <ItemModal modalItem={modalItem} />
+        </div>
+      )}
       <section className="trending">
         <h2>Illuminate your gullet</h2>
         <div className="item-container">

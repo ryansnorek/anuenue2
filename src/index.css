@@ -252,9 +252,22 @@ a {
   z-index: 2;
 }
 .modal-item-container {
-  padding: 12%;
+  padding: 9%;
+  display: flex;
+  justify-content: center;
+}
+.modal-item-container img {
+  width: 33%;
+}
+.modal-item-container .text-wrapper {
+  padding: 5%;
 }
 
+.modal-item-container .text h3 {
+  font-size: 1.2rem;
+}.modal-item-container .text p {
+  font-size: 1rem;
+}
 /* Scroll -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .scrolled-header {
   height: 90px;

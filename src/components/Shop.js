@@ -8,7 +8,6 @@ import Footer from "./Footer";
 
 function Shop() {
   const { modalItem } = useContext(effectsContext);
-  console.log(modalItem);
   return (
     <>
       <div className="shop">
