@@ -147,7 +147,6 @@ a {
 }
 .intro-card img {
   max-width: 100%;
-
 }
 .intro-card .text-wrapper {
   font-size: 1.2rem;
@@ -307,10 +306,11 @@ a {
 }
 @media (max-width: 500px) {
   .wrapper {
-    margin-top: 120px;
+    margin-top: 90px;
+    overflow: none;
   }
   header {
-    height: 10%;
+    height: 90px;
     padding: 0;
   }
   .IG {
@@ -329,8 +329,26 @@ a {
   .trending h2 {
     display: none;
   }
+  .item-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  .item {
+    width: 100%;
+    margin: 0;
+  }
   .intro-card {
     height: 30%;
+  }
+  .intro-card .card {
+    width: 100%;
+  }
+  .intro-card .text-wrapper {
+    font-size: .9rem;
+    padding: 5%;
+  }
+  footer {
+    margin-top: 10%;
   }
 }
 @media (max-width: 400px) {
