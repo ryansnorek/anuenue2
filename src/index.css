@@ -145,7 +145,7 @@ a {
   box-shadow: 0 0 2px var(--dark);
 }
 .intro-card img {
-  width: auto;
+  width: min-content;
 }
 .intro-card .text-wrapper {
   font-size: 1.2rem;

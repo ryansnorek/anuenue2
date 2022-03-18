@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { effectsContext } from "../../contexts";
+import useScrollSet from "../../hooks/useScrollSet";
 
 function ItemModal({ modalItem }) {
   const { setModalItem } = useContext(effectsContext);
 
+  const scrollPosition = useScrollSet();
+
   return (
-    <div className="modal">
+    <div className="modal" style={{ marginTop: `${scrollPosition + 30}px` }}>
       <img
         className="icon"
         onClick={() => setModalItem("")}

@@ -10,6 +10,7 @@ import { effectsContext } from "./contexts";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
+  const [itemClicked, setItemClicked] = useState(false);
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [visibleContent, setVisibleContent] = useState("");
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
@@ -27,6 +28,8 @@ function App() {
       value={{
         modalItem,
         setModalItem,
+        itemClicked,
+        setItemClicked,
         expandSearchBar,
         setExpandSearchBar,
         visibleContent,
