@@ -26,7 +26,9 @@ function Landing() {
       </section>
       <section className="intro-card">
         <div className="card">
-          <img src="../images/intro.png" alt="headshot" />
+          <div className="headshot">
+            <img src="../images/intro.png" alt="headshot" />
+          </div>
           <div className="text-wrapper">
             <div className="text">
               <h3>Why hello there</h3>
