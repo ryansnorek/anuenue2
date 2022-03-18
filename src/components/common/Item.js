@@ -5,7 +5,7 @@ function Item({ item }) {
   const { setModalItem } = useContext(effectsContext)
   return (
     <div className="item" onClick={() => setModalItem(item)}>
-      <img src={item.img} alt="chonky chip" />
+      <img className="skeleton" src={item.img} alt="chonky chip" />
       <div className="text">
         <h5>{item.name}</h5>
         <p>${item.price}</p>

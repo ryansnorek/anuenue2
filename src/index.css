@@ -280,3 +280,15 @@ a {
 .contact-wrapper a:hover {
   opacity: .8;
 }
+/* Loading -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(0, 0%, 0%);
+  }
+  100% {
+    background-color: hsl(0, 0%, 95%);
+  }
+}
