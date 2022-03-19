@@ -287,6 +287,9 @@ a {
   margin-top: 90px;
 }
 /* Footer -=-==-=-=-=--=-=-=-==--=-=-=-= */
+footer {
+  padding-bottom: 5%;
+}
 .contact-wrapper {
   width: 100%;
   display: flex;
@@ -371,6 +374,9 @@ a {
   }
   .what-is-anuenue img {
     width: 100%;
+  }
+  footer {
+    padding-bottom: 15%;
   }
 }
 @media (max-width: 400px) {
