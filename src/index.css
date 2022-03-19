@@ -5,6 +5,9 @@
   --tint: #ddd4cc;
   --landing: #efeee9;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   box-sizing: border-box;
@@ -255,6 +258,7 @@ a {
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
   margin-top: 2%;
+  margin-bottom: 6%;
   display: flex;
 }
 .what-is-anuenue img {
@@ -362,6 +366,12 @@ a {
   .card {
     width: 100%;
   }
+  .what-is-anuenue {
+    flex-direction: column;
+  }
+  .what-is-anuenue img {
+    width: 100%;
+  }
 }
 @media (max-width: 400px) {
   .nav-bar {
@@ -369,11 +379,5 @@ a {
   }
   .nav-bar a {
     font-size: .9rem;
-  }
-  .what-is-anuenue {
-    flex-direction: column;
-  }
-  .what-is-anuenue img {
-    width: 100%;
   }
 }
