@@ -135,25 +135,28 @@ a {
 .intro-card {
   display: flex;
   justify-content: center;
-  padding-top: 6%;
-  padding-bottom: 3%;
-  height: 60%;
-  width: 100%;
 }
-.intro-card .card {
+.card {
   display: flex;
   justify-content: space-between;
-  width: 66%;
-  height: fit-content;
+  width: 50%;
   box-shadow: 0 0 2px var(--dark);
+  margin-top: 6%;
+}
+.contents {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+}
+.contents .text {
+  width: 100%;
+  padding: 6%;
+  font-size: 1.3rem;
 }
 .intro-card img {
-  max-width: 100%;
-  height: 100%;
-}
-.intro-card .text-wrapper {
-  font-size: 1.2rem;
-  padding: 5%;
+  width: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 2px var(--dark);
 }
 .intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
@@ -272,7 +275,8 @@ a {
 .contact-wrapper a {
   background-color: var(--dark);
   color: var(--light);
-  margin-bottom: 5%;  
+  margin-top: 15%;
+  margin-bottom: 5%;
   padding: 1% 2%;
   border-radius: 3px;
 }
@@ -293,18 +297,13 @@ a {
 }
 /* Responsive Design -=-=-=-=-=-==--=-=-==- */
 @media (max-width: 1300px) {
-  .intro-card {
-    height: 40%;
-  }
+
 }
 @media (max-width: 820px) {
   .item-container {
     width: 100%;
   }
-  .intro-card {
-    height: 30%;
-  }
-  .intro-card .card {
+  .card {
     width: 80%;
   }
   footer {
@@ -343,15 +342,8 @@ a {
     width: 100%;
     margin: 0;
   }
-  .intro-card {
-    height: 30%;
-  }
-  .intro-card .card {
+  .card {
     width: 100%;
-  }
-  .intro-card .text-wrapper {
-    font-size: .9rem;
-    padding: 5%;
   }
 }
 @media (max-width: 400px) {
