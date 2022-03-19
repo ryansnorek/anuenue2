@@ -371,4 +371,10 @@ a {
   .nav-bar a {
     font-size: .9rem;
   }
+  .banner {
+    flex-direction: column;
+  }
+  .banner img {
+    width: 100%;
+  }
 }
