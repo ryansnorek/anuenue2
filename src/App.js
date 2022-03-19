@@ -7,6 +7,7 @@ import Shop from "./components/Shop";
 import Bag from "./components/Bag";
 
 import { effectsContext } from "./contexts";
+import About from "./components/About";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -44,6 +45,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/bag" element={<Bag />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </effectsContext.Provider>

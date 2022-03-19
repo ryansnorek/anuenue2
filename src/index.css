@@ -252,6 +252,16 @@ a {
 }.modal-item-container .text p {
   font-size: 1rem;
 }
+/* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.banner {
+  display: flex;
+}
+.banner img {
+  width: 50%;
+  height: 60vh;
+  object-fit: cover;
+}
+
 /* Scroll -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .scrolled-header {
   height: 90px;
@@ -264,7 +274,6 @@ a {
 .scrolled-landing {
   margin-top: 90px;
 }
-
 /* Footer -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .contact-wrapper {
   width: 100%;
