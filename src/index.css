@@ -253,22 +253,22 @@ a {
   font-size: 1rem;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.banner {
+.what-is-anuenue {
   margin-top: 2%;
   display: flex;
   box-shadow: 0 0 2px var(--dark);
 }
-.banner img {
+.what-is-anuenue img {
   width: 50%;
   object-fit: cover;
 }
-.banner .text {
+.what-is-anuenue .text {
   padding: 6%;
 }
-.banner .text h2 {
+.what-is-anuenue .text h2 {
   font-size: 1.4rem;
 }
-.banner .text p {
+.what-is-anuenue .text p {
   font-size: 1.1rem;
 }
 /* Scroll -=-==-=-=-=--=-=-=-==--=-=-=-= */
@@ -371,10 +371,10 @@ a {
   .nav-bar a {
     font-size: .9rem;
   }
-  .banner {
+  .what-is-anuenue {
     flex-direction: column;
   }
-  .banner img {
+  .what-is-anuenue img {
     width: 100%;
   }
 }
