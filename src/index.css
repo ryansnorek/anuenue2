@@ -256,7 +256,6 @@ a {
 .what-is-anuenue {
   margin-top: 2%;
   display: flex;
-  box-shadow: 0 0 2px var(--dark);
 }
 .what-is-anuenue img {
   width: 50%;
