@@ -254,14 +254,23 @@ a {
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .banner {
+  margin-top: 2%;
   display: flex;
+  box-shadow: 0 0 2px var(--dark);
 }
 .banner img {
   width: 50%;
-  height: 60vh;
   object-fit: cover;
 }
-
+.banner .text {
+  padding: 6%;
+}
+.banner .text h2 {
+  font-size: 1.4rem;
+}
+.banner .text p {
+  font-size: 1.1rem;
+}
 /* Scroll -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .scrolled-header {
   height: 90px;
