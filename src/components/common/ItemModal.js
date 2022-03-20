@@ -5,7 +5,7 @@ import useForm from "../../hooks/useForm";
 function ItemModal({ item }) {
   const { setModalItem } = useContext(effectsContext);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [values, handleChange] = useForm({ input: "" });
+  const [values, handleChange] = useForm({ input: 1 });
 
   useEffect(() => {
     const page = document.querySelector(".wrapper");
@@ -34,7 +34,6 @@ function ItemModal({ item }) {
               <input
                 type="text"
                 name="input"
-                defaultValue={1}
                 value={values.input}
                 onChange={handleChange}
               />
