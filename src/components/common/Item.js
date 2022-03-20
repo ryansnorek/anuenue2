@@ -10,7 +10,6 @@ function Item({ item }) {
       <img className="skeleton" src={item.img} alt="chonky chip" />
       <div className="text">
         <h5>{item.name}</h5>
-        <p>${item.price}</p>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ function ItemModal({ item }) {
 
   return (
     <div className="modal-container">
-      <div className="modal" style={{ marginTop: `${scrollPosition + 60}px` }}>
+      <div className="modal" style={{ marginTop: `${scrollPosition + 42}px` }}>
         <img
           className="icon"
           onClick={() => setModalItem("")}
@@ -26,6 +26,7 @@ function ItemModal({ item }) {
             <div className="text">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
+              <p>${item.price}</p>
             </div>
           </div>
         </section>
