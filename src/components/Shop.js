@@ -3,19 +3,16 @@ import { useContext } from "react";
 import { effectsContext } from "../contexts";
 
 import Item from "./common/Item";
-import ItemModal from "./common/ItemModal";
 import Footer from "./Footer";
+import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(effectsContext);
+
   return (
     <>
       <div className="shop">
-        {modalItem && (
-          <div className="modal-container">
-            <ItemModal modalItem={modalItem} />
-          </div>
-        )}
+        {modalItem && <ItemModal item={modalItem} />}
         <section className="shop-items">
           <h2>Desserts</h2>
           <div className="item-container">
