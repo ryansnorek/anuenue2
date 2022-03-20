@@ -43,8 +43,12 @@ code {
     monospace;
 }
 .social:hover,
-.search:hover {
+.search:hover,
+button:hover {
   cursor: pointer;
+}
+button:hover {
+  opacity: .9;
 }
 header {
   background-color: var(--light);
@@ -274,7 +278,7 @@ a {
   text-align: right;
 }
 .order-button input {
-  width: 20px;
+  width: 30px;
   border: none;
   background-color: var(--light);
   border-bottom: 1px solid black;
@@ -282,8 +286,9 @@ a {
   padding: 3px 10px;
 }
 .order-button button {
-  margin: 0 6%;
-  width: 50px;
+  margin: 0 2%;
+  width: 80px;
+  padding: 2% 3%;
   background-color: var(--dark);
   color: var(--light);
   border-radius: 3px;
