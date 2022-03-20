@@ -423,6 +423,12 @@ footer {
     width: 100%;
     height: 70vh;
   }
+  .modal-item-container {
+    flex-direction: column;
+  }
+  .modal-item-container img {
+    display: none;
+  }
   footer {
     padding-bottom: 15%;
   }
