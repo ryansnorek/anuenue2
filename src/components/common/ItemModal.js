@@ -1,17 +1,30 @@
 import { useContext, useState, useEffect } from "react";
-import { effectsContext } from "../../contexts";
+import { shoppingContext } from "../../contexts";
 import useForm from "../../hooks/useForm";
 
 function ItemModal({ item }) {
-  const { setModalItem } = useContext(effectsContext);
+  const { setModalItem, order, setOrder } = useContext(shoppingContext);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [values, handleChange] = useForm({ input: 1 });
+  const [values, handleChange] = useForm({ qty: 1 });
 
   useEffect(() => {
     const page = document.querySelector(".wrapper");
     page.scrollTop < 70 && page.scrollTo(0, 70);
     setScrollPosition(page.scrollTop);
   }, []);
+
+  const handleAddItem = () => {
+    setOrder([
+      ...order,
+      {
+        name: item.name,
+        img: item.img,
+        price: item.price,
+        qty: Number(values.qty),
+      },
+    ]);
+    setModalItem("");
+  };
 
   return (
     <div className="modal-container">
@@ -33,11 +46,11 @@ function ItemModal({ item }) {
             <div className="order-button">
               <input
                 type="text"
-                name="input"
-                value={values.input}
+                name="qty"
+                value={values.qty}
                 onChange={handleChange}
               />
-              <button>Add</button>
+              <button onClick={handleAddItem}>Add</button>
             </div>
           </div>
         </section>

@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { effectsContext } from "../../contexts";
+import { shoppingContext } from "../../contexts";
 
 function Item({ item }) {
-  const { setModalItem } = useContext(effectsContext);
+  const { setModalItem } = useContext(shoppingContext);
   const handleClickItem = () => setModalItem(item);
 
   return ( 

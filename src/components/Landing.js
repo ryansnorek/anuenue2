@@ -1,13 +1,13 @@
 import { data } from "../data";
 import { useContext } from "react";
-import { effectsContext } from "../contexts";
+import { shoppingContext } from "../contexts";
 
 import Item from "./common/Item";
 import Footer from "./Footer";
 import ItemModal from "./common/ItemModal";
 
 function Landing() {
-  const { modalItem } = useContext(effectsContext);
+  const { modalItem } = useContext(shoppingContext);
 
   return (
     <main className="landing">

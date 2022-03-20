@@ -1,9 +1,16 @@
-function Bag() {
-    return (
-        <div className="bag">
-            
+import { useContext } from "react";
+import { shoppingContext } from "../contexts";
 
-        </div>
-    );
-};
+function Bag() {
+  const { order } = useContext(shoppingContext);
+
+  console.log(order)
+  return (
+    <div className="bag">
+      <section className="order">
+
+      </section>
+    </div>
+  );
+}
 export default Bag;
