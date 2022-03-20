@@ -229,12 +229,16 @@ a {
   justify-content: center;
   align-items: center;
 }
+.not-blur {
+  filter: blur(0);
+}
 .modal {
   background-color: var(--light);
   width: 66%;
   height: 66%;
   border-radius: 3px;
-  z-index: 2;
+  z-index: 5;
+  box-shadow: 0 0 2px var(--dark);
   animation: fade-in 0.3s ease-in-out;
 }
 @keyframes fade-in {
@@ -244,6 +248,10 @@ a {
   to {
     opacity: 100%;
   }
+}
+.modal .icon {
+  width: 50px;
+  padding: 1%;
 }
 .modal-item-container {
   padding: 9%;
@@ -260,6 +268,9 @@ a {
   font-size: 1.2rem;
 }.modal-item-container .text p {
   font-size: 1rem;
+}
+.blur {
+  filter: blur(3px);
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {

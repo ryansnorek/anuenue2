@@ -7,12 +7,13 @@ function ItemModal({ item }) {
 
   useEffect(() => {
     const page = document.querySelector(".wrapper");
+    page.scrollTop < 70 && page.scrollTo(0, 70);
     setScrollPosition(page.scrollTop);
-  },[])
+  }, []);
 
   return (
     <div className="modal-container">
-      <div className="modal" style={{ marginTop: `${scrollPosition + 30}px` }}>
+      <div className="modal" style={{ marginTop: `${scrollPosition + 60}px` }}>
         <img
           className="icon"
           onClick={() => setModalItem("")}

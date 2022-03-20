@@ -13,7 +13,7 @@ function Shop() {
     <>
       <div className="shop">
         {modalItem && <ItemModal item={modalItem} />}
-        <section className="shop-items">
+        <section className={`shop-items ${modalItem && "blur"}`}>
           <h2>Desserts</h2>
           <div className="item-container">
             <Item item={data.chonky_chip} />
@@ -21,7 +21,7 @@ function Shop() {
             <Item item={data.they_cookies} />
           </div>
         </section>
-        <section className="shop-items">
+        <section className={`shop-items ${modalItem && "blur"}`}>
           <h2>Pepe Choice</h2>
           <div className="item-container">
             <Item item={data.power_bitch_balls} />
