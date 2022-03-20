@@ -1,9 +1,11 @@
 import { useContext, useState, useEffect } from "react";
 import { effectsContext } from "../../contexts";
+import useForm from "../../hooks/useForm";
 
 function ItemModal({ item }) {
   const { setModalItem } = useContext(effectsContext);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [values, handleChange] = useForm({ input: "" });
 
   useEffect(() => {
     const page = document.querySelector(".wrapper");
@@ -27,6 +29,16 @@ function ItemModal({ item }) {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <p>${item.price}</p>
+            </div>
+            <div className="order-button">
+              <input
+                type="text"
+                name="input"
+                defaultValue={1}
+                value={values.input}
+                onChange={handleChange}
+              />
+              <button>Add</button>
             </div>
           </div>
         </section>

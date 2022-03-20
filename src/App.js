@@ -8,6 +8,7 @@ import Landing from "./components/Landing";
 import Shop from "./components/Shop";
 import Bag from "./components/Bag";
 import About from "./components/About";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -42,6 +43,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </div>
     </effectsContext.Provider>

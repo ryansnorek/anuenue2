@@ -269,6 +269,25 @@ a {
 }.modal-item-container .text p {
   font-size: 1rem;
 }
+.order-button {
+  width: 100%;
+  text-align: right;
+}
+.order-button input {
+  width: 20px;
+  border: none;
+  background-color: var(--light);
+  border-bottom: 1px solid black;
+  outline-color: var(--dark);
+  padding: 3px 10px;
+}
+.order-button button {
+  margin: 0 6%;
+  width: 50px;
+  background-color: var(--dark);
+  color: var(--light);
+  border-radius: 3px;
+}
 .blur {
   filter: blur(3px);
 }
