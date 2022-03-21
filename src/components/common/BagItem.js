@@ -40,6 +40,7 @@ function BagItem({ item }) {
           <input
             type="number"
             name="qty"
+            min="0"
             value={values.qty}
             onChange={handleChange}
           />
