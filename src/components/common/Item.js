@@ -7,7 +7,7 @@ function Item({ item }) {
 
   return ( 
     <div className="item" onClick={handleClickItem}>
-      <img className="skeleton" src={item.img} alt="chonky chip" />
+      <img className="skeleton" src={item.img} alt="item" />
       <div className="text">
         <h5>{item.name}</h5>
       </div>

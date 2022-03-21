@@ -25,6 +25,7 @@ function ItemModal({ item }) {
       setOrder([
         ...order,
         {
+          id: item.id,
           name: item.name,
           qty: Number(values.qty),
           img: item.img,
