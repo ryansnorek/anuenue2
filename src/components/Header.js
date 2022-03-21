@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { useRef, useEffect, useContext } from "react";
 
-import { effectsContext } from "../contexts";
-import useForm from "../hooks/useForm";
+import { effectsContext, shoppingContext } from "../contexts";
+// import useForm from "../hooks/useForm";
 
 function Header() {
   const inputRef = useRef();
   const navigate = useNavigate();
+  const { order } = useContext(shoppingContext);
   const { expandSearchBar, setExpandSearchBar, scrollBreakPoint } =
-    useContext(effectsContext);
-  const [formValues, handleChange, clearForm] = useForm({ search: "" });
-  const handleClick = () => setExpandSearchBar(!expandSearchBar);
-  const handleSubmit = (e) => clearForm(e);
+    useContext(effectsContext); //eslint-disable-line
+  // const [formValues, handleChange, clearForm] = useForm({ search: "" });
+  // const handleClick = () => setExpandSearchBar(!expandSearchBar);
+  // const handleSubmit = (e) => clearForm(e);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -53,14 +54,19 @@ function Header() {
           <Link to="/gallery">Gallery</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/bag">
-            {<img className="icon bag" src="../images/icons/bag.png" alt="bag" />}
+            <span className="badge">{order.length > 0 && order.length}</span>
+            <img className="icon bag" src="../images/icons/bag.png" alt="bag" />
           </Link>
-          <a className="IG" href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link" rel="noreferrer" target="_blank">
-          <img className="icon" src="../images/icons/insta.png" alt="logo" />
+          <a
+            className="IG"
+            href="https://www.instagram.com/anuenue_maui/?utm_medium=copy_link"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img className="icon" src="../images/icons/insta.png" alt="logo" />
           </a>
         </div>
       </nav>
-
     </header>
   );
 }
