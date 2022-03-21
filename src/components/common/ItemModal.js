@@ -43,7 +43,7 @@ function ItemModal({ item }) {
           className="icon"
           onClick={() => setModalItem("")}
           src="../../images/icons/close.png"
-          alt="bag"
+          alt="close"
         />
         <section className="modal-item-container">
           <img src={item.img} alt={item.name} />

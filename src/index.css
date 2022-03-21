@@ -24,9 +24,6 @@ body {
   font-family: 'Raleway', sans-serif;
 
 }
-* {
-  /* border: 1px solid grey; */
-}
 img {
   border-radius: 5px;
 }
@@ -86,9 +83,6 @@ a {
 .icon {
   width: 30px;
   margin-right: 3%;
-}
-.bag {
-  width: 23px;
 }
 .search-bar {
   display: flex;
@@ -168,10 +162,6 @@ a {
 .intro-card h3 {
   font-family: 'Nothing You Could Do', cursive;
 }
-/* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.bag {
-  width: 100%;
-}
 /* Shop -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .shop {
   height: max-content;
@@ -226,7 +216,6 @@ a {
 .item .text p {
   margin: 0;
 }
-
 /* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .modal-container {
   position: absolute;
@@ -297,6 +286,49 @@ a {
 }
 .blur {
   filter: blur(3px);
+}
+/* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
+/* * {
+  border: 1px solid grey;
+} */
+.bag {
+  width: 100%;
+}
+.order {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.bag-item-container {
+  width: 100%;
+}
+.bag-item {
+  display: flex;
+  height: 200px;
+  border-bottom: 1px solid lightgrey;
+}
+.bag-item .pic {
+  width: 40%;
+}
+.bag-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bag-item .text {
+  width: 40%;
+  padding: 5%
+}
+.actions {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.actions .icon {
+  width: 20px;
+  height: 20px;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
