@@ -304,6 +304,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20%;
 }
 .order {
   width: 90%;
@@ -388,7 +389,8 @@ a {
 .checkout {
   width: 90%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .checkout .total {
   display: flex;
@@ -400,6 +402,17 @@ a {
 .checkout h3 {
   padding: 0 5%;
   font-size: 1.3rem;
+}
+.checkout a {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 12px;
+  border-radius: 3px;
+  width: fit-content;
+  margin-right: 17%;
+}
+.checkout a:hover {
+  opacity: .9;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {

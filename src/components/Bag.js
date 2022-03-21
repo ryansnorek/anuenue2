@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { shoppingContext } from "../contexts";
 import BagItem from "./common/BagItem";
 
@@ -30,6 +31,7 @@ function Bag() {
           <h2>Subtotal</h2>
           <h3>${total}</h3>
         </div>
+        <Link to="/checkout">Checkout</Link>
       </section>
     </div>
   );
