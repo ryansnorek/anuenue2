@@ -331,7 +331,10 @@ a {
 }
 .bag-item .text {
   width: 23%;
-  padding: 5%
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .bag-item .qty {
   width: 20%;
@@ -361,6 +364,9 @@ a {
   align-items: center;
   padding: 5% 0;
 }
+.actions:hover {
+  background-color: lightgrey;
+}
 .actions .icon {
   width: 20px;
   height: 20px;
@@ -369,16 +375,16 @@ a {
   margin: 20%;
 }
 .checkout {
-  width: 60%;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
 .checkout .total {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 200px;
-  height: 100px;
+  justify-content: flex-end;
+  padding-right: 12%;
+  width: 100%;
 }
 .checkout h3 {
   padding: 0 5%;

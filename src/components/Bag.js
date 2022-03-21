@@ -27,7 +27,7 @@ function Bag() {
       </section>
       <section className="checkout">
         <div className="total">
-          <h2>Total</h2>
+          <h2>Subtotal</h2>
           <h3>${total}</h3>
         </div>
       </section>

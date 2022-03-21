@@ -26,13 +26,8 @@ function BagItem({ item }) {
   return (
     <div className="bag-item-container">
       <div className="bag-item">
-        <div className="actions">
-          <img
-            className="icon"
-            onClick={removeItem}
-            src="../../images/icons/close.png"
-            alt="bag"
-          />
+        <div className="actions" onClick={removeItem}>
+          <img className="icon" src="../../images/icons/close.png" alt="bag" />
         </div>
         <div className="pic">
           <img className="skeleton" src={item.img} alt="bag item" />
