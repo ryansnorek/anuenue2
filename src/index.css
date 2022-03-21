@@ -288,25 +288,41 @@ a {
   filter: blur(3px);
 }
 /* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
+* {
+  /* border: 1px solid grey; */
+}
 .bag {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .order {
-  width: 40%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   padding-left: 3%;
 }
-.bag-item-container {
-  width: 100%;
+.columns {
+  width: 90%;
+  display: flex;
+  padding-left: 3%;
+  color: grey;
+}
+.columns .name {
+  width: 56%;
+  padding-left: 2%;
+}
+.columns .quantity,
+.columns .total {
+  width: 20%;
 }
 .bag-item {
   display: flex;
-  height: 200px;
+  height: 130px;
   border-bottom: 1px solid lightgrey;
 }
 .bag-item .pic {
-  width: 40%;
+  width: 20%;
 }
 .bag-item img {
   width: 100%;
@@ -314,14 +330,16 @@ a {
   object-fit: cover;
 }
 .bag-item .text {
-  width: 40%;
+  width: 23%;
   padding: 5%
 }
-.qty {
+.bag-item .qty {
+  width: 20%;
   display: flex;
+  align-items: center;
   padding: 3% 0;
 }
-.qty input {
+.bag-item .qty input {
   width: 30px;
   border: none;
   background-color: var(--light);
@@ -329,11 +347,17 @@ a {
   outline-color: var(--dark);
   padding: 3px 10px;
 }
-.actions {
+.bag-item .total {
   width: 20%;
   display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+.actions {
+  width: 5%;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 5% 0;
 }
@@ -343,6 +367,22 @@ a {
 }
 .actions button {
   margin: 20%;
+}
+.checkout {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.checkout .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 100px;
+}
+.checkout h3 {
+  padding: 0 5%;
+  font-size: 1.3rem;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
