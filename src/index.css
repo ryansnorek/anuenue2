@@ -311,10 +311,12 @@ a {
 .columns .name {
   width: 56%;
   padding-left: 2%;
+  border-bottom: 1px solid lightgrey;
 }
 .columns .quantity,
 .columns .total {
   width: 20%;
+  border-bottom: 1px solid lightgrey;
 }
 .bag-item {
   display: flex;
