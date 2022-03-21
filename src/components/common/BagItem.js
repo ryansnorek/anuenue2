@@ -1,8 +1,20 @@
 import { useContext } from "react";
 import { shoppingContext } from "../../contexts";
+import useForm from "../../hooks/useForm";
+import { useEffect } from "react";
 
 function BagItem({ item }) {
   const { order, setOrder } = useContext(shoppingContext);
+  const [values, handleChange] = useForm({ qty: item.qty });
+  
+  useEffect(() => {
+    const itemIndex = order.findIndex(
+        (orderItem) => orderItem.name === item.name
+      );
+    const updatedOrder = [...order];
+    updatedOrder[itemIndex].qty = Number(values.qty);
+    setOrder([...updatedOrder]);
+  }, [values]); //eslint-disable-line
 
   const removeItem = () => {
     const updatedOrder = order.filter(
@@ -10,6 +22,7 @@ function BagItem({ item }) {
     );
     setOrder([...updatedOrder]);
   };
+
   return (
     <div className="bag-item-container">
       <div className="bag-item">
@@ -18,7 +31,15 @@ function BagItem({ item }) {
         </div>
         <div className="text">
           <h5>{item.name}</h5>
-          <p>qty: {item.qty}</p>
+          <div className="qty">
+            <p>qty:</p>
+            <input
+              type="number"
+              name="qty"
+              value={values.qty}
+              onChange={handleChange}
+            />
+          </div>
           <p>price: ${item.price}</p>
           <p>total: ${item.price * item.qty}</p>
         </div>
@@ -29,7 +50,6 @@ function BagItem({ item }) {
             src="../../images/icons/close.png"
             alt="bag"
           />
-          <button>update</button>
         </div>
       </div>
     </div>

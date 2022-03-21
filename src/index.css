@@ -288,9 +288,6 @@ a {
   filter: blur(3px);
 }
 /* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
-/* * {
-  border: 1px solid grey;
-} */
 .bag {
   width: 100%;
 }
@@ -318,6 +315,17 @@ a {
 .bag-item .text {
   width: 40%;
   padding: 5%
+}
+.qty {
+  display: flex;
+}
+.qty input {
+  width: 30px;
+  border: none;
+  background-color: var(--light);
+  border-bottom: 1px solid black;
+  outline-color: var(--dark);
+  padding: 3px 10px;
 }
 .actions {
   width: 20%;

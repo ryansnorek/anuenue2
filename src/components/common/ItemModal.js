@@ -19,7 +19,7 @@ function ItemModal({ item }) {
     );
     if (orderItemExists !== -1) {
       const updatedOrder = [...order];
-      updatedOrder[orderItemExists].qty += Number(values.qty);
+      updatedOrder[orderItemExists].qty += values.qty;
       setOrder([...updatedOrder]);
     } else {
       setOrder([
@@ -27,7 +27,7 @@ function ItemModal({ item }) {
         {
           id: item.id,
           name: item.name,
-          qty: Number(values.qty),
+          qty: values.qty,
           img: item.img,
           price: item.price,
         },
@@ -55,7 +55,7 @@ function ItemModal({ item }) {
             </div>
             <div className="order-button">
               <input
-                type="text"
+                type="number"
                 name="qty"
                 value={values.qty}
                 onChange={handleChange}
