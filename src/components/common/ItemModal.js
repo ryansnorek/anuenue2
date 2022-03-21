@@ -27,6 +27,8 @@ function ItemModal({ item }) {
         {
           name: item.name,
           qty: Number(values.qty),
+          img: item.img,
+          price: item.price,
         },
       ]);
     }
