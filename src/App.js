@@ -9,6 +9,7 @@ import Shop from "./components/Shop";
 import Bag from "./components/Bag";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
+import Checkout from "./components/Checkout";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -48,6 +49,7 @@ function App() {
             <Route path="/bag" element={<Bag />} />
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </shoppingContext.Provider>
