@@ -30,7 +30,7 @@ function BagItem({ item }) {
           <img className="skeleton" src={item.img} alt="bag item" />
         </div>
         <div className="text">
-          <h5>{item.name}</h5>
+          <h3>{item.name}</h3>
           <div className="qty">
             <p>qty:</p>
             <input
