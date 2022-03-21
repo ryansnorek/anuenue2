@@ -14,15 +14,22 @@ function ItemModal({ item }) {
   }, []);
 
   const handleAddItem = () => {
-    setOrder([
-      ...order,
-      {
-        name: item.name,
-        img: item.img,
-        price: item.price,
-        qty: Number(values.qty),
-      },
-    ]);
+    const orderItemExists = order.findIndex(
+      (orderItem) => orderItem.name === item.name
+    );
+    if (orderItemExists !== -1) {
+      const updatedOrder = [...order];
+      updatedOrder[orderItemExists].qty += Number(values.qty);
+      setOrder([...updatedOrder]);
+    } else {
+      setOrder([
+        ...order,
+        {
+          name: item.name,
+          qty: Number(values.qty),
+        },
+      ]);
+    }
     setModalItem("");
   };
 
