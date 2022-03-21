@@ -1,4 +1,15 @@
+import { useContext } from "react";
+import { shoppingContext } from "../../contexts";
+
 function BagItem({ item }) {
+  const { order, setOrder } = useContext(shoppingContext);
+
+  const removeItem = () => {
+    const updatedOrder = order.filter(
+      (orderItem) => orderItem.name !== item.name
+    );
+    setOrder([...updatedOrder]);
+  };
   return (
     <div className="bag-item-container">
       <div className="bag-item">
@@ -14,7 +25,7 @@ function BagItem({ item }) {
         <div className="actions">
           <img
             className="icon"
-            //   onClick={() => setModalItem("")}
+            onClick={removeItem}
             src="../../images/icons/close.png"
             alt="bag"
           />
