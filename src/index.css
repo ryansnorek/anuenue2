@@ -4,6 +4,7 @@
   --light: rgb(247, 247, 247);
   --tint: #ddd4cc;
   --landing: #efeee9;
+  --rainbow: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
 }
 html {
   scroll-behavior: smooth;
@@ -44,9 +45,6 @@ code {
 button:hover {
   cursor: pointer;
 }
-button:hover {
-  opacity: .9;
-}
 .badge {
   position: absolute;
   background-color: var(--dark);
@@ -58,6 +56,12 @@ button:hover {
   padding: 2px 1px 4px 1px;
   font-weight: bold;
   text-align: center;
+  border: 2px solid transparent;
+  transition: 0.3s ease-in;
+}
+.badge:hover {
+  border-image: var(--rainbow);
+  border-image-slice: 1;
 }
 .hide {
   display: none;
@@ -299,7 +303,11 @@ a {
   padding: 2% 3%;
   background-color: var(--dark);
   color: var(--light);
-  border-radius: 3px;
+  border: 3px solid transparent;
+}
+.order-button button:hover {
+  border-image: var(--rainbow);
+  border-image-slice: 1;
 }
 .blur {
   filter: blur(3px) grayscale(1);
@@ -413,12 +421,13 @@ a {
   background-color: var(--dark);
   color: var(--light);
   padding: 12px;
-  border-radius: 3px;
   width: fit-content;
   margin-right: 17%;
+  border: 2px solid transparent;
 }
 .checkout a:hover {
-  opacity: .9;
+  border-image: var(--rainbow);
+  border-image-slice: 1;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
@@ -468,10 +477,11 @@ footer {
   margin-top: 15%;
   margin-bottom: 5%;
   padding: 1% 2%;
-  border-radius: 3px;
+  border: 2px solid transparent;
 }
 .contact-wrapper a:hover {
-  opacity: .8;
+  border-image: var(--rainbow);
+  border-image-slice: 1;
 }
 /* Loading -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .skeleton {
