@@ -382,7 +382,7 @@ a {
   padding: 3% 0;
 }
 .bag-item .qty input {
-  width: 30px;
+  width: 45px;
   border: none;
   background-color: var(--light);
   border-bottom: 1px solid black;
