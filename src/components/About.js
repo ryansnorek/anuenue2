@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import Footer from "./Footer";
 
 function About() {
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="about">
       <div className="what-is-anuenue">
