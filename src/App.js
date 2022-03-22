@@ -17,8 +17,7 @@ function App() {
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
-  // const [order, setOrder] = useState([]);
-  const [order, setOrder] = useLocalStorage("order", [])
+  const [order, setOrder] = useLocalStorage("order", []);
 
   const handleScroll = () => {
     const element = document.querySelector(".wrapper");

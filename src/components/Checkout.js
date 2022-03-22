@@ -4,6 +4,7 @@ import { shoppingContext } from "../contexts";
 
 function Checkout() {
   const { setCheckingOut } = useContext(shoppingContext);
+  // on checkout remove from local storage
 
   useEffect(() => {
     setCheckingOut(true);

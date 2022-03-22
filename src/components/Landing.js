@@ -1,13 +1,10 @@
 import { data } from "../data";
-import { useContext, useEffect } from "react";
-import { shoppingContext } from "../contexts";
+import { useEffect } from "react";
 
 import Item from "./common/Item";
 import Footer from "./Footer";
-import ItemModal from "./common/ItemModal";
 
 function Landing() {
-  const { modalItem } = useContext(shoppingContext);
 
   useEffect(() => {
     const wrapper = document.querySelector(".wrapper");
@@ -17,7 +14,6 @@ function Landing() {
 
   return (
     <main className="landing">
-      {modalItem && <ItemModal item={modalItem} />}
       <section className="trending">
         <h2>Illuminate your gullet</h2>
         <div className="item-container">
