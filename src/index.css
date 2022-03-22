@@ -199,7 +199,6 @@ a {
   display: flex;
   justify-content: center;
   animation: fade-in 300ms ease-in;
-
 }
 .item {
   width: 100%;
@@ -303,7 +302,7 @@ a {
   border-radius: 3px;
 }
 .blur {
-  filter: blur(3px);
+  filter: blur(3px) grayscale(1);
 }
 /* Bag -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .bag {
@@ -311,6 +310,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20%;
+  animation: fade-in 300ms ease-in;
 }
 .order {
   width: 90%;
@@ -425,6 +425,7 @@ a {
   margin-top: 2%;
   margin-bottom: 6%;
   display: flex;
+  animation: fade-in 300ms ease-in;
 }
 .what-is-anuenue img {
   width: 50%;
