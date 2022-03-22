@@ -13,7 +13,7 @@ function Landing() {
   return (
     <main className="landing">
       <section className="trending">
-        <h2>Illuminate your gullet</h2>
+        <h2>ILLUMINATE YOUR GULLET</h2>
         <div className="item-container">
           <div className="category left">
             <h3>D E S S E R T S</h3>
