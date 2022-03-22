@@ -189,14 +189,16 @@ a {
   border-radius: 2px;
 }
 .left {
-  background-image: url("../public/images/cake.jpeg");
+  background-image: url("../public/images/chonky_chip.png");
+  background-size: 180%;
+  background-position: 10%;
 }
 .center {
   background-image: url("../public/images/pepe_chef.jpeg");
   background-size: 182%;
 }
 .right {
-  background-image: url("../public/images/merch-min.png");
+  background-image: url("../public/images/merch.png");
   background-size: cover;
 }
 .intro-card {
