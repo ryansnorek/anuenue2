@@ -62,6 +62,7 @@ button:hover {
 .badge:hover {
   border-image: var(--rainbow);
   border-image-slice: 1;
+  box-shadow: 0 0 10px grey;
 }
 .hide {
   display: none;
@@ -304,10 +305,12 @@ a {
   background-color: var(--dark);
   color: var(--light);
   border: 3px solid transparent;
+  transition: 0.3s ease-in;
 }
 .order-button button:hover {
   border-image: var(--rainbow);
   border-image-slice: 1;
+  box-shadow: 0 0 10px grey;
 }
 .blur {
   filter: blur(3px) grayscale(1);
@@ -389,6 +392,7 @@ a {
   justify-content: center;
   align-items: center;
   padding: 5% 0;
+  transition: 0.2s ease-in;
 }
 .actions:hover {
   background-color: lightgrey;
@@ -424,10 +428,12 @@ a {
   width: fit-content;
   margin-right: 17%;
   border: 2px solid transparent;
+  transition: 0.3s ease-in;
 }
 .checkout a:hover {
   border-image: var(--rainbow);
   border-image-slice: 1;
+  box-shadow: 0 0 10px grey;
 }
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
@@ -478,10 +484,12 @@ footer {
   margin-bottom: 5%;
   padding: 1% 2%;
   border: 2px solid transparent;
+  transition: 0.3s ease-in;
 }
 .contact-wrapper a:hover {
   border-image: var(--rainbow);
   border-image-slice: 1;
+  box-shadow: 0 0 10px grey;
 }
 /* Loading -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .skeleton {
