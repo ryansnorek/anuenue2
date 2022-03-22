@@ -14,13 +14,10 @@ function Landing() {
     wrapper.scrollTo(0, 0);
   }, []);
 
+
   return (
     <main className="landing">
-      {modalItem && (
-        <div className="modal-container">
-          <ItemModal modalItem={modalItem} />
-        </div>
-      )}
+      {modalItem && <ItemModal item={modalItem} />}
       <section className="trending">
         <h2>Illuminate your gullet</h2>
         <div className="item-container">

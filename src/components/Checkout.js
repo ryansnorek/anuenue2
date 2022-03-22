@@ -10,7 +10,7 @@ function Checkout() {
     const wrapper = document.querySelector(".wrapper");
     wrapper.scrollTo(0, 0);
     return () => setCheckingOut(false);
-  }, []);
+  }, []); //eslint-disable-line
 
   return <div className="checkout-order"></div>;
 }

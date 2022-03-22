@@ -77,12 +77,14 @@ header {
   padding: 0 5%;
   z-index: 3;
   transition: 0.3s ease-in-out;
+  animation: fade-in 0.6s ease-in;
 }
 header nav {
   display: flex;
   justify-content: flex-end;
   height: 100%;
   width: 100%;
+  animation: fade-in 1s ease-in;
 }
 .nav-bar {
   width: 500px;
@@ -203,7 +205,7 @@ a {
   width: 85%;
   display: flex;
   justify-content: center;
-  animation: fade-in 300ms ease-in;
+  animation: fade-in 0.3s ease-in;
 }
 .item {
   width: 100%;
@@ -493,7 +495,7 @@ footer {
   box-shadow: 0 0 10px grey;
 }
 /* Loading -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.skeleton {
+/* .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
 }
 @keyframes skeleton-loading {
@@ -503,7 +505,7 @@ footer {
   100% {
     background-color: hsl(0, 0%, 95%);
   }
-}
+} */
 /* Responsive Design -=-=-=-=-=-==--=-=-==- */
 @media (max-width: 1300px) {
 
