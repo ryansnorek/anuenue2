@@ -407,9 +407,6 @@ input[type=number] {
   padding: 5% 0;
   transition: 0.2s ease-in;
 }
-.actions:hover {
-  transform: scale(1.3);
-}
 .actions .icon {
   width: 20px;
   height: 20px;
