@@ -190,11 +190,10 @@ a {
 }
 .left {
   background-image: url("../public/images/cake.jpeg");
-    /* background-size: cover; */
 }
 .center {
   background-image: url("../public/images/bread.jpg");
-  /* background-size: cover; */
+  background-size: 255%;
 }
 .right {
   background-image: url("../public/images/peepo.jpeg");
