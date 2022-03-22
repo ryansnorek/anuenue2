@@ -198,8 +198,7 @@ a {
 }
 .right {
   background-image: url("../public/images/peepo.jpeg");
-  background-size: cover;
-
+  background-size: 105%;
 }
 .intro-card {
   display: flex;
