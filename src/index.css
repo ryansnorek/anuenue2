@@ -2,7 +2,7 @@
   --dark: #1b1b1b;
   --med: #eeeded;
   --light: rgb(247, 247, 247);
-  --tint: #ddd4cc;
+  --tint: rgb(218, 218, 218, .3);
   --landing: #efeee9;
   --rainbow: linear-gradient(
     to bottom right,
@@ -166,6 +166,7 @@ a {
   font-size: 2rem;
   user-select: none;
   opacity: .5;
+  width: 100%;
 }
 .category {
   width: 33%;
@@ -184,7 +185,7 @@ a {
 .category h3 {
   margin-bottom: 33%;
   padding: 0 3%;
-  background-color: rgb(218, 218, 218, .3);
+  background-color: var(--tint);
   border-radius: 2px;
 }
 .left {
@@ -235,6 +236,7 @@ a {
   margin: 0;
   padding-bottom: 9%;
   animation: fade-in 1s ease-in-out;
+  font-family: "Barlow Condensed", sans-serif;
 }
 .shop-items {
   display: flex;
@@ -242,7 +244,7 @@ a {
   align-items: center;
 }
 .shop-items h2 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   padding: 2%;
   margin: 0 6%;
 }
