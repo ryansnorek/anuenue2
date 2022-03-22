@@ -15,6 +15,7 @@ function App() {
   const [modalItem, setModalItem] = useState("");
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
+  const [checkingOut, setCheckingOut] = useState(false);
   const [order, setOrder] = useState([]);
 
   const handleScroll = () => {
@@ -36,7 +37,16 @@ function App() {
       }}
     >
       <shoppingContext.Provider
-        value={{ modalItem, setModalItem, order, setOrder }}
+        value={{
+          modalItem,
+          setModalItem,
+
+          order,
+          setOrder,
+          
+          checkingOut,
+          setCheckingOut,
+        }}
       >
         <Header />
         <div

@@ -6,23 +6,23 @@ import { effectsContext, shoppingContext } from "../contexts";
 // import useForm from "../hooks/useForm";
 
 function Header() {
-  const inputRef = useRef();
+  // const inputRef = useRef();
   const navigate = useNavigate();
-  const { order } = useContext(shoppingContext);
+  const { order, checkingOut } = useContext(shoppingContext);
   const { expandSearchBar, setExpandSearchBar, scrollBreakPoint } =
     useContext(effectsContext); //eslint-disable-line
   // const [formValues, handleChange, clearForm] = useForm({ search: "" });
   // const handleClick = () => setExpandSearchBar(!expandSearchBar);
   // const handleSubmit = (e) => clearForm(e);
 
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [expandSearchBar]);
+  // useEffect(() => {
+  //   if (inputRef.current) {
+  //     inputRef.current.focus();
+  //   }
+  // }, [expandSearchBar]);
 
   return (
-    <header className={`${scrollBreakPoint && "scrolled-header"}`}>
+    <header className={`${scrollBreakPoint && "scrolled-header"} ${checkingOut && "hide"}`}>
       <img
         onClick={() => navigate("/")}
         className={`logo ${scrollBreakPoint && "scrolled-logo"}`}
