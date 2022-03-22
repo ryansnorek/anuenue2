@@ -213,15 +213,16 @@ a {
   align-items: center;
   transition: 0.3s ease-in-out;
 }
-.item:hover {
-  cursor: pointer;
-  opacity: .9;
-}
 .item img {
   height: 55%;
   width: 100%;
   object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
+}
+.item img:hover {
+  cursor: pointer;
+  opacity: .9;
+  box-shadow: 0 0 3px grey;
 }
 .item .text {
   font-size: 1.2rem;
