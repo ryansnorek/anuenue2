@@ -197,8 +197,8 @@ a {
   /* background-size: cover; */
 }
 .right {
-  background-image: url("../public/images/pepe_chef.jpeg");
-  /* background-size: cover; */
+  background-image: url("../public/images/peepo.jpeg");
+  background-size: cover;
 
 }
 .intro-card {
