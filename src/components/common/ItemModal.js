@@ -33,10 +33,9 @@ function ItemModal({ item }) {
         },
       ]);
     }
+
     setModalItem("");
   };
-
-  console.log(item, "-==--=-=-=")
 
   return (
     <div className="modal-container">

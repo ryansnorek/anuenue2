@@ -10,13 +10,15 @@ import Bag from "./components/Bag";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Checkout from "./components/Checkout";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
-  const [order, setOrder] = useState([]);
+  // const [order, setOrder] = useState([]);
+  const [order, setOrder] = useLocalStorage("order", [])
 
   const handleScroll = () => {
     const element = document.querySelector(".wrapper");
@@ -43,7 +45,7 @@ function App() {
 
           order,
           setOrder,
-          
+
           checkingOut,
           setCheckingOut,
         }}
