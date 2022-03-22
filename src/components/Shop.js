@@ -1,5 +1,5 @@
 import { data } from "../data";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { shoppingContext } from "../contexts";
 
 import Item from "./common/Item";
@@ -8,6 +8,11 @@ import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(shoppingContext);
+
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

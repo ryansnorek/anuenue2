@@ -3,7 +3,7 @@ import { shoppingContext } from "../../contexts";
 import useForm from "../../hooks/useForm";
 import { useEffect } from "react";
 
-function BagItem({ item, countStart }) {
+function BagItem({ item }) {
   const { order, setOrder } = useContext(shoppingContext);
   const [values, handleChange] = useForm({ qty: item.qty });
 
@@ -11,15 +11,8 @@ function BagItem({ item, countStart }) {
     const itemIndex = order.findIndex(
       (orderItem) => orderItem.name === item.name
     );
-
-    const orderTotal = order.reduce((x, y) => {
-      return x + y.price * y.qty;
-    }, 0);
-    countStart.current = orderTotal;
-
     const updatedOrder = [...order];
     updatedOrder[itemIndex].qty = Number(values.qty);
-
 
     setOrder([...updatedOrder]);
   }, [values]); //eslint-disable-line

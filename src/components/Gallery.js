@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+
 function Gallery() {
-    return (
-        <div className="gallery">
-            <div className="gallery-wrapper">
-            </div>
-        </div>
-    );
-};
+    
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="gallery">
+      <div className="gallery-wrapper"></div>
+    </div>
+  );
+}
 export default Gallery;

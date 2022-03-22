@@ -8,8 +8,12 @@ import CountUp from "react-countup";
 function Bag() {
   const { order } = useContext(shoppingContext);
   const [total, setTotal] = useState(0);
-  const countStart = useRef();
 
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.scrollTo(0, 0);
+  }, []);
+  
   useEffect(() => {
     const orderTotal = order.reduce((x, y) => {
       return x + y.price * y.qty;
@@ -26,7 +30,7 @@ function Bag() {
       </div>
       <section className="order">
         {order.map((item) => {
-          return <BagItem key={item.id} item={item} countStart={countStart} />;
+          return <BagItem key={item.id} item={item} />;
         })}
       </section>
       <section className="checkout">
