@@ -518,9 +518,6 @@ footer {
   .modal {
     width: 90%;
   }
-  .order {
-    width: 60%;
-  }
   footer {
     margin-top: 10%;
   }
@@ -576,9 +573,8 @@ footer {
   .modal-item-container img {
     display: none;
   }
-  .order {
+  .order, .columns {
     width: 100%;
-    padding-left: 0;
   }
   footer {
     padding-bottom: 15%;
