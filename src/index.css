@@ -189,12 +189,16 @@ a {
 }
 .left {
   background-image: url("../public/images/cake.jpeg");
+    /* background-size: cover; */
 }
 .center {
   background-image: url("../public/images/bread.jpg");
+  /* background-size: cover; */
 }
 .right {
   background-image: url("../public/images/pepe_chef.jpeg");
+  /* background-size: cover; */
+
 }
 .intro-card {
   display: flex;
@@ -595,6 +599,10 @@ footer {
   }
   .trending h2 {
     display: none;
+  }
+  .category {
+    width: 100%;
+    margin: 1.5% 0;
   }
   .item-container {
     flex-direction: column;
