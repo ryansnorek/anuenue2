@@ -54,7 +54,7 @@ function Header() {
           <Link to="/gallery">Gallery</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/bag">
-            <span className="badge">{order.length > 0 && order.length}</span>
+            <span className={`badge ${order.length < 1 && "hide"}`}>{order.length > 0 && order.length}</span>
             <img className="icon bag" src="../images/icons/bag.png" alt="bag" />
           </Link>
           <a
