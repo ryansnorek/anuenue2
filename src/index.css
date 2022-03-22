@@ -399,12 +399,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 12%;
+  padding-right: 16%;
   width: 100%;
 }
-.checkout h3 {
-  padding: 0 5%;
-  font-size: 1.3rem;
+.count {
+  font-size: 1.6rem;
+  margin: 1.5%;
 }
 .checkout a {
   background-color: var(--dark);

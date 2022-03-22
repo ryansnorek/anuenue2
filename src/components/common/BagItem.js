@@ -11,17 +11,15 @@ function BagItem({ item, countStart }) {
     const itemIndex = order.findIndex(
       (orderItem) => orderItem.name === item.name
     );
-    const updatedOrder = [...order];
-    console.log(updatedOrder)
-    console.log(values.qty)
-    updatedOrder[itemIndex].qty = Number(values.qty);
-    console.log(updatedOrder)
 
     const orderTotal = order.reduce((x, y) => {
       return x + y.price * y.qty;
     }, 0);
-    // countStart.current = orderTotal;
-    
+    countStart.current = orderTotal;
+
+    const updatedOrder = [...order];
+    updatedOrder[itemIndex].qty = Number(values.qty);
+
 
     setOrder([...updatedOrder]);
   }, [values]); //eslint-disable-line

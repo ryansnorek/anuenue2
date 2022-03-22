@@ -15,7 +15,6 @@ function Bag() {
       return x + y.price * y.qty;
     }, 0);
     setTotal(orderTotal);
-    console.log("start",countStart)
   }, [order]);
 
   return (
@@ -33,7 +32,15 @@ function Bag() {
       <section className="checkout">
         <div className="total">
           <h2>Subtotal</h2>
-          <h3>${total}</h3>
+          <CountUp
+            className="count"
+            start={countStart.current}
+            end={total}
+            prefix="$"
+            duration={1.618}
+            useEasing={1}
+            startOnMount={1}
+          />
         </div>
         <Link to="/checkout">Checkout</Link>
       </section>
