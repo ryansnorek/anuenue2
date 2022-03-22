@@ -34,7 +34,7 @@ function Bag() {
           <h2>Subtotal</h2>
           <CountUp
             className="count"
-            start={countStart.current}
+            start={0}
             end={total}
             prefix="$"
             duration={1.618}
