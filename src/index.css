@@ -145,6 +145,7 @@ a {
 /* Landing -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .landing {
   height: 100%;
+  animation: fade-in 1s ease-in-out;
 }
 .trending {
   display: flex;
@@ -189,6 +190,7 @@ a {
   height: max-content;
   margin: 0;
   padding-bottom: 9%;
+  animation: fade-in 1s ease-in-out;
 }
 .shop-items {
   display: flex;
@@ -205,7 +207,6 @@ a {
   width: 85%;
   display: flex;
   justify-content: center;
-  animation: fade-in 0.3s ease-in;
 }
 .item {
   width: 100%;
