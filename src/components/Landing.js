@@ -5,21 +5,25 @@ import Item from "./common/Item";
 import Footer from "./Footer";
 
 function Landing() {
-
   useEffect(() => {
     const wrapper = document.querySelector(".wrapper");
     wrapper.scrollTo(0, 0);
   }, []);
-
 
   return (
     <main className="landing">
       <section className="trending">
         <h2>Illuminate your gullet</h2>
         <div className="item-container">
-          <Item item={data.power_bitch_balls} />
-          <Item item={data.green_burrito} />
-          <Item item={data.all_your_breads} />
+          <div className="category left">
+            <h3>D E S S E R T S</h3>
+          </div>
+          <div className="category center">
+            <h3>S P E S H A L</h3>
+          </div>
+          <div className="category right">
+            <h3>M E R C H</h3>
+          </div>
         </div>
       </section>
       <section className="intro-card">
