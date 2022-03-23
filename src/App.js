@@ -16,6 +16,7 @@ function App() {
   const [modalItem, setModalItem] = useState("");
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [checkingOut, setCheckingOut] = useState(false);
   const [order, setOrder] = useLocalStorage("order", []);
 
@@ -35,6 +36,9 @@ function App() {
 
         scrollBreakPoint,
         setScrollBreakPoint,
+
+        scrollPosition,
+        setScrollPosition
       }}
     >
       <shoppingContext.Provider

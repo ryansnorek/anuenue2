@@ -1,10 +1,10 @@
 import { useContext, useState, useEffect } from "react";
-import { shoppingContext } from "../../contexts";
+import { effectsContext, shoppingContext } from "../../contexts";
 import useForm from "../../hooks/useForm";
 
 function ItemModal({ item }) {
   const { setModalItem, order, setOrder } = useContext(shoppingContext);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const { scrollPosition, setScrollPosition } = useContext(effectsContext);
   const [values, handleChange] = useForm({ qty: 1 });
 
   useEffect(() => {
