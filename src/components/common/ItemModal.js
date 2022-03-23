@@ -33,7 +33,6 @@ function ItemModal({ item }) {
         },
       ]);
     }
-
     setModalItem("");
   };
 
@@ -47,7 +46,9 @@ function ItemModal({ item }) {
           alt="close"
         />
         <section className="modal-item-container">
-          <img src={item.img} alt={item.name} />
+          <div className="image">
+            <img src={item.img} alt={item.name} />
+          </div>
           <div className="text-wrapper">
             <div className="text">
               <h3>{item.name}</h3>

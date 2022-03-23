@@ -322,13 +322,20 @@ a {
   width: 50px;
   padding: 1%;
 }
+/* * {
+  border: 1px solid grey;
+} */
 .modal-item-container {
   padding: 0 9% 9%;
   display: flex;
   justify-content: center;
+  height: 50vh;
 }
+/* .modal-item-container .image {
+} */
 .modal-item-container img {
-  width: 33%;
+  height: 100%;
+  object-fit: contain;
 }
 .modal-item-container .text-wrapper {
   padding: 5%;
