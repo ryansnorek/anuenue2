@@ -165,7 +165,6 @@ a {
 .trending h2 {
   font-size: 2rem;
   user-select: none;
-  opacity: .5;
   width: 100%;
 }
 .category {
