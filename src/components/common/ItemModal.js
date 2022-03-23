@@ -11,7 +11,7 @@ function ItemModal({ item }) {
     const page = document.querySelector(".wrapper");
     page.scrollTop < 70 && page.scrollTo(0, 70);
     setScrollPosition(page.scrollTop);
-  }, []);
+  }, [setScrollPosition]);
 
   const handleAddItem = () => {
     const orderItemExists = order.findIndex(

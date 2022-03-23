@@ -26,7 +26,7 @@ function Bag() {
         <h3 className="quantity">Quantity</h3>
         <h3 className="total">Total</h3>
       </div>
-      {order > 0 ? <BagOrder total={total} order={order} /> : <h2>No items</h2>}
+      {order.length > 0 ? <BagOrder total={total} order={order} /> : <h2>No items</h2>}
     </div>
   );
 }
