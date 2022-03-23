@@ -1,5 +1,5 @@
 import { data } from "../data";
-import { useContext, useLayoutEffect, useEffect } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { shoppingContext, effectsContext } from "../contexts";
 
 import Item from "./common/Item";
@@ -15,7 +15,7 @@ function Shop() {
     pageSection && setScrollPosition(pageSection.offsetTop);
   }, [pageTarget, setScrollPosition]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const wrapper = document.querySelector(".wrapper");
     wrapper.scrollTo(0, scrollPosition);
   },[scrollPosition])
