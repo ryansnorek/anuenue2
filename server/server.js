@@ -12,7 +12,7 @@ app.use(cors({
   origin: "http://localhost:3001"
 }))
 
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY || 1234);
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 app.post("/create-checkout-session", async (req, res) => {
   try {
