@@ -17,8 +17,8 @@ function Landing() {
   const handleClick = (target) => {
     let position = 0;
     if (target === "left") position = 20;
-    else if (target === "center") position = 420;
-    else position = 950;
+    else if (target === "center") position = 650;
+    else position = 1400;
     navigate("/shop");
     setScrollPosition(position);
   }
