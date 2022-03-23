@@ -327,9 +327,14 @@ a {
   justify-content: center;
   height: 50vh;
 }
+.modal-item-container .image {
+  width: 100%;
+}
 .modal-item-container img {
   height: 100%;
+  width: 100%;
   object-fit: contain;
+  object-fit: cover;
 }
 .modal-item-container .text-wrapper {
   padding: 5%;

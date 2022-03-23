@@ -8,7 +8,8 @@ import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(shoppingContext);
-  const { scrollPosition, setScrollPosition, pageTarget } = useContext(effectsContext);
+  const { scrollPosition, setScrollPosition, pageTarget } =
+    useContext(effectsContext);
 
   useLayoutEffect(() => {
     const pageSection = document.getElementById(pageTarget);
@@ -18,7 +19,7 @@ function Shop() {
   useLayoutEffect(() => {
     const wrapper = document.querySelector(".wrapper");
     wrapper.scrollTo(0, scrollPosition);
-  },[scrollPosition])
+  }, [scrollPosition]);
 
   return (
     <>
