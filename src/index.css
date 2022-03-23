@@ -237,6 +237,7 @@ a {
   padding-bottom: 9%;
   animation: fade-in 1s ease-in-out;
   font-family: "Barlow Condensed", sans-serif;
+  text-align: center;
 }
 .shop-items {
   display: flex;
