@@ -6,8 +6,7 @@ export const data = {
       sweet: 6,
       salty: 8,
       chewy: 9,
-      img:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHht10jGyrUz2JIRZhOF0TNN-7bTNLyCPhmQ&usqp=CAU",
+      img: "images/chonky_chip.png",
       sizes: ["small"],
       description:
         "She sweet, but she got rich depth and melts in your mouth, like the girl you should have married.",

@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { shoppingContext } from "../contexts";
 
-import BagItem from "./common/BagItem";
-import CountUp from "react-countup";
+import BagOrder from "./BagOrder";
 
 function Bag() {
   const { order } = useContext(shoppingContext);
@@ -28,26 +26,7 @@ function Bag() {
         <h3 className="quantity">Quantity</h3>
         <h3 className="total">Total</h3>
       </div>
-      <section className="order">
-        {order.map((item) => {
-          return <BagItem key={item.id} item={item} />;
-        })}
-      </section>
-      <section className="checkout">
-        <div className="total">
-          <h2>Subtotal</h2>
-          <CountUp
-            className="count"
-            start={0}
-            end={total}
-            prefix="$"
-            duration={1.618}
-            useEasing={1}
-            startOnMount={1}
-          />
-        </div>
-        <Link to="/checkout">Checkout</Link>
-      </section>
+      {order > 0 ? <BagOrder total={total} order={order}/> : <h2>No items</h2>}
     </div>
   );
 }
