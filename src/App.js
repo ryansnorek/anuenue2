@@ -17,6 +17,7 @@ function App() {
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [pageTarget, setPageTarget] = useState("");
   const [checkingOut, setCheckingOut] = useState(false);
   const [order, setOrder] = useLocalStorage("order", []);
 
@@ -38,7 +39,10 @@ function App() {
         setScrollBreakPoint,
 
         scrollPosition,
-        setScrollPosition
+        setScrollPosition,
+
+        pageTarget,
+        setPageTarget
       }}
     >
       <shoppingContext.Provider

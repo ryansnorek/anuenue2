@@ -1,5 +1,5 @@
 import { data } from "../data";
-import { useContext, useEffect } from "react";
+import { useContext, useLayoutEffect, useEffect } from "react";
 import { shoppingContext, effectsContext } from "../contexts";
 
 import Item from "./common/Item";
@@ -8,18 +8,23 @@ import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(shoppingContext);
-  const { scrollPosition } = useContext(effectsContext);
+  const { scrollPosition, setScrollPosition, pageTarget } = useContext(effectsContext);
+
+  useLayoutEffect(() => {
+    const pageSection = document.getElementById(pageTarget);
+    pageSection && setScrollPosition(pageSection.offsetTop);
+  }, [pageTarget, setScrollPosition]);
 
   useEffect(() => {
     const wrapper = document.querySelector(".wrapper");
     wrapper.scrollTo(0, scrollPosition);
-  }, []);
+  },[scrollPosition])
 
   return (
     <>
       <div className="shop">
         {modalItem && <ItemModal item={modalItem} />}
-        <section className={`shop-items ${modalItem && "blur"}`}>
+        <section id="1" className={`shop-items ${modalItem && "blur"}`}>
           <h2>D E S S E R T S</h2>
           <div className="item-container">
             <Item item={data.chonky_chip} />
@@ -27,7 +32,7 @@ function Shop() {
             <Item item={data.they_cookies} />
           </div>
         </section>
-        <section className={`shop-items ${modalItem && "blur"}`}>
+        <section id="2" className={`shop-items ${modalItem && "blur"}`}>
           <h2>S P E S H A L</h2>
           <div className="item-container">
             <Item item={data.power_bitch_balls} />
@@ -35,7 +40,7 @@ function Shop() {
             <Item item={data.champs_elycakes} />
           </div>
         </section>
-        <section className={`shop-items ${modalItem && "blur"}`}>
+        <section id="3" className={`shop-items ${modalItem && "blur"}`}>
           <h2>M E R C H</h2>
           <div className="item-container">
             <Item item={data.power_bitch_balls} />

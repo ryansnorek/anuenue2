@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 function Landing() {
   const navigate = useNavigate();
-  const { setScrollPosition } = useContext(effectsContext);
+  const { setPageTarget } = useContext(effectsContext);
 
   useEffect(() => {
     const wrapper = document.querySelector(".wrapper");
@@ -15,25 +15,21 @@ function Landing() {
   }, []);
 
   const handleClick = (target) => {
-    let position = 0;
-    if (target === "left") position = 20;
-    else if (target === "center") position = 650;
-    else position = 1400;
+    setPageTarget(target);
     navigate("/shop");
-    setScrollPosition(position);
   }
   return (
     <main className="landing">
       <section className="trending">
         <h2>ILLUMINATE YOUR GULLET</h2>
         <div className="item-container">
-          <div className="category left" onClick={() => handleClick("left")}>
+          <div className="category left" onClick={() => handleClick("1")}>
             <h3>D E S S E R T S</h3>
           </div>
-          <div className="category center" onClick={() => handleClick("center")}>
+          <div className="category center" onClick={() => handleClick("2")}>
             <h3>S P E S H A L</h3>
           </div>
-          <div className="category right" onClick={() => handleClick("right")}>
+          <div className="category right" onClick={() => handleClick("3")}>
             <h3>M E R C H</h3>
           </div>
         </div>
