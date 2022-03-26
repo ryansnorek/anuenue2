@@ -5,7 +5,7 @@ const { getOrderTotal, getOrderItems } = require("./model");
 router.post("/charge", async (req, res) => {
     const { id, order } = req.body;
     const orderItems = getOrderItems(order);
-    const total = getOrderTotal(order);
+    const total = getOrderTotal(orderItems);
 
     try {
       const payment = await stripe.paymentIntents.create({
@@ -15,7 +15,9 @@ router.post("/charge", async (req, res) => {
         payment_method: id,
         confirm: true,
       });
+      
       console.log(payment);
+
       res.json({
         message: "Payment Successful",
         success: true,
