@@ -5,25 +5,29 @@ const { getOrderTotal, getLineItems } = require('./model');
 const DOMAIN = 'http://localhost:3000'
 
 
-router.post('/create-checkout-session', async (req, res) => {
+// router.post('/create-checkout-session', async (req, res) => {
+//   const { order } = req.body;
+
+//   const lineItems = getLineItems(order);
+//   console.log(lineItems);
+
+
+//   const session = await stripe.checkout.sessions.create({
+//     line_items: lineItems,
+//     mode: 'payment',
+//     success_url: `${DOMAIN}/success`,
+//     cancel_url: `${DOMAIN}/bag`
+//   });
+//   res.redirect(303, session.url);
+// })
+
+router.post('/secret', async (req, res) => {
   const { order } = req.body;
-
   const lineItems = getLineItems(order);
-  console.log(lineItems);
-
-
-  const session = await stripe.checkout.sessions.create({
-    line_items: lineItems,
-    mode: 'payment',
-    success_url: `${DOMAIN}/success`,
-    cancel_url: `${DOMAIN}/bag`
-  });
-  res.redirect(303, session.url);
-})
-
-router.get('/secret', async (req, res) => {
+  const total = getOrderTotal(lineItems);
+  
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: 1099,
+    amount: total,
     currency: 'usd',
     payment_method_types: ['card'],
   });

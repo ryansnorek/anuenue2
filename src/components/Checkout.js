@@ -35,7 +35,7 @@ function Checkout() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/stripe/secret")
+      .post("http://localhost:8000/stripe/secret", { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
   }, []);
@@ -46,7 +46,7 @@ function Checkout() {
   return (
     <div className="checkout-order">
       <Elements stripe={stripePromise} options={options}>
-       <CheckoutForm />
+        <CheckoutForm />
       </Elements>
     </div>
   );
