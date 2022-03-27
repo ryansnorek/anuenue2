@@ -500,6 +500,13 @@ input[type="number"] {
   border-image-slice: 1;
   box-shadow: 0 0 10px grey;
 }
+.checkout-order {
+  display: flex;
+  justify-content: center;
+}
+.checkout-element {
+  
+}
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
   margin-top: 2%;

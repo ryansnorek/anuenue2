@@ -4,8 +4,15 @@ function getItemById(id) {
   return storeItems.find((item) => item.id === id);
 }
 
-function getOrderItems(order) {
-  return order.map((item) => getItemById(item.id));
+function getLineItems(order) {
+  return order.map((item) => {
+    const product = getItemById(item.id);
+    const lineItem = {
+      price: product.price,
+      quantity: item.qty
+    }
+    return lineItem;
+  });
 }
 
 function getOrderTotal(orderItems) {
@@ -16,6 +23,6 @@ function getOrderTotal(orderItems) {
 
 module.exports = {
   getItemById,
-  getOrderItems,
+  getLineItems,
   getOrderTotal,
 };

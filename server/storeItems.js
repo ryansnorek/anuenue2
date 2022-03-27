@@ -2,37 +2,44 @@ const storeItems = [
   {
     name: "Chonky Chip",
     id: 420,
-    price: 3,
+    quantity: 0,
+    price: "pr_1234",
   },
   {
     name: "All Your Bread Are Belong To Us",
     id: 421,
-    price: 7,
+    quantity: 0,
+    price: "pr_1234",
   },
   {
     name: "Based Brownies",
     id: 422,
-    price: 4,
+    quantity: 0,
+    price: "pr_1234",
   },
   {
     name: "Champ's Elycakes",
     id: 423,
-    price: 6,
+    quantity: 0,
+    price: "pr_1234",
   },
   {
     name: "Power Bitch Balls",
     id: 425,
+    quantity: 0,
     price: 10,
   },
   {
     name: "Green Brrrrito",
     id: 426,
+    quantity: 0,
     price: 8,
   },
   {
     name: "They Cookies",
     id: 427,
-    price: 10,
+    quantity: 0,
+    price: "pr_1234",
   },
 ];
 

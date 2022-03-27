@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import "@stripe/stripe-js";
 
 import { effectsContext, shoppingContext } from "./contexts";
 
