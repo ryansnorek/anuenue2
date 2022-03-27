@@ -4,12 +4,10 @@ import {
   PaymentElement,
 } from "@stripe/react-stripe-js";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router";
 
 function CheckoutForm({ order }) {
   const stripe = useStripe();
   const elements = useElements();
-  const navigate = useNavigate();
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +39,6 @@ function CheckoutForm({ order }) {
       }
     });
   }, [stripe]);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
