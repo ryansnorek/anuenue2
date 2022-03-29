@@ -4,7 +4,7 @@ import { shoppingContext } from "../contexts";
 import BagOrder from "./BagOrder";
 
 function Bag() {
-  const { order } = useContext(shoppingContext);
+  const { order, checkingOut } = useContext(shoppingContext);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -26,7 +26,11 @@ function Bag() {
         <h3 className="quantity">Quantity</h3>
         <h3 className="total">Total</h3>
       </div>
-      {order.length > 0 ? <BagOrder total={total} order={order} /> : <h2>No items</h2>}
+      {order.length > 0 ? (
+        <BagOrder total={total} />
+      ) : (
+        <h2>No items</h2>
+      )}
     </div>
   );
 }
