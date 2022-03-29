@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   cors({ origin: ["http://localhost:3000", "https://anuenue.herokuapp.com"] })
 );
-// app.use(express.static(`${__dirname}/public`));
 
 app.use("/stripe", stripeRouter);
 
