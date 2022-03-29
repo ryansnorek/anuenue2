@@ -19,7 +19,6 @@ function App() {
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [pageTarget, setPageTarget] = useState("");
-  const [checkingOut, setCheckingOut] = useState(false);
   const [order, setOrder] = useLocalStorage("order", []);
 
   const handleScroll = () => {
@@ -53,9 +52,6 @@ function App() {
 
           order,
           setOrder,
-
-          checkingOut,
-          setCheckingOut,
         }}
       >
         <Header />

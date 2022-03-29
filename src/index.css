@@ -109,6 +109,13 @@ a {
   margin: 0 3%;
   font-family: "Raleway", sans-serif;
 }
+/* button {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 3%;
+  font-size: 1.1rem;
+  font-family: "Raleway", sans-serif;
+} */
 .icon {
   width: 30px;
   margin-right: 3%;
@@ -486,23 +493,33 @@ input[type="number"] {
   font-size: 1.6rem;
   margin: 1.5%;
 }
-.checkout a {
+.checkout button {
+  margin: 0 2%;
+  padding: 2% 3%;
   background-color: var(--dark);
   color: var(--light);
-  padding: 12px;
-  width: fit-content;
-  margin-right: 17%;
-  border: 2px solid transparent;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  border: 3px solid transparent;
   transition: 0.3s ease-in;
+  margin-right: 16%;
 }
-.checkout a:hover {
+.checkout button:hover {
   border-image: var(--rainbow);
   border-image-slice: 1;
   box-shadow: 0 0 10px grey;
 }
 .checkout-order {
+  height: 100%;
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+.stripe-wrapper {
+  position: absolute;
+  top: 0;
+  z-index: 6;
 }
 #payment-form {
   width: 30vw;
@@ -512,6 +529,7 @@ input[type="number"] {
     0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
   border-radius: 7px;
   padding: 40px;
+  background-color: var(--light);
 }
 #payment-message {
   color: rgb(105, 115, 134);
@@ -524,8 +542,8 @@ input[type="number"] {
   margin-bottom: 24px;
 }
 #payment-button {
-  background: #5469d4;
-  font-family: Arial, sans-serif;
+  background: var(--dark);
+  font-family: "Raleway", sans-serif;
   color: #ffffff;
   border-radius: 4px;
   border: 0;
@@ -537,9 +555,12 @@ input[type="number"] {
   transition: all 0.2s ease;
   box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
   width: 100%;
+  border: 3px solid transparent;
 }
 #payment-button:hover {
-  filter: contrast(115%);
+  border-image: var(--rainbow);
+  border-image-slice: 1;
+  box-shadow: 0 0 10px grey;
 }
 #payment-button:disabled {
   opacity: 0.5;

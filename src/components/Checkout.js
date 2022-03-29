@@ -15,7 +15,7 @@ import { shoppingContext } from "../contexts";
 import CheckoutForm from "./CheckoutForm";
 
 function Checkout() {
-  const { setCheckingOut, order } = useContext(shoppingContext);
+  const { order } = useContext(shoppingContext);
 
   // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
   const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -23,13 +23,6 @@ function Checkout() {
   const options = { clientSecret };
 
   // on checkout remove from local storage
-
-  useEffect(() => {
-    setCheckingOut(true);
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
-    return () => setCheckingOut(false);
-  }, [setCheckingOut]);
 
   useEffect(() => {
     axios
@@ -43,9 +36,11 @@ function Checkout() {
   }
   return (
     <div className="checkout-order">
-      <Elements stripe={stripePromise} options={options}>
+      <div className="stripe-wrapper">
+      <Elements className="stripe-element" stripe={stripePromise} options={options}>
         <CheckoutForm />
       </Elements>
+      </div>
     </div>
   );
 }
