@@ -2,10 +2,16 @@ import BagItem from "./common/BagItem";
 import CountUp from "react-countup";
 import Checkout from "./Checkout";
 import { useContext } from "react";
-import { shoppingContext } from "../contexts";
+import { effectsContext, shoppingContext } from "../contexts";
 
 function BagOrder({ total }) {
   const { order, checkingOut, setCheckingOut } = useContext(shoppingContext);
+  const { setScrollPosition } = useContext(effectsContext);
+  const handleClickCheckout = () => {
+    const wrapper = document.querySelector(".wrapper");
+    setScrollPosition(wrapper.scrollTop);
+    setCheckingOut(true);
+  };
 
   return (
     <>
@@ -27,7 +33,7 @@ function BagOrder({ total }) {
             startOnMount={1}
           />
         </div>
-        <button onClick={() => setCheckingOut(true)}>Checkout</button>
+        <button onClick={handleClickCheckout}>Checkout</button>
       </section>
       {checkingOut && (
         <section className="stripe-checkout">

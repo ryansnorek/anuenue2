@@ -23,7 +23,7 @@ function Header() {
   return (
     <header
       className={`${scrollBreakPoint && "scrolled-header"} ${
-        checkingOut && "hide"
+        checkingOut && "animate-hide"
       }`}
     >
       <img

@@ -315,15 +315,7 @@ a {
   border-radius: 3px;
   z-index: 5;
   box-shadow: 0 0 2px var(--dark);
-  animation: fade-in 0.3s ease-in-out;
-}
-@keyframes fade-in {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
+  animation: drop-fade-in 0.3s ease-in;
 }
 .modal .icon {
   width: 50px;
@@ -527,6 +519,18 @@ input[type="number"] {
 }
 .pay {
   position: absolute;
+  animation: pull-down 0.4s ease-in;
+}
+.animate-hide {
+  animation: pull-up 300ms ease-in forwards;
+}
+@keyframes pull-up {
+ from {
+  transform: translateY(1);
+ }
+ to {
+  transform: translateY(-100%);
+ }
 }
 #payment-form {
   width: 30vw;
@@ -538,6 +542,7 @@ input[type="number"] {
   padding: 40px;
   padding-top: 30%;
   background-color: var(--light);
+  animation: pull-down 0.3s ease-in;
 }
 #payment-message {
   color: rgb(105, 115, 134);
@@ -573,6 +578,14 @@ input[type="number"] {
 #payment-button:disabled {
   opacity: 0.5;
   cursor: default;
+}
+@keyframes pull-down {
+  from {
+    transform: translateY(-100%);
+   }
+   to {
+    transform: translateY(1);
+   }
 }
 .spinner:before,
 .spinner:after {
@@ -692,7 +705,25 @@ footer {
   border-image-slice: 1;
   box-shadow: 0 0 10px grey;
 }
-/* Loading -=-==-=-=-=--=-=-=-==--=-=-=-= */
+/* Loading / Other effects -=-==-=-=-=--=-=-=-==--=-=-=-= */
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes drop-fade-in {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(1);
+    opacity: 100%;
+  }
+}
 /* .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
 }

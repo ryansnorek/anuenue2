@@ -4,12 +4,13 @@ import axios from "axios";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
-import { shoppingContext } from "../contexts";
+import { effectsContext, shoppingContext } from "../contexts";
 
 import CheckoutForm from "./CheckoutForm";
 
 function Checkout() {
   const { order, setCheckingOut } = useContext(shoppingContext);
+  const { scrollPosition } = useContext(effectsContext);
 
   // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
   const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -22,14 +23,14 @@ function Checkout() {
       .post("https://anuenue.herokuapp.com/stripe/create-payment-intent", { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
-  }, [order, setCheckingOut]);
+  }, [order, setCheckingOut, scrollPosition]);
 
   if (!clientSecret) {
-    return <h1>loading</h1>;
+    return <div className="spinner" id="spinner"></div>;
   }
   return (
     <div className="checkout-order">
-      <div className="stripe-wrapper">
+      <div className="stripe-wrapper" style={{ marginTop: scrollPosition }}>
         <img
           className="logo pay"
           src="../images/icons/anuenue_logo.png"
