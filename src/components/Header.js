@@ -9,12 +9,11 @@ function Header() {
   // const inputRef = useRef();
   const navigate = useNavigate();
   const { order, checkingOut } = useContext(shoppingContext);
-  const { expandSearchBar, setExpandSearchBar, scrollBreakPoint, setScrollPosition } =
+  const { expandSearchBar, setExpandSearchBar, scrollBreakPoint, setPageTarget } =
     useContext(effectsContext); //eslint-disable-line
   // const [formValues, handleChange, clearForm] = useForm({ search: "" });
   // const handleClick = () => setExpandSearchBar(!expandSearchBar);
   // const handleSubmit = (e) => clearForm(e);
-
   // useEffect(() => {
   //   if (inputRef.current) {
   //     inputRef.current.focus();
@@ -56,7 +55,7 @@ function Header() {
           </div> */}
           <Link to="/about">About</Link>
           <Link to="/gallery">Gallery</Link>
-          <Link onClick={() => setScrollPosition(0)} to="/shop">Shop</Link>
+          <Link onClick={() => setPageTarget("1")} to="/shop">Shop</Link>
           <Link to="/bag">
             <span className={`badge ${order.length < 1 && "hide"}`}>
               {order.length > 0 && order.length}
