@@ -4,7 +4,7 @@ import { shoppingContext } from "../contexts";
 import BagOrder from "./BagOrder";
 
 function Bag() {
-  const { order, checkingOut } = useContext(shoppingContext);
+  const { order } = useContext(shoppingContext);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {

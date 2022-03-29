@@ -19,7 +19,7 @@ function Checkout() {
   useEffect(() => {
     setCheckingOut(true);
     axios
-      .post("http://localhost:8000/stripe/create-payment-intent", { order })
+      .post("http://anuenue.herokuapp.com/stripe/create-payment-intent", { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
   }, [order, setCheckingOut]);

@@ -46,11 +46,10 @@ function CheckoutForm({ order }) {
       return;
     }
     setIsLoading(true);
-
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000/complete",
+        return_url: "http://anuenue.herokuapp.com/complete",
       },
     });
     if (error.type === "card_error" || error.type === "validation_error") {
