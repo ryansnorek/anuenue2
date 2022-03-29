@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { shoppingContext } from "../../contexts";
 import useForm from "../../hooks/useForm";
 import { useEffect } from "react";
+import CountUp from "react-countup";
+
 
 function BagItem({ item }) {
   const { order, setOrder } = useContext(shoppingContext);
@@ -47,7 +49,14 @@ function BagItem({ item }) {
           />
         </div>
         <div className="total">
-          <p>${item.price * item.qty}</p>
+          <CountUp
+            start={0}
+            end={item.price * item.qty}
+            prefix="$"
+            duration={.618}
+            useEasing={1}
+            startOnMount={1}
+          />
         </div>
       </div>
     </div>
