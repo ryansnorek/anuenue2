@@ -19,7 +19,7 @@ function ItemModal({ item }) {
     );
     if (orderItemExists !== -1) {
       const updatedOrder = [...order];
-      updatedOrder[orderItemExists].qty += values.qty;
+      updatedOrder[orderItemExists].qty += Number(values.qty);
       setOrder([...updatedOrder]);
     } else {
       setOrder([
