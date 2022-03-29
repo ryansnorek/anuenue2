@@ -7,11 +7,11 @@ function CheckoutComplete() {
   useEffect(() => {
     setOrder([]);
     localStorage.removeItem("order");
-  }, []);
+  }, []); //eslint-disable-line
 
   return (
     <div className="complete">
-      <h1>Order is in the oven</h1>
+      <h1>Order is in the oven!</h1>
     </div>
   );
 }

@@ -1,14 +1,8 @@
 import { useEffect, useContext, useState } from "react";
-
-import {
-  Elements,
-  PaymentElement,
-  useStripe,
-  useElements,
-} from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-
 import axios from "axios";
+
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 import { shoppingContext } from "../contexts";
 
@@ -21,8 +15,6 @@ function Checkout() {
   const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
   const [clientSecret, setClientSecret] = useState("");
   const options = { clientSecret };
-
-  // on checkout remove from local storage
 
   useEffect(() => {
     setCheckingOut(true);
@@ -38,15 +30,19 @@ function Checkout() {
   return (
     <div className="checkout-order">
       <div className="stripe-wrapper">
-      <img
-        className="logo pay"
-        src="../images/icons/anuenue_logo.png"
-        alt="logo"
-      />
-      <Elements className="stripe-element" stripe={stripePromise} options={options}>
-        <CheckoutForm />
-      </Elements>
-      <img
+        <img
+          className="logo pay"
+          src="../images/icons/anuenue_logo.png"
+          alt="logo"
+        />
+        <Elements
+          className="stripe-element"
+          stripe={stripePromise}
+          options={options}
+        >
+          <CheckoutForm />
+        </Elements>
+        <img
           className="icon"
           onClick={() => setCheckingOut(false)}
           src="../../images/icons/close.png"
