@@ -11,7 +11,7 @@ const stripeRouter = require("./routes");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
-  cors({ origin: ["http://localhost:3000", "https://anuenue.herokuapp.com"] })
+  cors({ origin: ["http://localhost:3000", "https://anuenue.netlify.app"] })
 );
 
 app.use("/stripe", stripeRouter);
