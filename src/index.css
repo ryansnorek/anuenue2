@@ -630,6 +630,11 @@ input[type="number"] {
     transform: rotate(360deg);
   }
 }
+.complete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* About -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .what-is-anuenue {
   margin-top: 2%;

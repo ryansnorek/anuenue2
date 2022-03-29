@@ -12,6 +12,7 @@ import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Checkout from "./components/Checkout";
 import useLocalStorage from "./hooks/useLocalStorage";
+import CheckoutComplete from "./components/CheckoutComplete";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -70,6 +71,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/complete" element={<CheckoutComplete />} />
           </Routes>
         </div>
       </shoppingContext.Provider>
