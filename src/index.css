@@ -706,8 +706,8 @@ footer {
   box-shadow: 0 0 10px grey;
 }
 /* Loading / Other effects -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.fade-out {
-  animation: fade-out 0.2s ease-in forwards;
+.fade-slide {
+  animation: fade-slide 0.4s ease-in forwards;
 }
 @keyframes fade-in {
   from {
@@ -717,13 +717,13 @@ footer {
     opacity: 100%;
   }
 }
-@keyframes fade-out {
+@keyframes fade-slide {
   from {
-    opacity: 100%;
+    filter: grayscale(0);
     transform: translateX(1);
   }
   to {
-    opacity: 0%;
+    filter: grayscale(100%);
     transform: translateX(-100%);
   }
 }

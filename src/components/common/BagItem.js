@@ -21,13 +21,13 @@ function BagItem({ item }) {
 
   const removeItem = () => {
     const element = document.getElementById(`${String(item.id)}`);
-    element.classList.add("fade-out");
+    element.classList.add("fade-slide");
     const updatedOrder = order.filter(
       (orderItem) => orderItem.name !== item.name
     );
     setTimeout(() => {
       setOrder([...updatedOrder]);
-    }, 300)
+    }, 400)
   };
 
   return (
