@@ -27,7 +27,7 @@ function BagItem({ item }) {
     );
     setTimeout(() => {
       setOrder([...updatedOrder]);
-    }, 400)
+    }, 300)
   };
 
   return (

@@ -707,7 +707,7 @@ footer {
 }
 /* Loading / Other effects -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .fade-slide {
-  animation: fade-slide 0.4s ease-in forwards;
+  animation: fade-slide 0.2s ease-in forwards;
 }
 @keyframes fade-in {
   from {
@@ -721,10 +721,12 @@ footer {
   from {
     filter: grayscale(0);
     transform: translateX(1);
+    opacity: 100%;
   }
   to {
     filter: grayscale(100%);
     transform: translateX(-100%);
+    opacity: 0%;
   }
 }
 @keyframes drop-fade-in {
