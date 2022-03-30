@@ -194,6 +194,7 @@ a {
   padding: 0 3%;
   background-color: var(--tint);
   border-radius: 2px;
+  font-size: 1.8rem;
 }
 .left {
   background-image: url("../public/images/chonky_chip.png");
