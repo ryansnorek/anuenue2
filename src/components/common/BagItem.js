@@ -20,14 +20,18 @@ function BagItem({ item }) {
   }, [values]); //eslint-disable-line
 
   const removeItem = () => {
+    const element = document.getElementById(`${String(item.id)}`);
+    element.classList.add("fade-out");
     const updatedOrder = order.filter(
       (orderItem) => orderItem.name !== item.name
     );
-    setOrder([...updatedOrder]);
+    setTimeout(() => {
+      setOrder([...updatedOrder]);
+    }, 300)
   };
 
   return (
-    <div className="bag-item-container">
+    <div className="bag-item-container" id={String(item.id)}>
       <div className="bag-item">
         <div className="actions" onClick={removeItem}>
           <img className="icon" src="../../images/icons/close.png" alt="bag" />
