@@ -740,8 +740,9 @@ footer {
     opacity: 100%;
   }
 }
-/* .skeleton {
-  animation: skeleton-loading 1s linear infinite alternate;
+.skeleton {
+  background-color: var(--dark);
+  /* animation: skeleton-loading 1s linear infinite alternate; */
 }
 @keyframes skeleton-loading {
   0% {
@@ -750,7 +751,7 @@ footer {
   100% {
     background-color: hsl(0, 0%, 95%);
   }
-} */
+}
 /* Responsive Design -=-=-=-=-=-==--=-=-==- */
 @media (max-width: 1300px) {
 }
