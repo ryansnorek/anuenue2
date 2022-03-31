@@ -33,15 +33,26 @@ function ItemModal({ item }) {
         },
       ]);
     }
-    setModalItem("");
+    const element = document.querySelector(".modal-container");
+    element.classList.add("slide-buy");
+    setTimeout(() => {
+      setModalItem("");
+    }, 300)
   };
 
+  const handleCloseModal = () => {
+    const element = document.querySelector(".modal-container");
+    element.classList.add("slide-close");
+    setTimeout(() => {
+      setModalItem("");
+    }, 300)
+  };
   return (
     <div className="modal-container">
       <div className="modal" style={{ marginTop: `${scrollPosition + 42}px` }}>
         <img
           className="icon"
-          onClick={() => setModalItem("")}
+          onClick={handleCloseModal}
           src="../../images/icons/close.png"
           alt="close"
         />

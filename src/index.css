@@ -740,6 +740,38 @@ footer {
     opacity: 100%;
   }
 }
+.slide-close {
+  animation: slide-close .6s ease-in forwards;
+}
+@keyframes slide-close {
+  0% {
+    z-index: 5;
+    transform: translateX(1);
+    filter: grayscale(0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(-150%);
+    filter: grayscale(100%);
+    opacity: 0%;
+  }
+}
+.slide-buy {
+  animation: slide-buy .2s ease-in forwards;
+}
+@keyframes slide-buy {
+  0% {
+    z-index: 5;
+    filter: grayscale(0);
+    opacity: 100%;
+  }
+  30% {
+    filter: grayscale(100%);
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 .skeleton {
   background-color: var(--dark);
   /* animation: skeleton-loading 1s linear infinite alternate; */
