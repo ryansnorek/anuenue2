@@ -297,6 +297,23 @@ a {
 .item .text p {
   margin: 0;
 }
+/* Contact -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 6% 0;
+}
+.contact .info {
+  background-color: var(--dark);
+  width: 100vw;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  color: var(--light);
+}
+.contact .info p {
+  margin: 0;
+}
 
 /* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .modal-container {
