@@ -311,10 +311,23 @@ a {
   justify-content: center;
   color: var(--light);
 }
-.contact .info p {
+.contact .info input {
   margin: 0;
+  background-color: var(--dark);
+  border: none;
+  color: var(--light);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  padding: 1%;
+  outline: none;
 }
-
+input[id="email"]::selection {
+  background-color: var(--dark);
+}
+.contact .info input:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .modal-container {
   position: absolute;
