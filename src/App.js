@@ -13,6 +13,7 @@ import Gallery from "./components/Gallery";
 import Checkout from "./components/Checkout";
 import useLocalStorage from "./hooks/useLocalStorage";
 import CheckoutComplete from "./components/CheckoutComplete";
+import Contact from "./components/Contact";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -69,6 +70,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/bag" element={<Bag />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/complete" element={<CheckoutComplete />} />
