@@ -306,21 +306,22 @@ a {
 .contact .info {
   background-color: var(--dark);
   width: 100vw;
+  height: 60px;
   font-size: 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: var(--light);
 }
 .contact .info input {
-  margin: 0;
-  background-color: var(--dark);
+  background-color: transparent;
   border: none;
   color: var(--light);
   font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
-  padding: 1%;
   outline: none;
 }
+
 input[id="email"]::selection {
   background-color: var(--dark);
 }
