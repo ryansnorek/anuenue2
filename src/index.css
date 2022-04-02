@@ -275,6 +275,7 @@ a {
 .item img {
   height: 55%;
   width: 100%;
+  /* min-height: 300px; */
   object-fit: cover;
   box-shadow: 0 0 2px var(--dark);
 }

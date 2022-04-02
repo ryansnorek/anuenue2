@@ -89,4 +89,14 @@ export const data = {
     quantity: 0,
     price: 30,
   },
+  cloth: {
+    name: "Top-tier",
+    id: 428,
+    img: "images/frog_cat.png",
+    sizes: ["small"],
+    description:
+      "Simply the highest care for your clothing needs",
+    quantity: 0,
+    price: 60,
+  },
 };

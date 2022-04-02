@@ -62,7 +62,7 @@ function Shop() {
           <h2>M E R C H</h2>
           <div className="item-container">
             <Item item={data.cat_hat} />
-            <Item item={data.all_your_breads} />
+            <Item item={data.cloth} />
             <Item item={data.cat_sweat} />
           </div>
         </section>
