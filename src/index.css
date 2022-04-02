@@ -336,6 +336,7 @@ input[id="email"]::selection {
 @keyframes drop-in {
   0% {
     height: 0px;
+    
   }
   70% {
     height: 69px;
@@ -914,6 +915,9 @@ footer {
   }
   .modal-item-container img {
     display: none;
+  }
+  .contact .info {
+    margin-top: 30%;
   }
   .order,
   .columns {
