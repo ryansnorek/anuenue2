@@ -8,7 +8,8 @@ import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(shoppingContext);
-  const { scrollPosition, pageTarget } = useContext(effectsContext);
+  const { scrollPosition, setScrollPosition, pageTarget } =
+    useContext(effectsContext);
 
   useEffect(
     function colorFadeInOnModalExit() {
@@ -22,21 +23,31 @@ function Shop() {
   );
 
   useEffect(
-    function scrollToTarget() {
-      let location = 0;
+    function findScrollTarget() {
       const pageSection = document.getElementById(pageTarget);
-      if (pageSection) location = pageSection.offsetTop;
+      console.log(pageSection.getBoundingClientRect())
+      pageSection && setScrollPosition(pageSection.offsetTop);
+    },
+    [pageTarget, setScrollPosition]
+  );
+
+  useEffect(
+    function scrollToTarget() {
       const wrapper = document.querySelector(".wrapper");
-      wrapper.scrollTo(0, location);
+      wrapper.scrollTo(0, scrollPosition);
     },
     [scrollPosition, pageTarget]
   );
+
+  const blur = (classname) => {
+    return `${classname} ${modalItem && "blur"}`
+  };
 
   return (
     <>
       <div className="shop">
         {modalItem && <ItemModal item={modalItem} />}
-        <section id="1" className={`shop-items ${modalItem && "blur"}`}>
+        <section id="1" className={blur("shop-items")}>
           <h2>D E S S E R T S</h2>
           <div className="item-container">
             <Item item={data.chonky_chip} />
@@ -44,7 +55,7 @@ function Shop() {
             <Item item={data.they_cookies} />
           </div>
         </section>
-        <section id="2" className={`shop-items ${modalItem && "blur"}`}>
+        <section id="2" className={blur("shop-items")}>
           <h2>S P E S H A L</h2>
           <div className="item-container">
             <Item item={data.power_bitch_balls} />
@@ -52,7 +63,7 @@ function Shop() {
             <Item item={data.champs_elycakes} />
           </div>
         </section>
-        <section id="3" className={`shop-items ${modalItem && "blur"}`}>
+        <section id="3" className={blur("shop-items")}>
           <h2>M E R C H</h2>
           <div className="item-container">
             <Item item={data.cat_hat} />

@@ -13,14 +13,18 @@ function BagOrder({ total }) {
     setCheckingOut(true);
   };
 
+  const blur = (classname) => {
+    return `${classname} ${checkingOut && "blur"}`
+  };
+
   return (
     <>
-      <section className={`order ${checkingOut && "blur"}`}>
+      <section className={blur("order")}>
         {order.map((item) => {
           return <BagItem key={item.id} item={item} />;
         })}
       </section>
-      <section className={`checkout ${checkingOut && "blur"}`}>
+      <section className={blur("checkout")}>
         <div className="total">
           <h2>Subtotal</h2>
           <CountUp
