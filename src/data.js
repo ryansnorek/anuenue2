@@ -42,7 +42,7 @@ export const data = {
   power_bitch_balls: {
     name: "Power Bitch Balls",
     id: 425,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXZKIBeDLUdOn6VmBAu8Yphfl9O_H0ii8UAQ&usqp=CAU",
+    img: "images/balls.png",
     sizes: ["small"],
     description:
       "Be prepared for a hot date. Infused with maca powder so you're certain to impress your partner with your virility",
