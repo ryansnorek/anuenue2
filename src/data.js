@@ -75,7 +75,7 @@ export const data = {
     img: "images/cathat.jpeg",
     sizes: ["small"],
     description:
-      "Headwear the fashionables",
+      "Headwear for the fashionablest beings",
     quantity: 0,
     price: 24,
   },
@@ -95,7 +95,7 @@ export const data = {
     img: "images/frog_cat.png",
     sizes: ["small"],
     description:
-      "Simply the highest care for your clothing needs",
+      "Procrastinate in style",
     quantity: 0,
     price: 60,
   },
