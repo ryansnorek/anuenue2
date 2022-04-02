@@ -49,7 +49,7 @@ function CheckoutForm({ order }) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://anuenue.netlify.com/complete",
+        return_url: "https://anuenue.herokuapp.com/complete",
       },
     });
     if (error.type === "card_error" || error.type === "validation_error") {

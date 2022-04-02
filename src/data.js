@@ -81,7 +81,7 @@ export const data = {
   },
   cat_sweat: {
     name: "Comfy Swetter",
-    id: 428,
+    id: 429,
     img: "images/cat_sweat.jpeg",
     sizes: ["small"],
     description:
@@ -91,7 +91,7 @@ export const data = {
   },
   cloth: {
     name: "Ellegant Jammies",
-    id: 428,
+    id: 430,
     img: "images/frog_cat.png",
     sizes: ["small"],
     description:
