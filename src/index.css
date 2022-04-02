@@ -378,6 +378,7 @@ input[id="email"]::selection {
 }
 .modal-item-container .image {
   width: 100%;
+  max-width: 50%;
 }
 .modal-item-container img {
   height: 100%;
