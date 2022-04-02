@@ -69,4 +69,24 @@ export const data = {
     quantity: 0,
     price: 10,
   },
+  cat_hat: {
+    name: "Hatz",
+    id: 428,
+    img: "images/cathat.jpeg",
+    sizes: ["small"],
+    description:
+      "Headwear the fashionables",
+    quantity: 0,
+    price: 24,
+  },
+  cat_sweat: {
+    name: "Comfy",
+    id: 428,
+    img: "images/cat_sweat.jpeg",
+    sizes: ["small"],
+    description:
+      "Finest materials for you to be cozy",
+    quantity: 0,
+    price: 30,
+  },
 };

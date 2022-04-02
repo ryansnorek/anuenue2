@@ -61,9 +61,9 @@ function Shop() {
         <section id="3" className={`shop-items ${modalItem && "blur"}`}>
           <h2>M E R C H</h2>
           <div className="item-container">
-            <Item item={data.power_bitch_balls} />
+            <Item item={data.cat_hat} />
             <Item item={data.all_your_breads} />
-            <Item item={data.champs_elycakes} />
+            <Item item={data.cat_sweat} />
           </div>
         </section>
       </div>
