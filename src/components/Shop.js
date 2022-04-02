@@ -11,15 +11,32 @@ function Shop() {
   const { scrollPosition, setScrollPosition, pageTarget } =
     useContext(effectsContext);
 
-  useEffect(() => {
-    const pageSection = document.getElementById(pageTarget);
-    pageSection && setScrollPosition(pageSection.offsetTop);
-  }, [pageTarget, setScrollPosition]);
+  useEffect(
+    function colorFadeInOnModalExit() {
+      const shopItems = document.querySelector(".shop");
+      if (!modalItem) {
+        shopItems.classList.add("color-in");
+      }
+      return () => shopItems.classList.remove("color-in");
+    },
+    [modalItem]
+  );
 
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, scrollPosition);
-  }, [scrollPosition]);
+  useEffect(
+    function findScrollTarget() {
+      const pageSection = document.getElementById(pageTarget);
+      pageSection && setScrollPosition(pageSection.offsetTop);
+    },
+    [pageTarget, setScrollPosition]
+  );
+
+  useEffect(
+    function scrollToTarget() {
+      const wrapper = document.querySelector(".wrapper");
+      wrapper.scrollTo(0, scrollPosition);
+    },
+    [scrollPosition]
+  );
 
   return (
     <>

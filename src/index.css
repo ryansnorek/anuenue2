@@ -203,7 +203,8 @@ a {
 }
 .center {
   background-image: url("../public/images/bread.png");
-  background-size: 100%;
+  background-size: 100%;  
+
 }
 .right {
   background-image: url("../public/images/merch.png");
@@ -758,9 +759,11 @@ footer {
 @keyframes fade-in {
   from {
     opacity: 0%;
+    filter: grayscale(100%);
   }
   to {
     opacity: 100%;
+    filter: grayscale(0);
   }
 }
 @keyframes fade-slide {
@@ -816,6 +819,17 @@ footer {
   100% {
     opacity: 0%;
   }
+}
+@keyframes color-in {
+  from {
+    filter: grayscale(100%);
+  }
+  to {
+    filter: grayscale(0);
+  }
+}
+.color-in {
+  animation: color-in .3s ease-in forwards;
 }
 .skeleton {
   background-color: var(--dark);

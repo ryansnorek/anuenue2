@@ -7,11 +7,14 @@ function ItemModal({ item }) {
   const { scrollPosition, setScrollPosition } = useContext(effectsContext);
   const [values, handleChange] = useForm({ qty: 1 });
 
-  useEffect(() => {
-    const page = document.querySelector(".wrapper");
-    page.scrollTop < 70 && page.scrollTo(0, 70);
-    setScrollPosition(page.scrollTop);
-  }, [setScrollPosition]);
+
+  function AddItemAfterEffects() {
+    const element = document.querySelector(".modal-container");
+    element.classList.add("slide-buy");
+    setTimeout(() => {
+      setModalItem("");
+    }, 300)
+  }
 
   const handleAddItem = () => {
     const orderItemExists = order.findIndex(
@@ -33,11 +36,7 @@ function ItemModal({ item }) {
         },
       ]);
     }
-    const element = document.querySelector(".modal-container");
-    element.classList.add("slide-buy");
-    setTimeout(() => {
-      setModalItem("");
-    }, 300)
+    AddItemAfterEffects();
   };
 
   const handleCloseModal = () => {
@@ -47,6 +46,13 @@ function ItemModal({ item }) {
       setModalItem("");
     }, 300)
   };
+
+  useEffect(() => {
+    const page = document.querySelector(".wrapper");
+    page.scrollTop < 70 && page.scrollTo(0, 70);
+    setScrollPosition(page.scrollTop);
+  }, [setScrollPosition]);
+
   return (
     <div className="modal-container">
       <div className="modal" style={{ marginTop: `${scrollPosition + 42}px` }}>
