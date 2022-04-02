@@ -362,7 +362,7 @@ input[id="email"]::selection {
   border-radius: 3px;
   z-index: 5;
   box-shadow: 0 0 2px var(--dark);
-  animation: drop-fade-in 0.3s ease-in;
+  animation: drop-fade-in 0.2s ease-in;
 }
 .modal .icon {
   width: 50px;
@@ -789,7 +789,7 @@ footer {
   }
 }
 .slide-close {
-  animation: slide-close .6s ease-in forwards;
+  animation: slide-close .2s ease-in forwards;
 }
 @keyframes slide-close {
   0% {
