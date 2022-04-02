@@ -8,8 +8,7 @@ import ItemModal from "./common/ItemModal";
 
 function Shop() {
   const { modalItem } = useContext(shoppingContext);
-  const { scrollPosition, setScrollPosition, pageTarget } =
-    useContext(effectsContext);
+  const { scrollPosition, pageTarget } = useContext(effectsContext);
 
   useEffect(
     function colorFadeInOnModalExit() {
@@ -23,19 +22,14 @@ function Shop() {
   );
 
   useEffect(
-    function findScrollTarget() {
-      const pageSection = document.getElementById(pageTarget);
-      pageSection && setScrollPosition(pageSection.offsetTop);
-    },
-    [pageTarget, setScrollPosition]
-  );
-
-  useEffect(
     function scrollToTarget() {
+      let location = 0;
+      const pageSection = document.getElementById(pageTarget);
+      if (pageSection) location = pageSection.offsetTop;
       const wrapper = document.querySelector(".wrapper");
-      wrapper.scrollTo(0, scrollPosition);
+      wrapper.scrollTo(0, location);
     },
-    [scrollPosition]
+    [scrollPosition, pageTarget]
   );
 
   return (
