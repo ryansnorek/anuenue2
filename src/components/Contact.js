@@ -1,4 +1,6 @@
-function Contact() {
+import { useEffect } from "react";
+
+function Contact() {  
   const copyToClipboard = () => {
     const copyText = document.getElementById("email");
     copyText.focus();
@@ -7,6 +9,10 @@ function Contact() {
     navigator.clipboard.writeText(copyText.value);
     alert(`Copied ${copyText.value} to clipboard`);
   };
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.scrollTo(0, 0);
+  }, []);
   return (
     <section className="contact">
       <div className="info">
