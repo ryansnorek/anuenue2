@@ -11,7 +11,7 @@ function Contact() {
   };
   useEffect(() => {
     const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
+    wrapper.scrollTo(0, 30);
   }, []);
   return (
     <section className="contact">
