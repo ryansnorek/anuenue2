@@ -203,7 +203,7 @@ a {
 }
 .center {
   background-image: url("../public/images/bread.png");
-  background-size: 182%;
+  background-size: 100%;
 }
 .right {
   background-image: url("../public/images/merch.png");
