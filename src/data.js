@@ -70,7 +70,7 @@ export const data = {
     price: 10,
   },
   cat_hat: {
-    name: "Hatz",
+    name: "Hat",
     id: 428,
     img: "images/cathat.jpeg",
     sizes: ["small"],
@@ -80,7 +80,7 @@ export const data = {
     price: 24,
   },
   cat_sweat: {
-    name: "Comfy",
+    name: "Comfy Swetter",
     id: 428,
     img: "images/cat_sweat.jpeg",
     sizes: ["small"],
@@ -90,7 +90,7 @@ export const data = {
     price: 30,
   },
   cloth: {
-    name: "Top-tier",
+    name: "Ellegant Jammies",
     id: 428,
     img: "images/frog_cat.png",
     sizes: ["small"],
