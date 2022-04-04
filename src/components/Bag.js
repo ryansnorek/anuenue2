@@ -1,16 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { shoppingContext } from "../contexts";
 
+import { scrollTo } from "../helper";
+
 import BagOrder from "./BagOrder";
 
 function Bag() {
   const { order } = useContext(shoppingContext);
   const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
-  }, []);
+  useEffect(() => scrollTo(0), []);
 
   useEffect(() => {
     const orderTotal = order.reduce((x, y) => {

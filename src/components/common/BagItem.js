@@ -4,20 +4,22 @@ import useForm from "../../hooks/useForm";
 import { useEffect } from "react";
 import CountUp from "react-countup";
 
-
 function BagItem({ item }) {
   const { order, setOrder } = useContext(shoppingContext);
   const [values, handleChange] = useForm({ qty: item.qty });
 
-  useEffect(() => {
-    const itemIndex = order.findIndex(
-      (orderItem) => orderItem.name === item.name
-    );
-    const updatedOrder = [...order];
-    updatedOrder[itemIndex].qty = Number(values.qty);
+  useEffect(
+    function changeQty() {
+      const itemIndex = order.findIndex(
+        (orderItem) => orderItem.name === item.name
+      );
+      const updatedOrder = [...order];
+      updatedOrder[itemIndex].qty = Number(values.qty);
 
-    setOrder([...updatedOrder]);
-  }, [values]); //eslint-disable-line
+      setOrder([...updatedOrder]);
+    },
+    [values] //eslint-disable-line
+  ); 
 
   const removeItem = () => {
     const element = document.getElementById(`${String(item.id)}`);
@@ -27,7 +29,7 @@ function BagItem({ item }) {
     );
     setTimeout(() => {
       setOrder([...updatedOrder]);
-    }, 300)
+    }, 300);
   };
 
   return (
@@ -57,7 +59,7 @@ function BagItem({ item }) {
             start={0}
             end={item.price * item.qty}
             prefix="$"
-            duration={.618}
+            duration={0.618}
             useEasing={1}
             startOnMount={1}
           />

@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 
 import { effectsContext } from "../contexts";
+import { scrollTo } from "../helper";
 
 import Footer from "./Footer";
 
@@ -9,15 +10,12 @@ function Landing() {
   const navigate = useNavigate();
   const { setPageTarget } = useContext(effectsContext);
 
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
-  }, []);
+  useEffect(() => scrollTo(0), []);
 
   const handleClick = (target) => {
     setPageTarget(target);
     navigate("/shop");
-  }
+  };
   return (
     <main className="landing">
       <section className="trending">

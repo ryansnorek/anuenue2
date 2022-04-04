@@ -14,7 +14,7 @@ function BagOrder({ total }) {
   };
 
   const blur = (classname) => {
-    return `${classname} ${checkingOut && "blur"}`
+    return `${classname} ${checkingOut && "blur"}`;
   };
 
   return (

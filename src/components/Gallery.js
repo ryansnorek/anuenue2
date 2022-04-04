@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 
+import { scrollTo } from "../helper";
+
 function Gallery() {
-    
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
-  }, []);
+  useEffect(() => scrollTo(0), []);
 
   return (
     <div className="gallery">

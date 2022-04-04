@@ -1,11 +1,11 @@
 import { useEffect } from "react";
+
+import { scrollTo } from "../helper";
+
 import Footer from "./Footer";
 
 function About() {
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 0);
-  }, []);
+  useEffect(() => scrollTo(0), []);
 
   return (
     <div className="about">

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import { scrollTo } from "../helper";
+
 function Contact() {  
   const copyToClipboard = () => {
     const copyText = document.getElementById("email");
@@ -9,10 +11,7 @@ function Contact() {
     navigator.clipboard.writeText(copyText.value);
     alert(`Copied ${copyText.value} to clipboard`);
   };
-  useEffect(() => {
-    const wrapper = document.querySelector(".wrapper");
-    wrapper.scrollTo(0, 30);
-  }, []);
+  useEffect(() => scrollTo(30), []);
   return (
     <section className="contact">
       <div className="info">

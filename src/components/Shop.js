@@ -40,7 +40,7 @@ function Shop() {
   );
 
   const blur = (classname) => {
-    return `${classname} ${modalItem && "blur"}`
+    return `${classname} ${modalItem && "blur"}`;
   };
 
   return (
