@@ -1,21 +1,22 @@
 import BagItem from "./common/BagItem";
 import CountUp from "react-countup";
-import Checkout from "./Checkout";
 import { useContext } from "react";
 import { effectsContext, shoppingContext } from "../contexts";
+
+import CheckoutModal from "./CheckoutModal";
+import Checkout from "./Checkout";
 
 function BagOrder({ total }) {
   const { order, checkingOut, setCheckingOut } = useContext(shoppingContext);
   const { setScrollPosition } = useContext(effectsContext);
+
   const handleClickCheckout = () => {
     const wrapper = document.querySelector(".wrapper");
     setScrollPosition(wrapper.scrollTop);
-    setCheckingOut(true);
+    setCheckingOut("x");
   };
 
-  const blur = (classname) => {
-    return `${classname} ${checkingOut && "blur"}`;
-  };
+  const blur = (classname) => `${classname} ${checkingOut && "blur"}`;
 
   return (
     <>
@@ -39,11 +40,12 @@ function BagOrder({ total }) {
         </div>
         <button onClick={handleClickCheckout}>Checkout</button>
       </section>
-      {checkingOut && (
+
+      {/* {checkingOut && (     
         <section className="stripe-checkout">
           <Checkout />
         </section>
-      )}
+      )} */}
     </>
   );
 }

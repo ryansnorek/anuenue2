@@ -17,12 +17,11 @@ function Checkout() {
   const options = { clientSecret };
 
   useEffect(() => {
-    setCheckingOut(true);
     axios
       .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
-  }, [order, setCheckingOut, scrollPosition]);
+  }, [order, scrollPosition]);
 
   if (!clientSecret) {
     return <div className="spinner" id="spinner"></div>;

@@ -14,6 +14,7 @@ import Checkout from "./components/Checkout";
 import useLocalStorage from "./hooks/useLocalStorage";
 import CheckoutComplete from "./components/CheckoutComplete";
 import Contact from "./components/Contact";
+import CheckoutModal from "./components/CheckoutModal";
 
 function App() {
   const [modalItem, setModalItem] = useState("");
@@ -21,7 +22,7 @@ function App() {
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [pageTarget, setPageTarget] = useState("");
-  const [checkingOut, setCheckingOut] = useState(false);
+  const [checkingOut, setCheckingOut] = useState("");
   const [order, setOrder] = useLocalStorage("order", []);
 
   const handleScroll = () => {
@@ -60,6 +61,7 @@ function App() {
           setCheckingOut,
         }}
       >
+        {checkingOut && <CheckoutModal />}
         <Header />
         <div
           className={`wrapper ${scrollBreakPoint && "scrolled-landing"}`}

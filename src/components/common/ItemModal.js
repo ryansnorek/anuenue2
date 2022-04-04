@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { effectsContext, shoppingContext } from "../../contexts";
+import { animateUnmount } from "../../helper";
 import useForm from "../../hooks/useForm";
 
 function ItemModal({ item }) {
@@ -7,14 +8,6 @@ function ItemModal({ item }) {
   const { scrollPosition, setScrollPosition } = useContext(effectsContext);
   const [values, handleChange] = useForm({ qty: 1 });
   const position = `${scrollPosition + 42}px`;
-
-  function AddItemAfterEffects() {
-    const element = document.querySelector(".modal-container");
-    element.classList.add("slide-buy");
-    setTimeout(() => {
-      setModalItem("");
-    }, 300);
-  }
 
   const handleAddItem = () => {
     const orderItemExists = order.findIndex(
@@ -36,15 +29,11 @@ function ItemModal({ item }) {
         },
       ]);
     }
-    AddItemAfterEffects();
+    animateUnmount(".modal-container", "slide-buy", setModalItem, "");
   };
 
   const handleCloseModal = () => {
-    const element = document.querySelector(".modal-container");
-    element.classList.add("slide-close");
-    setTimeout(() => {
-      setModalItem("");
-    }, 300);
+    animateUnmount(".modal-container", "slide-close", setModalItem, "");
   };
 
   useEffect(() => {
