@@ -5,7 +5,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { useState, useEffect } from "react";
 
-function CheckoutForm({ order }) {
+function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
 

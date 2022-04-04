@@ -12,8 +12,6 @@ import CheckoutForm from "./CheckoutForm";
 function Checkout() {
   const { order, setCheckingOut } = useContext(shoppingContext);
   const { scrollPosition } = useContext(effectsContext);
-
-  // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
   const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
   const [clientSecret, setClientSecret] = useState("");
   const options = { clientSecret };
