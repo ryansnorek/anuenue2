@@ -6,14 +6,14 @@ function ItemModal({ item }) {
   const { setModalItem, order, setOrder } = useContext(shoppingContext);
   const { scrollPosition, setScrollPosition } = useContext(effectsContext);
   const [values, handleChange] = useForm({ qty: 1 });
-
+  const position = `${scrollPosition + 42}px`;
 
   function AddItemAfterEffects() {
     const element = document.querySelector(".modal-container");
     element.classList.add("slide-buy");
     setTimeout(() => {
       setModalItem("");
-    }, 300)
+    }, 300);
   }
 
   const handleAddItem = () => {
@@ -44,7 +44,7 @@ function ItemModal({ item }) {
     element.classList.add("slide-close");
     setTimeout(() => {
       setModalItem("");
-    }, 300)
+    }, 300);
   };
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function ItemModal({ item }) {
 
   return (
     <div className="modal-container">
-      <div className="modal" style={{ marginTop: `${scrollPosition + 42}px` }}>
+      <div className="modal" style={{ marginTop: position }}>
         <img
           className="icon"
           onClick={handleCloseModal}
