@@ -1,5 +1,6 @@
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
+import { STRIPE_PUBLISHABLE_KEY } from "../config";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -13,7 +14,7 @@ function Checkout() {
   const { scrollPosition } = useContext(effectsContext);
 
   // const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
-  const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+  const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
   const [clientSecret, setClientSecret] = useState("");
   const options = { clientSecret };
 

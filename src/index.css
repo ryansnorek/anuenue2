@@ -594,7 +594,8 @@ input[type="number"] {
   animation: pull-down 0.3s ease-in;
 }
 #payment-message {
-  color: rgb(105, 115, 134);
+  background-color: var(--dark);
+  color: var(--light);
   font-size: 16px;
   line-height: 20px;
   padding-top: 12px;
