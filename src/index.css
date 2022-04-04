@@ -183,11 +183,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(60%);
+  border-radius: 3px;
 }
 .category:hover {
   opacity: 0.9;
-  filter: grayscale(20%);
 }
 .category h3 {
   margin-bottom: 33%;
@@ -198,17 +197,19 @@ a {
 }
 .left {
   background-image: url("../public/images/chonky_chip.png");
-  background-size: 180%;
-  background-position: 10%;
+  background-size: 140%;
+  background-position: 50%;
+  filter: contrast(150%) grayscale(10%) brightness(90%);
 }
 .center {
   background-image: url("../public/images/bread.png");
   background-size: 100%;  
-
+  filter: contrast(150%) grayscale(10%) brightness(90%);
 }
 .right {
   background-image: url("../public/images/merch.png");
   background-size: cover;
+  filter: contrast(150%) grayscale(10%) brightness(90%);
 }
 .intro-card {
   display: flex;
