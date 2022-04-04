@@ -1,6 +1,6 @@
 import { useEffect, useContext, useState } from "react";
 import axios from "axios";
-import { STRIPE_PUBLISHABLE_KEY } from "../config";
+import { BASE_URL, STRIPE_PUBLISHABLE_KEY } from "../config";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -19,7 +19,7 @@ function Checkout() {
   useEffect(() => {
     setCheckingOut(true);
     axios
-      .post("https://anuenue.herokuapp.com/stripe/create-payment-intent", { order })
+      .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
   }, [order, setCheckingOut, scrollPosition]);

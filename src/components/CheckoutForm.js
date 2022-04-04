@@ -4,6 +4,7 @@ import {
   PaymentElement,
 } from "@stripe/react-stripe-js";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../config";
 
 function CheckoutForm() {
   const stripe = useStripe();
@@ -49,7 +50,7 @@ function CheckoutForm() {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://anuenue.herokuapp.com/complete",
+        return_url: `${BASE_URL}/complete`,
       },
     });
     if (error.type === "card_error" || error.type === "validation_error") {
