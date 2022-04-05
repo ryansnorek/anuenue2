@@ -9,17 +9,27 @@ function CheckoutModal() {
 
   const handleSubmitEmail = (e) => {
     e.preventDefault();
-    animateUnmount(".checkout-modal", "slide-buy", setCheckingOut, "delivery")
+    animateUnmount(".checkout-modal", "slide-buy", setCheckingOut, "delivery");
   };
   return (
     <section className="checkout-modal">
+         <img
+          className="small"
+          src="../images/icons/anuenue_logo.png"
+          alt="logo"
+        />
       <div className="modal-wrapper">
-          <div className="tabs">
-            <button>Email</button>
-            <button>Delivery</button>
-            <button>Payment</button>
-          </div>
-      {checkingOut === "email" && <EmailModal />}
+        <div className="tabs">
+          <button
+            onClick={() => setCheckingOut("email")}
+            id={checkingOut === "email" ? "cur" : ""}
+          >
+            Email
+          </button>
+          <button>Delivery</button>
+          <button>Payment</button>
+        </div>
+        {checkingOut === "email" && <EmailModal />}
       </div>
     </section>
   );
