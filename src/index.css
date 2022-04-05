@@ -1,4 +1,6 @@
 :root {
+  --shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+  0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
   --dark: #1b1b1b;
   --med: #eeeded;
   --light: rgb(247, 247, 247);
@@ -574,7 +576,7 @@ input[type="number"] {
 }
 .checkout-modal .modal-wrapper {
   background-color: var(--light);
-  box-shadow: 0 0 1px var(--dark);
+  box-shadow: var(--shadow);
   width: 600px;
   height: 500px;
   display: flex;
@@ -616,7 +618,6 @@ input[type="number"] {
 .email-modal {
   width: 100%;
   display: flex;
-  /* position: absolute; */
   justify-content: center;
 }
 * {
@@ -653,14 +654,6 @@ input[type="number"] {
   padding: 1.5% 0;
 }
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.stripe-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 0;
-  z-index: 6;
-}
 .pay {
   position: absolute;
   animation: pull-down 0.4s ease-in;
@@ -677,16 +670,12 @@ input[type="number"] {
  }
 }
 #payment-form {
-  width: 30vw;
+  width: 400px;
   min-width: 500px;
   align-self: center;
-  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
   border-radius: 7px;
   padding: 40px;
-  padding-top: 30%;
-  background-color: var(--light);
-  animation: pull-down 0.3s ease-in;
+  animation: drop-fade-in 0.4s ease-in;
 }
 #payment-message {
   background-color: var(--dark);
