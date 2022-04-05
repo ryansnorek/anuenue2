@@ -13,7 +13,7 @@ function BagOrder({ total }) {
   const handleClickCheckout = () => {
     const wrapper = document.querySelector(".wrapper");
     setScrollPosition(wrapper.scrollTop);
-    setCheckingOut("x");
+    setCheckingOut("email");
   };
 
   const blur = (classname) => `${classname} ${checkingOut && "blur"}`;
