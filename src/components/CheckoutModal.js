@@ -54,6 +54,7 @@ function CheckoutModal() {
         </div>
         {checkingOut === "email" && <EmailModal />}
         {checkingOut === "delivery" && <DeliveryModal />}
+        {/* <PaymentModal clientSecret={clientSecret} /> */}
         {checkingOut === "payment" && <PaymentModal clientSecret={clientSecret} />}
         {/* <img
         className="icon"

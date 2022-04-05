@@ -605,8 +605,9 @@ input[type="number"] {
   border-bottom: 6px solid var(--dark);
 }
 #cur {
-  border-image: var(--rainbow);
-  border-image-slice: 1;
+  /* border-image: var(--rainbow);
+  border-image-slice: 1; */
+  border-bottom: 6px solid white;
 }
 .small {
   width: 150px;
@@ -653,6 +654,11 @@ input[type="number"] {
   color: var(--light);
   padding: 1.5% 0;
 }
+/* Delivery Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
+
+.delivery-modal {
+  animation: drop-fade-in 0.4s ease-in;
+}
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .pay {
   position: absolute;
@@ -668,6 +674,9 @@ input[type="number"] {
  to {
   transform: translateY(-100%);
  }
+}
+.hide-pay {
+  display: none;
 }
 #payment-form {
   width: 400px;
