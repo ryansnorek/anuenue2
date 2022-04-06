@@ -684,13 +684,13 @@ input[type="number"] {
   margin-bottom: 10px;
 }
 #west {
-  background-color: rgb(31, 31, 165);
+  background-color: rgb(89, 144, 232);
 }
 #kahului {
-  background-color: rgb(140, 44, 118);
+  background-color: rgb(161, 37, 132);
 }
 #kihei {
-  background-color: green;
+  background-color: rgb(75, 172, 75);
 }
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .pay {
