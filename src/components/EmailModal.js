@@ -3,14 +3,17 @@ import { useContext } from "react";
 
 function EmailModal() {
   const { setCheckingOut } = useContext(shoppingContext);
-  const { email, setEmail } = useContext(checkingOutContext);
+  const { email, setEmail, setErrorMessage } = useContext(checkingOutContext);
 
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
   const handleSubmitEmail = (e) => {
     e.preventDefault();
-    email && setCheckingOut("delivery");
+    if (email) {
+      setErrorMessage("");
+      setCheckingOut("delivery");
+    }
   };
   return (
     <section className="checkout-modal-tab">

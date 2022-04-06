@@ -26,6 +26,7 @@ function CheckoutModal() {
   const handleClickPayment = () => {
     const { street, area } = deliveryAddress;
     if (email && street && area) {
+      setErrorMessage("");
       setCheckingOut("payment");
     } else {
       if (!email) setErrorMessage("Missing email");
@@ -78,7 +79,7 @@ function CheckoutModal() {
               Payment
             </button>
           </div>
-          <h3 id="error">{errorMessage}</h3>
+          {errorMessage && <h3 id="error">{errorMessage}</h3>}
           {checkingOut === "email" && <EmailModal />}
           {checkingOut === "delivery" && <DeliveryModal />}
           {checkingOut === "payment" &&

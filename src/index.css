@@ -628,10 +628,12 @@ input[type="number"] {
   /* border: 1px solid red; */
 }
 #error {
+  margin: 10x;
   font-size: 1rem;
   background-color: lightgrey;
   padding: 0 12px;
   border-radius: 5px;
+  text-align: center;
   animation: drop-fade-in 0.3s ease-in;
 }
 .checkout-modal-tab .form-wrapper {
