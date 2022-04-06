@@ -1,6 +1,7 @@
 :root {
   --shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-  0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  --btn-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
   --dark: #1b1b1b;
   --med: #eeeded;
   --light: rgb(247, 247, 247);
@@ -14,7 +15,53 @@
     #fec837 75%,
     #fd1892 100%
   );
+  --font: "Raleway", sans-serif;
 }
+/* Common --=-==--=-==-=--=-=-=-= */
+img,
+input,
+.category,
+.modal,
+#error,
+.checkout-modal-tab button,
+.modal-wrapper,
+#payment-button {
+  border-radius: 4px;
+}
+.category,
+.intro-card,
+.gallery-wrapper,
+.contact,
+.contact .info,
+.modal-container,
+.modal-item-container,
+.bag-item .text,
+.actions,
+.checkout-order,
+.checkout-modal,
+.modal-wrapper .tabs,
+.checkout-modal-tab,
+.checkout-modal-tab .form-wrapper,
+.complete,
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.logo,
+.social:hover,
+.search:hover,
+button:hover,
+.category:hover {
+  cursor: pointer;
+}
+body,
+html,
+button,
+.item .text,
+.contact .info input {
+  font-family: var(--font);
+}
+/* Main --=-=--==-=-=--=-=-=-=-==--= */
 html {
   scroll-behavior: smooth;
 }
@@ -26,15 +73,8 @@ body {
   font-size: 62.5%;
   max-width: 100%;
   max-height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Raleway", sans-serif;
-}
-img {
-  border-radius: 5px;
 }
 .wrapper {
   margin-top: 200px;
@@ -47,13 +87,6 @@ img {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.logo,
-.social:hover,
-.search:hover,
-button:hover,
-.category:hover {
-  cursor: pointer;
 }
 .badge {
   position: absolute;
@@ -110,18 +143,7 @@ a {
   padding: 3%;
   font-size: 1.1rem;
   margin: 0 3%;
-  font-family: "Raleway", sans-serif;
 }
-button {
-  font-family: "Raleway", sans-serif;
-}
-/* button {
-  background-color: var(--dark);
-  color: var(--light);
-  padding: 3%;
-  font-size: 1.1rem;
-  font-family: "Raleway", sans-serif;
-} */
 .icon {
   width: 30px;
   margin-right: 3%;
@@ -138,7 +160,6 @@ button {
   width: 100%;
   font-size: 1.2rem;
   padding: 3%;
-  border-radius: 3px;
   background-color: var(--light);
   outline-color: var(--dark);
   border: 1px solid var(--dark);
@@ -184,11 +205,7 @@ button {
   width: 33%;
   aspect-ratio: 1;
   margin: 1.5%;
-  border-radius: 2px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 3px;
 }
 .category:hover {
   opacity: 0.9;
@@ -197,7 +214,6 @@ button {
   margin-bottom: 33%;
   padding: 0 3%;
   background-color: var(--tint);
-  border-radius: 2px;
   font-size: 1.8rem;
 }
 .left {
@@ -208,17 +224,13 @@ button {
 }
 .center {
   background-image: url("../public/images/bread.png");
-  background-size: 100%;  
+  background-size: 100%;
   filter: contrast(150%) grayscale(10%) brightness(90%);
 }
 .right {
   background-image: url("../public/images/merch.png");
   background-size: cover;
   filter: contrast(150%) grayscale(10%) brightness(90%);
-}
-.intro-card {
-  display: flex;
-  justify-content: center;
 }
 .card {
   display: flex;
@@ -294,7 +306,6 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: "Raleway", sans-serif;
 }
 .item .text h5 {
   margin: 0;
@@ -304,14 +315,8 @@ button {
   margin: 0;
 }
 /* Gallery -=-==-=-=-=--=-=-=-==--=-=-=-= */
-.gallery-wrapper {
-  display: flex;
-  justify-content: center;
-}
 /* Contact -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .contact {
-  display: flex;
-  justify-content: center;
   padding: 6% 0;
 }
 .contact .info {
@@ -319,21 +324,17 @@ button {
   width: 100vw;
   height: 60px;
   font-size: 1rem;
-  display: flex;
-  justify-content: center;
   align-items: center;
   color: var(--light);
-  animation: drop-in .6s ease-in;
+  animation: drop-in 0.6s ease-in;
 }
-
 .contact .info input {
   background-color: transparent;
   border: none;
   color: var(--light);
-  font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
   outline: none;
-  animation: fade-in .4s ease-in;
+  animation: fade-in 0.4s ease-in;
 }
 input[id="email"]::selection {
   background-color: var(--dark);
@@ -346,21 +347,18 @@ input[id="email"]::selection {
 @keyframes drop-in {
   0% {
     height: 0px;
-    
   }
   70% {
     height: 69px;
   }
   100% {
     height: 60px;
-  } 
+  }
 }
 /* Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .modal-container {
   position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 .not-blur {
@@ -370,7 +368,6 @@ input[id="email"]::selection {
   background-color: var(--light);
   width: 66%;
   height: 66%;
-  border-radius: 3px;
   z-index: 5;
   box-shadow: 0 0 2px var(--dark);
   animation: drop-fade-in 0.2s ease-in;
@@ -381,8 +378,6 @@ input[id="email"]::selection {
 }
 .modal-item-container {
   padding: 0 9% 9%;
-  display: flex;
-  justify-content: center;
   height: 50vh;
 }
 .modal-item-container .image {
@@ -480,9 +475,7 @@ input[id="email"]::selection {
 .bag-item .text {
   width: 23%;
   padding: 0 5%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   font-size: 1.2rem;
 }
 .bag-item .text h3,
@@ -514,9 +507,7 @@ input[type="number"] {
 }
 .actions {
   width: 5%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 5% 0;
   transition: 0.2s ease-in;
@@ -550,7 +541,6 @@ input[type="number"] {
   padding: 2% 3%;
   background-color: var(--dark);
   color: var(--light);
-  font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
   border: 3px solid transparent;
   transition: 0.3s ease-in;
@@ -564,17 +554,13 @@ input[type="number"] {
 .checkout-order {
   height: 100%;
   width: 100%;
-  display: flex;
   align-items: center;
-  justify-content: center;
 }
 /* Checkout Modal -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .checkout-modal {
   top: 5vh;
   width: 100%;
-  display: flex;
   position: absolute;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   z-index: 12;
@@ -587,12 +573,9 @@ input[type="number"] {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 3px;
   animation: drop-fade-in 0.4s ease-in;
 }
 .modal-wrapper .tabs {
-  display: flex;
-  justify-content: center;
   width: 100%;
   height: 60px;
   top: 0;
@@ -623,8 +606,6 @@ input[type="number"] {
 /* Checkout Modal Tabs -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .checkout-modal-tab {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .checkout-modal .icon {
   margin-right: 0;
@@ -634,13 +615,10 @@ input[type="number"] {
   font-size: 1rem;
   background-color: lightgrey;
   padding: 0 12px;
-  border-radius: 5px;
   text-align: center;
   animation: drop-fade-in 0.3s ease-in;
 }
 .checkout-modal-tab .form-wrapper {
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 500px;
@@ -659,12 +637,11 @@ input[type="number"] {
 .checkout-modal-tab input {
   background-color: var(--light);
   border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 4px;
   padding: 12px 16px;
   width: 90%;
   font-size: 16px;
   margin: 10px;
-  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow);
   outline-color: var(--dark);
 }
 .checkout-modal-tab input::placeholder {
@@ -672,9 +649,8 @@ input[type="number"] {
 }
 .checkout-modal-tab button {
   background-color: var(--dark);
-  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--btn-shadow);
   color: var(--light);
-  border-radius: 4px;
   border: 0;
   width: 100%;
   margin-top: 10px;
@@ -683,7 +659,7 @@ input[type="number"] {
   font-weight: 600;
 }
 .checkout-modal-tab button:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 .checkout-modal .area {
   width: 100%;
@@ -698,7 +674,7 @@ input[type="number"] {
   border-radius: 100%;
   font-size: 1.2rem;
   text-shadow: 2px 2px 2px black;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #west {
   background-image: url("../public/images/west.png");
@@ -706,7 +682,7 @@ input[type="number"] {
   filter: grayscale(1) contrast(140%);
 }
 #west:hover {
-  filter: grayscale(0); 
+  filter: grayscale(0);
   opacity: 1;
 }
 #kahului {
@@ -728,7 +704,6 @@ input[type="number"] {
   opacity: 1;
 }
 
-
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .pay {
   position: absolute;
@@ -738,18 +713,17 @@ input[type="number"] {
   animation: pull-up 300ms ease-in forwards;
 }
 @keyframes pull-up {
- from {
-  transform: translateY(1);
- }
- to {
-  transform: translateY(-100%);
- }
+  from {
+    transform: translateY(1);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 #payment-form {
   width: 400px;
   min-width: 500px;
   align-self: center;
-  border-radius: 7px;
   padding: 40px;
   animation: drop-fade-in 0.4s ease-in;
 }
@@ -766,17 +740,14 @@ input[type="number"] {
 }
 #payment-button {
   background: var(--dark);
-  font-family: "Raleway", sans-serif;
   color: #ffffff;
-  border-radius: 4px;
   border: 0;
   padding: 12px 16px;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
   display: block;
   transition: all 0.2s ease;
-  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--btn-shadow);
   width: 100%;
   border: 3px solid transparent;
 }
@@ -793,11 +764,11 @@ input[type="number"] {
   from {
     opacity: 0;
     transform: translateY(-120%);
-   }
-   to {
+  }
+  to {
     opacity: 1;
     transform: translateY(1);
-   }
+  }
 }
 .spinner:before,
 .spinner:after {
@@ -856,8 +827,6 @@ input[type="number"] {
   }
 }
 .complete {
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -923,8 +892,6 @@ footer {
 }
 .contact-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
   background-color: var(--light);
 }
 .contact-wrapper a {
@@ -978,7 +945,7 @@ footer {
   }
 }
 .slide-close {
-  animation: slide-close .2s ease-in forwards;
+  animation: slide-close 0.2s ease-in forwards;
 }
 @keyframes slide-close {
   0% {
@@ -994,7 +961,7 @@ footer {
   }
 }
 .slide-buy {
-  animation: slide-buy .2s ease-in forwards;
+  animation: slide-buy 0.2s ease-in forwards;
 }
 @keyframes slide-buy {
   0% {
@@ -1018,11 +985,10 @@ footer {
   }
 }
 .color-in {
-  animation: color-in .3s ease-in forwards;
+  animation: color-in 0.3s ease-in forwards;
 }
 .skeleton {
   background-color: var(--dark);
-  /* animation: skeleton-loading 1s linear infinite alternate; */
 }
 @keyframes skeleton-loading {
   0% {
@@ -1118,6 +1084,12 @@ footer {
   }
   footer {
     padding-bottom: 15%;
+  }
+  .checkout-modal .modal-wrapper {
+    width: 100%;
+  }
+  .checkout-modal-tab form {
+    width: 90%;
   }
   #payment-form {
     width: 80vw;
