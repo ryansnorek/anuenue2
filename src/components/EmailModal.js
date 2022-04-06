@@ -10,7 +10,7 @@ function EmailModal() {
   };
   const handleSubmitEmail = (e) => {
     e.preventDefault();
-    setCheckingOut("delivery");
+    email && setCheckingOut("delivery");
   };
   return (
     <section className="checkout-modal-tab">

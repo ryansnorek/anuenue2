@@ -21,6 +21,13 @@ function CheckoutModal() {
   const [email, setEmail] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState(InititalDelivery);
 
+  const handleClickPayment = () => {
+    const { street, city, zip } = deliveryAddress;
+    if (email && street && city && zip) {
+      setCheckingOut("payment");
+    }
+  };
+
   useEffect(() => {
     axios
       .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
@@ -58,7 +65,7 @@ function CheckoutModal() {
               Delivery
             </button>
             <button
-              onClick={() => setCheckingOut("payment")}
+              onClick={handleClickPayment}
               id={checkingOut === "payment" ? "highlight" : ""}
             >
               Payment
