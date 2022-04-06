@@ -627,6 +627,13 @@ input[type="number"] {
 * {
   /* border: 1px solid red; */
 }
+#error {
+  font-size: 1rem;
+  background-color: lightgrey;
+  padding: 0 12px;
+  border-radius: 5px;
+  animation: drop-fade-in 0.3s ease-in;
+}
 .checkout-modal-tab .form-wrapper {
   display: flex;
   justify-content: center;

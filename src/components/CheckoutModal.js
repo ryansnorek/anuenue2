@@ -12,7 +12,7 @@ const InititalDelivery = {
   street: "",
   city: "",
   zip: "",
-  area: ""
+  area: "",
 };
 
 function CheckoutModal() {
@@ -21,11 +21,16 @@ function CheckoutModal() {
 
   const [email, setEmail] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState(InititalDelivery);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleClickPayment = () => {
     const { street, area } = deliveryAddress;
     if (email && street && area) {
       setCheckingOut("payment");
+    } else {
+      if (!email) setErrorMessage("Missing email");
+      else if (!street) setErrorMessage("Missing delivery address");
+      else setErrorMessage("Please select delivery area");
     }
   };
 
@@ -43,6 +48,7 @@ function CheckoutModal() {
         setEmail,
         deliveryAddress,
         setDeliveryAddress,
+        setErrorMessage,
       }}
     >
       <section className="checkout-modal">
@@ -72,11 +78,15 @@ function CheckoutModal() {
               Payment
             </button>
           </div>
+          <h3 id="error">{errorMessage}</h3>
           {checkingOut === "email" && <EmailModal />}
           {checkingOut === "delivery" && <DeliveryModal />}
-          {checkingOut === "payment" && (
-            <PaymentModal clientSecret={clientSecret} />
-          )}
+          {checkingOut === "payment" &&
+            email &&
+            deliveryAddress.street &&
+            deliveryAddress.area && (
+              <PaymentModal clientSecret={clientSecret} />
+            )}
         </div>
         <img
           className="icon"
