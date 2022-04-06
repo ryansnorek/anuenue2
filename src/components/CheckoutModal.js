@@ -18,12 +18,14 @@ function CheckoutModal() {
       .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
       .then((res) => setClientSecret(res.data.client_secret))
       .catch((err) => console.log(err));
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmitEmail = (e) => {
     e.preventDefault();
     animateUnmount(".checkout-modal", "slide-buy", setCheckingOut, "delivery");
   };
+
+
   return (
     <section className="checkout-modal">
       <img
@@ -35,34 +37,34 @@ function CheckoutModal() {
         <div className="tabs">
           <button
             onClick={() => setCheckingOut("email")}
-            id={checkingOut === "email" ? "cur" : ""}
+            id={checkingOut === "email" ? "highlight" : ""}
           >
             Email
           </button>
           <button
             onClick={() => setCheckingOut("delivery")}
-            id={checkingOut === "delivery" ? "cur" : ""}
+            id={checkingOut === "delivery" ? "highlight" : ""}
           >
             Delivery
           </button>
           <button
             onClick={() => setCheckingOut("payment")}
-            id={checkingOut === "payment" ? "cur" : ""}
+            id={checkingOut === "payment" ? "highlight" : ""}
           >
             Payment
           </button>
         </div>
         {checkingOut === "email" && <EmailModal />}
         {checkingOut === "delivery" && <DeliveryModal />}
-        {/* <PaymentModal clientSecret={clientSecret} /> */}
         {checkingOut === "payment" && <PaymentModal clientSecret={clientSecret} />}
-        {/* <img
+    
+      </div>
+      <img
         className="icon"
         onClick={() => setCheckingOut(false)}
         src="../../images/icons/close.png"
         alt="close"
-      /> */}
-      </div>
+      />
     </section>
   );
 }
