@@ -11,7 +11,7 @@ function Contact() {
     navigator.clipboard.writeText(copyText.value);
     alert(`Copied ${copyText.value} to clipboard`);
   };
-  useEffect(() => scrollTo(30), []);
+  useEffect(() => scrollTo(50), []);
   return (
     <section className="contact">
       <div className="info">
