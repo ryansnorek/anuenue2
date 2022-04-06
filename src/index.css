@@ -303,6 +303,11 @@ button {
 .item .text p {
   margin: 0;
 }
+/* Gallery -=-==-=-=-=--=-=-=-==--=-=-=-= */
+.gallery-wrapper {
+  display: flex;
+  justify-content: center;
+}
 /* Contact -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .contact {
   display: flex;
@@ -624,9 +629,6 @@ input[type="number"] {
 .checkout-modal .icon {
   margin-right: 0;
 }
-* {
-  /* border: 1px solid red; */
-}
 #error {
   margin: 10x;
   font-size: 1rem;
@@ -836,7 +838,7 @@ input[type="number"] {
   height: 10.2px;
   background: var(--light);
   border-radius: 0 10.2px 10.2px 0;
-  2op:2-0.2px;
+  top: 20.2px;
   left: 10.2px;
   -webkit-transform-origin: 0px 10.2px;
   transform-origin: 0px 10.2px;
