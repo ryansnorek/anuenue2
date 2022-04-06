@@ -682,17 +682,41 @@ input[type="number"] {
 .area button {
   margin: 0 5px;
   margin-bottom: 10px;
+  height: 150px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  font-weight: bold;
+  transition: .3s ease-in-out;
 }
 #west {
-  background-color: rgb(12, 55, 125);
+  background-image: url("../public/images/west.png");
+  background-size: cover;
+  filter: grayscale(1) contrast(140%);
+}
+#west:hover {
+  filter: grayscale(0); 
+  opacity: 1;
 }
 #kahului {
-  background-color: rgb(89, 144, 232);
+  background-image: url("../public/images/kahului.png");
+  background-size: cover;
+  filter: grayscale(1) contrast(140%);
+}
+#kahului:hover {
+  filter: grayscale(0) contrast(140%);
+  opacity: 1;
 }
 #kihei {
-  background-color: rgb(181, 208, 250);
-  color:rgb(12, 55, 125)
+  background-image: url("../public/images/kihei.png");
+  background-size: cover;
+  filter: grayscale(1) contrast(140%);
 }
+#kihei:hover {
+  filter: grayscale(0) contrast(120%);
+  opacity: 1;
+}
+
+
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .pay {
   position: absolute;

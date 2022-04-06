@@ -23,8 +23,8 @@ function CheckoutModal() {
   const [deliveryAddress, setDeliveryAddress] = useState(InititalDelivery);
 
   const handleClickPayment = () => {
-    const { street, city, zip } = deliveryAddress;
-    if (email && street && city && zip) {
+    const { street, area } = deliveryAddress;
+    if (email && street && area) {
       setCheckingOut("payment");
     }
   };
