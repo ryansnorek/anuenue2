@@ -1,17 +1,11 @@
 import { useEffect } from "react";
 
-import { scrollTo } from "../helper";
+import { scrollTo, copyToClipboard } from "../helper";
 
 function Contact() {  
-  const copyToClipboard = () => {
-    const copyText = document.getElementById("email");
-    copyText.focus();
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-    alert(`Copied ${copyText.value} to clipboard`);
-  };
+
   useEffect(() => scrollTo(50), []);
+  
   return (
     <section className="contact">
       <div className="info">
