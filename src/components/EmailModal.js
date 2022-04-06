@@ -1,9 +1,13 @@
-import { shoppingContext } from "../contexts";
+import { shoppingContext, checkingOutContext } from "../contexts";
 import { useContext } from "react";
 
 function EmailModal() {
   const { setCheckingOut } = useContext(shoppingContext);
+  const { email, setEmail } = useContext(checkingOutContext);
 
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
   const handleSubmitEmail = (e) => {
     e.preventDefault();
     setCheckingOut("delivery");
@@ -13,7 +17,13 @@ function EmailModal() {
       <div className="form-wrapper">
         <form onSubmit={handleSubmitEmail}>
           <h3>What is your email?</h3>
-          <input type="email" name="email" required/>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            required
+          />
           <button type="submit">Submit</button>
         </form>
       </div>

@@ -17,13 +17,14 @@ import Contact from "./components/Contact";
 import CheckoutModal from "./components/CheckoutModal";
 
 function App() {
-  const [modalItem, setModalItem] = useState("");
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [pageTarget, setPageTarget] = useState("");
-  const [checkingOut, setCheckingOut] = useState("");
+
+  const [modalItem, setModalItem] = useState("");
   const [order, setOrder] = useLocalStorage("order", []);
+  const [checkingOut, setCheckingOut] = useState("");
 
   const handleScroll = () => {
     const element = document.querySelector(".wrapper");
@@ -46,7 +47,7 @@ function App() {
         setScrollPosition,
 
         pageTarget,
-        setPageTarget
+        setPageTarget,
       }}
     >
       <shoppingContext.Provider
