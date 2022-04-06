@@ -12,6 +12,7 @@ const InititalDelivery = {
   street: "",
   city: "",
   zip: "",
+  area: ""
 };
 
 function CheckoutModal() {

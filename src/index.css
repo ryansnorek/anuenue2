@@ -674,6 +674,24 @@ input[type="number"] {
 .checkout-modal-tab button:hover {
   opacity: .9;
 }
+.checkout-modal .area {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.area button {
+  margin: 0 5px;
+  margin-bottom: 10px;
+}
+#west {
+  background-color: rgb(31, 31, 165);
+}
+#kahului {
+  background-color: rgb(140, 44, 118);
+}
+#kihei {
+  background-color: green;
+}
 /* Stripe -=-==-=-=-=--=-=-=-==--=-=-=-= */
 .pay {
   position: absolute;

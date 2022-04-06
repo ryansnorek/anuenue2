@@ -14,6 +14,13 @@ function EmailModal() {
     });
   };
 
+  const handleClickArea = (e) => {
+    setDeliveryAddress({
+      ...deliveryAddress,
+      area: e.target.textContent
+    });
+  };
+  
   const handleSubmitDelivery = (e) => {
     e.preventDefault();
     setCheckingOut("payment");
@@ -31,23 +38,11 @@ function EmailModal() {
             onChange={handleChange}
             required
           />
-          <input
-            type="text"
-            name="city"
-            value={deliveryAddress.city}
-            placeholder="City"
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="zip"
-            value={deliveryAddress.zip}
-            placeholder="Zip"
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Submit</button>
+          <div className="area">
+            <button id="west" onClick={handleClickArea}>West Side</button>
+            <button id="kahului" onClick={handleClickArea}>Kahului</button>
+            <button id="kihei" onClick={handleClickArea}>Kihei</button>
+          </div>
         </form>
       </div>
     </section>
