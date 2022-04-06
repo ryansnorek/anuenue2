@@ -1,21 +1,20 @@
 import { shoppingContext } from "../contexts";
 import { useContext } from "react";
-import { animateUnmount } from "../helper";
 
 function EmailModal() {
   const { setCheckingOut } = useContext(shoppingContext);
 
   const handleSubmitEmail = (e) => {
     e.preventDefault();
-    animateUnmount(".email-modal", "slide-buy", setCheckingOut, "delivery")
+    setCheckingOut("delivery");
   };
   return (
-    <section className="email-modal">
+    <section className="checkout-modal-tab">
       <div className="form-wrapper">
         <form onSubmit={handleSubmitEmail}>
           <h3>What is your email?</h3>
-          <input type="email" name="email" />
-          <button type="submit">Ok</button>
+          <input type="email" name="email" required/>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </section>
