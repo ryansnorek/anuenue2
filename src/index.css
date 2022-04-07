@@ -677,7 +677,7 @@ input[type="number"] {
   transition: 0.3s ease-in-out;
 }
 #west {
-  background-image: url("../public/images/west.png");
+  background-image: url("../public/images/westside.png");
   background-size: cover;
   filter: grayscale(1) contrast(140%);
 }
@@ -688,10 +688,10 @@ input[type="number"] {
 #kahului {
   background-image: url("../public/images/kahului.png");
   background-size: cover;
-  filter: grayscale(1) contrast(140%);
+  filter: grayscale(1) contrast(120%);
 }
 #kahului:hover {
-  filter: grayscale(0) contrast(140%);
+  filter: grayscale(0);
   opacity: 1;
 }
 #kihei {
@@ -700,7 +700,7 @@ input[type="number"] {
   filter: grayscale(1) contrast(140%);
 }
 #kihei:hover {
-  filter: grayscale(0) contrast(120%);
+  filter: grayscale(0) contrast(140%);
   opacity: 1;
 }
 
