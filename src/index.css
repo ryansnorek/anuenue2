@@ -15,7 +15,8 @@
     #fec837 75%,
     #fd1892 100%
   );
-  --goblin: rgb(21, 154, 21);
+  --goblin: #81b984;
+  --goblin-bright: #b8fd33;
   --font: "Raleway", sans-serif;
   --goblin-font: 'Arial';
 }
@@ -961,20 +962,49 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.admin-mode .top {
+  padding: 20px 12px 0 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.top .title {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--goblin-bright);
+  box-shadow: 0 0 12px var(--goblin-bright);
+  width: 130px;
+  height: fit-content;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 black;
+}
+.top .title:hover {
+  background-color: var(--goblin-bright);
+  box-shadow: 0 0 12px var(--goblin-bright);
+}
+.top button {
+  font-weight: bold;
+}
 #interface {
   counter-reset: item;
   margin: 18px;
+  height: 100vh;
 }
 #interface h3{
   font-family: 'Arial';
   width: 25%;
+  color: var(--goblin-bright);
 }
 #interface h3::before {
   counter-increment: item;
   content: counter(item) ":::";
 }
 #interface .store-item {
-  padding: 5px;
+  padding: 3px;
   border-bottom: 1px solid rgb(17, 17, 17);
   display: flex;
   justify-content: space-between;
@@ -992,8 +1022,8 @@ footer {
 .uploader button {
   margin: 0 20px;
 }
-* {
-  /* border: 1px solid red; */
+.uploader button:hover, #edit:hover {
+  color: var(--goblin-bright);
 }
 .uploader input::before {
   background-color: black;
@@ -1015,9 +1045,43 @@ input[type=file]::file-selector-button {
 #interface #edit {
   width: 50px;
 }
-.admin-mode #cancel {
-  background-color: black;
-  color: var(--goblin);
+.edit-modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.edit-modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  background-color: rgb(17, 17, 17, .9);
+  color: var(--goblin-bright);
+  height: 300px;
+  width: 500px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 20px 50px;
+  animation: drop-fade-in .3s ease-out;
+}
+.edit-modal .icon {
+  width: 30px;
+  filter: invert(100%);
+  margin: 0;
+}
+.admin-mode #abort {
+  border-radius: 100%;
+  width: 60px;
+  aspect-ratio: 1;
+  background-color: #923c3c;
+  color: var(--light);
+}
+#abort:hover {
+  background-color: #f10000;
+  box-shadow: 0 0 12px #f10000;
 }
 @keyframes slide-out-ok {
   from {

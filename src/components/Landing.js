@@ -27,7 +27,6 @@ function Landing() {
     setPageTarget(target);
     navigate("/shop");
   };
-
   return (
     <main className="landing">
       <section className="trending">

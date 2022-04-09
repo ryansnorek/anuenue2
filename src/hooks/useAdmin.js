@@ -24,11 +24,13 @@ export default function useAdmin() {
 
   const handleClickOk = () => setTimeout(() => setAdminMode(true), 200);
 
-  const handleCancelAdmin = () => {
-    keyImage.classList.add("hide");
-    okButton.classList.add("hide");
-    passInput.classList.add("hide");
-    animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
+  const handleCancelAdmin = (e) => {
+    setTimeout(() => {
+      keyImage.classList.add("hide");
+      okButton.classList.add("hide");
+      passInput.classList.add("hide");
+      animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
+    }, 300)
   };
   useEffect(() => {
     const okButton = document.getElementById("ok");
