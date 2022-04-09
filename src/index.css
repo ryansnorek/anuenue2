@@ -1087,10 +1087,14 @@ input[type=file]::file-selector-button {
 }
 .edit-modal button {
   background-color: black;
-  color: var(--goblin-bright);
+  color: var(--goblin);
   width: 80%;
   margin-bottom: 15px;
   padding: 5px 8px;
+  font-size: 1.2rem;
+}
+.edit-modal form button:hover {
+  color: var(--goblin-bright);
 }
 .admin-mode #abort {
   border-radius: 100%;
