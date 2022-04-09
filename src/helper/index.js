@@ -19,3 +19,10 @@ export const copyToClipboard = () => {
   navigator.clipboard.writeText(copyText.value);
   alert(`Copied ${copyText.value} to clipboard`);
 };
+
+export const handleKey = (e) => {
+  if (e.keyCode === 80) {
+    const key = document.getElementById("key");
+    key.classList.remove("hide");
+  }
+};

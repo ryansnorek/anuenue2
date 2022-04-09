@@ -1,14 +1,18 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 
 import { effectsContext } from "../contexts";
-import { animateUnmount, scrollTo } from "../helper";
+import { scrollTo } from "../helper";
+import useAdmin from "../hooks/useAdmin";
+import AdminMode from "./AdminMode";
 
 import Footer from "./Footer";
 
 function Landing() {
   const navigate = useNavigate();
   const { setPageTarget } = useContext(effectsContext);
+
+  const [adminMode, pass, handleClickKey, handleChangePass, handleClickOk, handleCancelAdmin] = useAdmin();
 
   useEffect(() => scrollTo(0), []);
 
@@ -17,54 +21,6 @@ function Landing() {
     navigate("/shop");
   };
 
-  // Key 
-  const handleKey = (e) => {
-    if (e.keyCode === 80) {
-      const key = document.getElementById("key");
-      key.classList.remove("hide");
-    }
-  };
-  const handleClickKey = () => {
-    const pass = document.getElementById("pass");
-    pass.classList.remove("hide");
-    pass.focus();
-  };
-  const [pass, setPass] = useState("");
-  const handleChangePass = (e) => {
-    setPass(e.target.value);
-  }
-  const [adminMode, setAdminMode] = useState(false);
-  const handleClickOk = () => {
-    setTimeout(() => {
-      setAdminMode(true);
-    }, 200)
-  }
-  const handleCancelAdmin = () => {
-    animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
-  }
-  useEffect(() => {
-    const ok = document.getElementById("ok");
-    if (pass.length > 3) {
-      ok.classList.remove("hide");
-    } 
-  }, [pass])
-
-  useEffect(() => {
-    scrollTo(10)
-    const doc = document.querySelector(".wrapper");
-    const header = document.querySelector("header");
-    if (adminMode) {
-      doc.style.overflow = "hidden";
-      header.style.backgroundColor = "var(--goblin)";
-    } else {
-      doc.style.overflow = "scroll";
-      header.style.backgroundColor = "var(--light)"
-    }
-   
-  }, [adminMode])
-  document.addEventListener("keydown", handleKey);
-
-  // Key
   return (
     <main className="landing">
       <section className="trending">
@@ -105,14 +61,7 @@ function Landing() {
             </div>
           </div>
         </div>
-        {adminMode && (
-          <>
-          <div className="admin-mode">
-            <h1>GOBLIN MODE</h1>
-            <button onClick={handleCancelAdmin}>cancel</button>
-          </div>
-          </>
-        )}
+        {adminMode && <AdminMode handleCancelAdmin={handleCancelAdmin}/>}
       </section>
       <Footer />
     </main>
