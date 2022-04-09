@@ -967,7 +967,6 @@ footer {
 }
 #interface h3{
   font-family: 'Arial';
-  
 }
 #interface h3::before {
   counter-increment: item;
@@ -977,7 +976,9 @@ footer {
   padding: 5px;
   border-bottom: 1px solid rgb(17, 17, 17);
 }
-
+#interface img {
+  width: 150px;
+}
 .admin-mode #cancel {
   background-color: black;
   color: var(--goblin);
