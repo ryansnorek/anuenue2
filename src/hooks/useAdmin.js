@@ -4,7 +4,7 @@ import { animateUnmount, scrollTo } from "../helper";
 export default function useAdmin() {
   document.addEventListener("keydown", handleKey);
   
-  const key = document.getElementById("key");
+  const keyImage = document.getElementById("key");
   const passInput = document.getElementById("pass");
   const okButton = document.getElementById("ok");
 
@@ -12,7 +12,9 @@ export default function useAdmin() {
   const [adminMode, setAdminMode] = useState(false);
 
   function handleKey(e) {
-    e.keyCode === 80 && key.classList.remove("hide");
+    if (e.keyCode === 80) {
+      keyImage && keyImage.classList.remove("hide");
+    }
   };
   const handleClickKey = () => {
     passInput.classList.remove("hide");
@@ -23,7 +25,7 @@ export default function useAdmin() {
   const handleClickOk = () => setTimeout(() => setAdminMode(true), 200);
 
   const handleCancelAdmin = () => {
-    key.classList.add("hide");
+    keyImage.classList.add("hide");
     okButton.classList.add("hide");
     passInput.classList.add("hide");
     animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
@@ -39,9 +41,11 @@ export default function useAdmin() {
     const header = document.querySelector("header");
     if (adminMode) {
       doc.style.overflow = "hidden";
+      header.style.pointerEvents = "none";
       header.style.backgroundColor = "var(--goblin)";
     } else {
       doc.style.overflow = "scroll";
+      header.style.pointerEvents = "all";
       header.style.backgroundColor = "var(--light)";
     }
   }, [adminMode]);

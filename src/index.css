@@ -959,8 +959,9 @@ footer {
   background-color: #303030;
   color: rgb(0, 232, 0);
 }
-.lock-scroll {
-  overflow: hidden;
+.admin-mode .cancel {
+  background-color: black;
+  color: var(--goblin);
 }
 @keyframes slide-out-ok {
   from {
