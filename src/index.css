@@ -1060,17 +1060,37 @@ input[type=file]::file-selector-button {
   margin: 10%;
   background-color: rgb(17, 17, 17, .9);
   color: var(--goblin-bright);
-  height: 300px;
+  height: 350px;
   width: 500px;
   border-radius: 4px;
   font-size: 1.2rem;
   padding: 20px 50px;
   animation: drop-fade-in .3s ease-out;
 }
+.edit-modal form input,
+.edit-modal form textarea {
+  margin: 9px;
+  background-color: rgba(65, 64, 64, 0.9);
+  color: var(--goblin-bright);
+  width: 80%;
+  font-size: 1.5rem;
+  outline: none;
+  font-family: var(--font);
+}
+.edit-modal form textarea {
+  height: 50%;
+}
 .edit-modal .icon {
   width: 30px;
   filter: invert(100%);
   margin: 0;
+}
+.edit-modal button {
+  background-color: black;
+  color: var(--goblin-bright);
+  width: 80%;
+  margin-bottom: 15px;
+  padding: 5px 8px;
 }
 .admin-mode #abort {
   border-radius: 100%;
