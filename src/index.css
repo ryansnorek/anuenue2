@@ -959,6 +959,9 @@ footer {
   background-color: #303030;
   color: rgb(0, 232, 0);
 }
+.lock-scroll {
+  overflow: hidden;
+}
 @keyframes slide-out-ok {
   from {
     transform: translateX(-20px);

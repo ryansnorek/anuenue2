@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
-import { animateUnmount, scrollTo, handleKey } from "../helper";
+import { animateUnmount, scrollTo } from "../helper";
 
 export default function useAdmin() {
   document.addEventListener("keydown", handleKey);
+  
+  const key = document.getElementById("key");
+  const passInput = document.getElementById("pass");
+  const okButton = document.getElementById("ok");
 
   const [pass, setPass] = useState("");
   const [adminMode, setAdminMode] = useState(false);
 
+  function handleKey(e) {
+    e.keyCode === 80 && key.classList.remove("hide");
+  };
   const handleClickKey = () => {
-    const passInput = document.getElementById("pass");
     passInput.classList.remove("hide");
     passInput.focus();
   };
@@ -17,6 +23,9 @@ export default function useAdmin() {
   const handleClickOk = () => setTimeout(() => setAdminMode(true), 200);
 
   const handleCancelAdmin = () => {
+    key.classList.add("hide");
+    okButton.classList.add("hide");
+    passInput.classList.add("hide");
     animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
   };
   useEffect(() => {
