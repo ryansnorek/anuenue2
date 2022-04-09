@@ -28,21 +28,21 @@ function Gallery() {
   const handleSelectFile = (e) => {
     setImg(e.target.files[0]);
   };
-  // useEffect(() => {
-  //   const fd = new FormData();
-  //   console.log(img)
-  //   fd.append("image", img)
-  //   axios
-  //     .post(`http://localhost:8000/store/single/3`, fd, {
-  //       onUploadProgress: e => console.log(e.loaded / e.total)
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [img])
+  useEffect(() => {
+    const fd = new FormData();
+    console.log(img)
+    fd.append("image", img)
+    axios
+      .post(`http://localhost:8000/store/single/3`, fd, {
+        onUploadProgress: e => console.log(e.loaded / e.total)
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [img])
 
   // const handleLoad = (e) => {
   //   setImg(e.target.files[0]);

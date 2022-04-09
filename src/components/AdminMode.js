@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function AdminMode({ handleCancelAdmin }) {
-  const [storeItems, setStoreItems] = useState({});
-
+  const [storeItems, setStoreItems] = useState([]);
+  const [pic, setPic] = useState("");
+  const handleSelectFile = (e) => {
+    setPic(e.target.files[0]);
+  };
   useEffect(() => {
     axios
       .get(`http://localhost:8000/store`)
@@ -18,14 +21,21 @@ function AdminMode({ handleCancelAdmin }) {
     <div className="admin-mode">
       <section>
         <h1>GOBLIN MODE</h1>
-        <button className="cancel" onClick={handleCancelAdmin}>
+        <button id="cancel" onClick={handleCancelAdmin}>
           cancel
         </button>
       </section>
-      <section>
-          {/* {storeItems && storeItems.map((item) => (
-              <img src={`http://localhost:8000/${item.pic}`} alt="item"/>
-          ))} */}
+      <section id="interface">
+        {storeItems &&
+          storeItems.map((item) => (
+            <div className="store-item">
+              <h3>{item.name}</h3>
+              <div>
+                <input type="file" onChange={handleSelectFile} />
+                <button>upload</button>
+              </div>
+            </div>
+          ))}
       </section>
     </div>
   );
