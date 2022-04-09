@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 function AdminMode({ handleCancelAdmin }) {
   const [storeItems, setStoreItems] = useState([]);
+  const [toggleEditPic, setToggleEditPic] = useState(false);
   const [pic, setPic] = useState("");
   const [picID, setPicID] = useState("");
 
@@ -12,6 +13,7 @@ function AdminMode({ handleCancelAdmin }) {
   const handleUpload = (id) => {
     setPicID(id);
   };
+  const handleClickPic = (id) => {};
   useEffect(() => {
     axios
       .get(`http://localhost:8000/store`)
@@ -56,10 +58,14 @@ function AdminMode({ handleCancelAdmin }) {
             <div className="store-item">
               <h3>{item.name}</h3>
               <div className="uploader">
-                <img src={`http://localhost:8000/${item.pic}`} alt="pic" />
+                <img
+                  onClick={() => handleClickPic(item.item_id)}
+                  src={`http://localhost:8000/${item.pic}`}
+                  alt="pic"
+                />
                 <input type="file" onChange={handleSelectFile} />
                 <button onClick={() => handleUpload(item.item_id)}>
-                  upload
+                  upload pic
                 </button>
               </div>
               <button id="edit">edit</button>

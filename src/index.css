@@ -967,6 +967,7 @@ footer {
 }
 #interface h3{
   font-family: 'Arial';
+  width: 25%;
 }
 #interface h3::before {
   counter-increment: item;
@@ -975,17 +976,39 @@ footer {
 #interface .store-item {
   padding: 5px;
   border-bottom: 1px solid rgb(17, 17, 17);
-  display: grid;
-  grid-template-columns: repeat(3, 33%);
+  display: flex;
+  justify-content: space-between;
 }
 #interface .uploader {
   display: flex;
+  width: 60%;
 }
 .uploader button, #edit {
   background-color: black;
   color: var(--goblin);
   border-radius: 4px;
   font-family: var(--goblin-font);
+}
+.uploader button {
+  margin: 0 20px;
+}
+* {
+  /* border: 1px solid red; */
+}
+.uploader input::before {
+  content: "Select pic to upload";
+  background-color: black;
+  margin: 0 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--goblin);
+}
+input[type=file]::file-selector-button {
+  background-color: black;
+  color: var(--goblin);
+  margin: 0 10px;
+  border-radius: 4px;
+  height: 100%;
 }
 #interface img {
   margin: 0 20px;
