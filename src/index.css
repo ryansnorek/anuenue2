@@ -17,6 +17,7 @@
   );
   --goblin: rgb(0, 232, 0);
   --font: "Raleway", sans-serif;
+  --goblin-font: 'Arial';
 }
 /* Common --=-==--=-==-=--=-=-=-= */
 img,
@@ -963,7 +964,6 @@ footer {
 #interface {
   counter-reset: item;
   margin: 18px;
-  height: 1000px;
 }
 #interface h3{
   font-family: 'Arial';
@@ -980,6 +980,12 @@ footer {
 }
 #interface .uploader {
   display: flex;
+}
+.uploader button, #edit {
+  background-color: black;
+  color: var(--goblin);
+  border-radius: 4px;
+  font-family: var(--goblin-font);
 }
 #interface img {
   width: 50px;
