@@ -996,9 +996,7 @@ footer {
   /* border: 1px solid red; */
 }
 .uploader input::before {
-  content: "Select pic to upload";
   background-color: black;
-  margin: 0 10px;
   border-radius: 4px;
   cursor: pointer;
   color: var(--goblin);
@@ -1006,7 +1004,6 @@ footer {
 input[type=file]::file-selector-button {
   background-color: black;
   color: var(--goblin);
-  margin: 0 10px;
   border-radius: 4px;
   height: 100%;
 }
