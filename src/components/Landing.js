@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router";
 
 import { effectsContext } from "../contexts";
-import { scrollTo } from "../helper";
+import { animateUnmount, scrollTo } from "../helper";
 
 import Footer from "./Footer";
 
@@ -35,7 +35,12 @@ function Landing() {
   }
   const [adminMode, setAdminMode] = useState(false);
   const handleClickOk = () => {
-    setAdminMode(true);
+    setTimeout(() => {
+      setAdminMode(true);
+    }, 200)
+  }
+  const handleCancelAdmin = () => {
+    animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
   }
   useEffect(() => {
     const ok = document.getElementById("ok");
@@ -104,7 +109,7 @@ function Landing() {
           <>
           <div className="admin-mode">
             <h1>GOBLIN MODE</h1>
-            <button onClick={() => setAdminMode(false)}>cancel</button>
+            <button onClick={handleCancelAdmin}>cancel</button>
           </div>
           </>
         )}

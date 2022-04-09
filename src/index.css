@@ -934,7 +934,7 @@ footer {
   outline: none;
   transform: translateX(-3px);
   background-color: #303030;
-  animation: slide-in .6s ease-out;
+  animation: slide-out .6s ease-out;
   z-index: 1;
 }
 #ok {
@@ -945,7 +945,7 @@ footer {
   border-radius: 3px;
   transform: translateX(-6px);
   z-index: 0;
-  animation: slide-in-ok .3s ease-out;
+  animation: slide-out-ok .3s ease-out;
 }
 #ok:hover {
   opacity: .9;
@@ -959,7 +959,7 @@ footer {
   background-color: #303030;
   color: rgb(0, 232, 0);
 }
-@keyframes slide-in-ok {
+@keyframes slide-out-ok {
   from {
     transform: translateX(-20px);
   } 
@@ -967,7 +967,7 @@ footer {
      transform: translateX(1);
   }
 }
-@keyframes slide-in {
+@keyframes slide-out {
   from {
     transform: translateX(-100px);
   } 
@@ -975,6 +975,17 @@ footer {
      transform: translateX(1);
   }
 }
+.slide-in {
+  animation: slide-in .2s ease-out;
+}
+/* @keyframes slide-up {
+  from {
+    transform: translateY(1);
+  } 
+   to {
+     transform: translateY(-100%);
+  }
+} */
 @keyframes sas {
   from {
     opacity: 0;
