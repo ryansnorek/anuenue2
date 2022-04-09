@@ -10,7 +10,6 @@ function AdminMode({ handleCancelAdmin }) {
     setPic(e.target.files[0]);
   };
   const handleUpload = (id) => {
-    console.log(id);
     setPicID(id);
   };
   useEffect(() => {
@@ -26,11 +25,9 @@ function AdminMode({ handleCancelAdmin }) {
   }, [pic]);
 
   useEffect(() => {
-    console.log(pic, picID, "effect");
     if (pic && picID) {
       const fd = new FormData();
       fd.append("image", pic);
-      console.log("writing pic........");
       axios
         .post(`http://localhost:8000/store/single/${picID}`, fd, {
           onUploadProgress: (e) => console.log(e.loaded / e.total),

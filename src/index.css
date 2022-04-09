@@ -15,7 +15,7 @@
     #fec837 75%,
     #fd1892 100%
   );
-  --goblin: rgb(0, 232, 0);
+  --goblin: rgb(21, 154, 21);
   --font: "Raleway", sans-serif;
   --goblin-font: 'Arial';
 }
@@ -957,7 +957,7 @@ footer {
   width: 100%;
   z-index: 10;
   background-color: #303030;
-  color: rgb(0, 232, 0);
+  color: var(--goblin);
   display: flex;
   flex-direction: column;
 }
@@ -988,6 +988,7 @@ footer {
   font-family: var(--goblin-font);
 }
 #interface img {
+  margin: 0 20px;
   width: 50px;
   aspect-ratio: 1;
 }
