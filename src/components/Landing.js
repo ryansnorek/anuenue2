@@ -33,16 +33,30 @@ function Landing() {
   const handleChangePass = (e) => {
     setPass(e.target.value);
   }
-  const [editMode, setEditMode] = useState(false);
+  const [adminMode, setAdminMode] = useState(false);
   const handleClickOk = () => {
-    setEditMode(true);
+    setAdminMode(true);
   }
   useEffect(() => {
+    const ok = document.getElementById("ok");
     if (pass.length > 3) {
-      const ok = document.getElementById("ok");
       ok.classList.remove("hide");
-    }
+    } 
   }, [pass])
+
+  useEffect(() => {
+    scrollTo(10)
+    const doc = document.querySelector(".wrapper");
+    const header = document.querySelector("header");
+    if (adminMode) {
+      doc.style.overflow = "hidden";
+      header.style.backgroundColor = "var(--goblin)";
+    } else {
+      doc.style.overflow = "scroll";
+      header.style.backgroundColor = "var(--light)"
+    }
+   
+  }, [adminMode])
   document.addEventListener("keydown", handleKey);
 
   // Key
@@ -86,10 +100,11 @@ function Landing() {
             </div>
           </div>
         </div>
-        {editMode && (
+        {adminMode && (
           <>
-          <div className="edit-mode">
-            <h1>EDIT MODE</h1>
+          <div className="admin-mode">
+            <h1>GOBLIN MODE</h1>
+            <button onClick={() => setAdminMode(false)}>cancel</button>
           </div>
           </>
         )}
