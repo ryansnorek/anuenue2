@@ -12,7 +12,14 @@ function Landing() {
   const navigate = useNavigate();
   const { setPageTarget } = useContext(effectsContext);
 
-  const [adminMode, pass, handleClickKey, handleChangePass, handleClickOk, handleCancelAdmin] = useAdmin();
+  const [
+    adminMode,
+    pass,
+    handleClickKey,
+    handleChangePass,
+    handleClickOk,
+    handleCancelAdmin,
+  ] = useAdmin();
 
   useEffect(() => scrollTo(0), []);
 
@@ -55,13 +62,22 @@ function Landing() {
                   alt="sas"
                   onClick={handleClickKey}
                 />
-                <input id="pass" className="hide" name="pass" type="password" value={pass} onChange={handleChangePass}/>
-                <button id="ok" className="hide" onClick={handleClickOk}>ok</button>
+                <input
+                  id="pass"
+                  className="hide"
+                  name="pass"
+                  type="password"
+                  value={pass}
+                  onChange={handleChangePass}
+                />
+                <button id="ok" className="hide" onClick={handleClickOk}>
+                  ok
+                </button>
               </div>
             </div>
           </div>
         </div>
-        {adminMode && <AdminMode handleCancelAdmin={handleCancelAdmin}/>}
+        {adminMode && <AdminMode handleCancelAdmin={handleCancelAdmin} />}
       </section>
       <Footer />
     </main>

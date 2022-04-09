@@ -36,8 +36,9 @@ function AdminMode({ handleCancelAdmin }) {
           .post(`http://localhost:8000/store/single/${picID}`, fd, {
             onUploadProgress: e => console.log(e.loaded / e.total)
           })
-          .then((res) => {
-            console.log(res);
+          .then(() => {
+            setPic("");
+            setPicID("");
           })
           .catch((err) => {
             console.log(err);
@@ -59,10 +60,11 @@ function AdminMode({ handleCancelAdmin }) {
             <div className="store-item">
               <h3>{item.name}</h3>
               <div className="uploader">
+              <img src={`http://localhost:8000/${item.pic}`} alt="pic"/>
                 <button onClick={() => handleUpload(item.item_id)}>upload</button>
                 <input type="file" onChange={handleSelectFile} />
               </div>
-              <img src={`http://localhost:8000/${item.pic}`} alt="pic"/>
+              <button id="edit">edit</button>
             </div>
           ))}
       </section>
