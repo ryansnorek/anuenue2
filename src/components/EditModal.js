@@ -8,27 +8,31 @@ function EditModal({ item, setEditItem }) {
     description: item.description,
   };
   const [values, handleChange] = useForm(initialValues);
-  const [updateItem, setUpdateItem] = useState(false);
+//   const [updatedItem, setUpdatedItem] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUpdateItem(true);
+    axios
+        .put(`http://localhost:8000/store/${item.item_id}`, values)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    // setUpdatedItem(true);
     setEditItem(false);
   };
   const handleCloseModal = () => {
     setEditItem(false);
   };
 
-  useEffect(() => {
-      console.log("updating ???")
-      console.log(updateItem)
-    if (updateItem) {
-      axios
-        .put(`http://localhost:8000/store/${item.item_id}`, values)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    }
-  }, [updateItem, item.item_id, values]);
+//   useEffect(() => {
+//       console.log("updating ???")
+//       console.log(updateItem)
+//     if (updateItem) {
+//       axios
+//         .put(`http://localhost:8000/store/${item.item_id}`, values)
+//         .then((res) => console.log(res))
+//         .catch((err) => console.log(err));
+//     }
+//   }, [updateItem, item.item_id, values]);
 
   return (
     <section className="edit-modal">

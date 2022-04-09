@@ -27,7 +27,7 @@ function AdminMode({ handleCancelAdmin }) {
       .catch((err) => {
         console.log(err);
       });
-  }, [pic]);
+  }, [pic, editItem]);
 
   useEffect(() => {
     if (pic && picID) {
