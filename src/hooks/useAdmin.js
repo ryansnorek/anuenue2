@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../config";
 import { animateUnmount, scrollTo } from "../helper";
 
 export default function useAdmin() {
@@ -22,7 +24,20 @@ export default function useAdmin() {
   };
   const handleChangePass = (e) => setPass(e.target.value);
 
-  const handleClickOk = () => setTimeout(() => setAdminMode(true), 200);
+  const handleClickOk = () => {
+    const code = { pass };
+    axios.post(`${BASE_URL}/store/admin`, code)
+    .then((res) => {
+      if (res.data) {
+        setAdminMode(res.data)
+      } else {
+        console.log("wrong")
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  };
 
   const handleCancelAdmin = (e) => {
     setTimeout(() => {

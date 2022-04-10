@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { BASE_URL } from "../config";
 import useForm from "../hooks/useForm";
 
 function EditModal({ item, setEditItem }) {
@@ -8,37 +8,28 @@ function EditModal({ item, setEditItem }) {
     description: item.description,
   };
   const [values, handleChange] = useForm(initialValues);
-//   const [updatedItem, setUpdatedItem] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-        .put(`http://localhost:8000/store/${item.item_id}`, values)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    // setUpdatedItem(true);
+      .put(`${BASE_URL}/store/${item.item_id}`, values)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     setEditItem(false);
   };
   const handleCloseModal = () => {
     setEditItem(false);
   };
 
-//   useEffect(() => {
-//       console.log("updating ???")
-//       console.log(updateItem)
-//     if (updateItem) {
-//       axios
-//         .put(`http://localhost:8000/store/${item.item_id}`, values)
-//         .then((res) => console.log(res))
-//         .catch((err) => console.log(err));
-//     }
-//   }, [updateItem, item.item_id, values]);
-
   return (
     <section className="edit-modal">
       <form onSubmit={handleSubmit}>
         <input name="name" value={values.name} onChange={handleChange} />
-        <textarea name="description" value={values.description} onChange={handleChange} />
+        <textarea
+          name="description"
+          value={values.description}
+          onChange={handleChange}
+        />
         <button type="submit">Update</button>
         <img
           className="icon"

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../config";
 import EditModal from "./EditModal";
 
 function AdminMode({ handleCancelAdmin }) {
@@ -19,7 +20,7 @@ function AdminMode({ handleCancelAdmin }) {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/store`)
+      .get(`${BASE_URL}/store`)
       .then((items) => {
         setStoreItems(items.data);
         console.log(items.data);
@@ -34,7 +35,7 @@ function AdminMode({ handleCancelAdmin }) {
       const fd = new FormData();
       fd.append("image", pic);
       axios
-        .post(`http://localhost:8000/store/single/${picID}`, fd, {
+        .post(`${BASE_URL}/store/single/${picID}`, fd, {
           onUploadProgress: (e) => console.log(e.loaded / e.total),
         })
         .then(() => {
@@ -62,7 +63,7 @@ function AdminMode({ handleCancelAdmin }) {
             <div className="store-item">
               <h3>{item.name}</h3>
               <div className="uploader">
-                <img src={`http://localhost:8000/${item.pic}`} alt="pic" />
+                <img src={`${BASE_URL}/${item.pic}`} alt="pic" />
                 <input type="file" onChange={handleSelectFile} />
                 <button onClick={() => handleUpload(item.item_id)}>
                   upload pic
