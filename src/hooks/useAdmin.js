@@ -26,17 +26,18 @@ export default function useAdmin() {
 
   const handleClickOk = () => {
     const code = { pass };
-    axios.post(`${BASE_URL}/store/admin`, code)
-    .then((res) => {
-      if (res.data) {
-        setAdminMode(res.data)
-      } else {
-        console.log("wrong")
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+    setAdminMode(true)
+    // axios.post(`${BASE_URL}/store/admin`, code)
+    // .then((res) => {
+    //   if (res.data) {
+    //     setAdminMode(res.data)
+    //   } else {
+    //     console.log("wrong")
+    //   }
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // })
   };
 
   const handleCancelAdmin = (e) => {
