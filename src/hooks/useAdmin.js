@@ -26,7 +26,7 @@ export default function useAdmin() {
 
   const handleClickOk = () => {
     const code = { pass };
-    axios.post(`${BASE_URL}/store/admin`, code)
+    axios.post(`${BASE_URL}/pepe`, code)
     .then((res) => {
       if (res.data) {
         setAdminMode(res.data)
