@@ -60,7 +60,7 @@ function AdminMode({ handleCancelAdmin }) {
       <section id="interface">
         {storeItems &&
           storeItems.map((item) => (
-            <div className="store-item">
+            <div className="store-item" key={item.item_id}>
               <h3>{item.name}</h3>
               <div className="uploader">
                 <img src={`${BASE_URL}/${item.pic}`} alt="pic" />
