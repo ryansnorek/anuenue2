@@ -1,6 +1,4 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../config";
 import { animateUnmount, loginAdmin, scrollTo, setPageProperties } from "../helper";
 
 export default function useAdmin() {
