@@ -12,7 +12,7 @@ function EditModal({ item, setEditItem }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`${BASE_URL}/store/${item.item_id}`, values)
+      .put(`${BASE_URL}/admin/items/${item.item_id}`, values)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     setEditItem(false);
