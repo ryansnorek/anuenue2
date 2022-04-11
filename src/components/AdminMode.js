@@ -18,35 +18,41 @@ function AdminMode({ handleCancelAdmin }) {
   const handleClickEdit = (item) => {
     setEditItem(item);
   };
-  useEffect(() => {
-    axios
-      .get(`${BASE_URL}/store`)
-      .then((items) => {
-        setStoreItems(items.data);
-        console.log(items.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [pic, editItem]);
-
-  useEffect(() => {
-    if (pic && picID) {
-      const fd = new FormData();
-      fd.append("image", pic);
+  useEffect(
+    function getStoreItems() {
       axios
-        .post(`${BASE_URL}/admin/upload/${picID}`, fd, {
-          onUploadProgress: (e) => console.log((e.loaded / e.total) * 100),
-        })
-        .then(() => {
-          setPic("");
-          setPicID("");
+        .get(`${BASE_URL}/store`)
+        .then((items) => {
+          setStoreItems(items.data);
+          console.log(items.data);
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-  }, [pic, picID]);
+    },
+    [pic, editItem]
+  );
+
+  useEffect(
+    function uploadImage() {
+      if (pic && picID) {
+        const fd = new FormData();
+        fd.append("image", pic);
+        axios
+          .post(`${BASE_URL}/admin/upload/${picID}`, fd, {
+            onUploadProgress: (e) => console.log((e.loaded / e.total) * 100),
+          })
+          .then(() => {
+            setPic("");
+            setPicID("");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    },
+    [pic, picID]
+  );
 
   return (
     <div className="admin-mode">

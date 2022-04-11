@@ -15,7 +15,6 @@ function EditModal({ item, setEditItem }) {
       .put(`${BASE_URL}/admin/items/${item.item_id}`, values)
       .then(() => setEditItem(false))
       .catch((err) => console.log(err));
-    
   };
   const handleCloseModal = () => {
     setEditItem(false);

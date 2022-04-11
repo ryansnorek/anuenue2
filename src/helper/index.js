@@ -19,3 +19,11 @@ export const copyToClipboard = () => {
   navigator.clipboard.writeText(copyText.value);
   alert(`Copied ${copyText.value} to clipboard`);
 };
+
+export const setPageProperties = (overflow, pEvent, color) => {
+  const doc = document.querySelector(".wrapper");
+  const header = document.querySelector("header");
+  doc.style.overflow = overflow;
+  header.style.pointerEvents = pEvent;
+  header.style.backgroundColor = color;
+};
