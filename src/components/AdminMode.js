@@ -28,15 +28,15 @@ function AdminMode({ handleCancelAdmin }) {
 
   useEffect(() => {
     const uploadNewImage = async () => {
-      if (pic && picID) {
-          const fd = new FormData();
-          fd.append("image", pic);
-          await uploadImage(picID, fd);
-          setPic("");
-          setPicID("");
-      }
+      const fd = new FormData();
+      fd.append("image", pic);
+      await uploadImage(picID, fd);
+      setPic("");
+      setPicID("");
     };
-    uploadNewImage();
+    if (pic && picID) {
+      uploadNewImage();
+    }
   }, [pic, picID]);
 
   return (
@@ -54,7 +54,7 @@ function AdminMode({ handleCancelAdmin }) {
             <div className="store-item" key={item.item_id}>
               <h3>{item.name}</h3>
               <div className="uploader">
-                <img src={`${BASE_URL}/${item.image}` || ""} alt="pic" />
+                <img src="../images/sas.jpeg" alt="pic" />
                 <input type="file" onChange={handleSelectFile} />
                 <button onClick={() => handleUpload(item.item_id)}>
                   upload pic

@@ -67,7 +67,9 @@ export const uploadImage = (picID, fd) => {
 export const createStripePayment = (order) => {
   return axios
     .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
-    .then((res) => ({ secret: res.data.client_secret }))
+    .then((res) => {
+      return res.data.client_secret;
+    })
     .catch((err) => console.log(err));
 };
 

@@ -35,8 +35,8 @@ function CheckoutModal() {
 
   useEffect(() => {
     const createPayment = async () => {
-      const { secret } = await createStripePayment(order);
-      secret && setClientSecret(secret);
+      const { client_secret } = await createStripePayment(order);
+      client_secret && setClientSecret(client_secret);
     };
     createPayment();
   }, []); //eslint-disable-line
