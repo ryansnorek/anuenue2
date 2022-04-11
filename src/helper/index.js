@@ -38,7 +38,8 @@ export const loginAdmin = (code) => {
       return res.data;
     })
     .catch((err) => {
-      return err;
+      console.log(err);
+      return false;
     });
 };
 
@@ -46,9 +47,38 @@ export const getStoreItems = () => {
   return axios
     .get(`${BASE_URL}/store`)
     .then((items) => {
+      console.log(items.data);
       return { items: items.data };
     })
     .catch((err) => {
-      return err;
+      console.log(err);
+    });
+};
+
+export const uploadImage = (picID, fd) => {
+  return axios
+    .post(`${BASE_URL}/admin/upload/${picID}`, fd, {
+      onUploadProgress: (e) => console.log((e.loaded / e.total) * 100),
+    })
+    .then((res) => res)
+    .catch((err) => console.log(err));
+};
+
+export const createStripePayment = (order) => {
+  return axios
+    .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
+    .then((res) => ({ secret: res.data.client_secret }))
+    .catch((err) => console.log(err));
+};
+
+export const editItemByID = (id, item) => {
+  return axios
+    .put(`${BASE_URL}/admin/items/${id}`, item)
+    .then(() => {
+      return true;
+    })
+    .catch((err) => {
+      console.log(err);
+      return false;
     });
 };

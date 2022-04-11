@@ -1,12 +1,10 @@
 import { shoppingContext, checkingOutContext } from "../contexts";
 import { useState, useContext, useEffect } from "react";
-import axios from "axios";
-
-import { BASE_URL } from "../config";
 
 import EmailModal from "./EmailModal";
 import DeliveryModal from "./DeliveryModal";
 import PaymentModal from "./PaymentModal";
+import { createStripePayment } from "../helper";
 
 const InititalDelivery = {
   street: "",
@@ -36,10 +34,11 @@ function CheckoutModal() {
   };
 
   useEffect(() => {
-    axios
-      .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
-      .then((res) => setClientSecret(res.data.client_secret))
-      .catch((err) => console.log(err));
+    const createPayment = async () => {
+      const { secret } = await createStripePayment(order);
+      secret && setClientSecret(secret);
+    };
+    createPayment();
   }, []); //eslint-disable-line
 
   return (

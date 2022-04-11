@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL } from "../config";
+import { editItemByID } from "../helper";
 import useForm from "../hooks/useForm";
 
 function EditModal({ item, setEditItem }) {
@@ -9,12 +8,10 @@ function EditModal({ item, setEditItem }) {
   };
   const [values, handleChange] = useForm(initialValues);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .put(`${BASE_URL}/admin/items/${item.item_id}`, values)
-      .then(() => setEditItem(false))
-      .catch((err) => console.log(err));
+    const edited = await editItemByID(item.item_id, values);
+    edited && setEditItem(false);
   };
   const handleCloseModal = () => {
     setEditItem(false);

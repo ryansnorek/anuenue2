@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { animateUnmount, loginAdmin, scrollTo, setPageProperties } from "../helper";
+import {
+  animateUnmount,
+  loginAdmin,
+  scrollTo,
+  setPageProperties,
+} from "../helper";
 
 export default function useAdmin() {
   document.addEventListener("keydown", handleKey);

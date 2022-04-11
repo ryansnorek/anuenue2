@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../config";
-import { getStoreItems } from "../helper";
+import { getStoreItems, uploadImage } from "../helper";
 import EditModal from "./EditModal";
 
 function AdminMode({ handleCancelAdmin }) {
@@ -23,31 +22,22 @@ function AdminMode({ handleCancelAdmin }) {
     const getItems = async () => {
       const { items } = await getStoreItems();
       items && setStoreItems(items);
-      console.log(items, "items");
     };
-    getItems()
+    getItems();
   }, [pic, editItem]);
 
-  useEffect(
-    function uploadImage() {
+  useEffect(() => {
+    const uploadNewImage = async () => {
       if (pic && picID) {
-        const fd = new FormData();
-        fd.append("image", pic);
-        axios
-          .post(`${BASE_URL}/admin/upload/${picID}`, fd, {
-            onUploadProgress: (e) => console.log((e.loaded / e.total) * 100),
-          })
-          .then(() => {
-            setPic("");
-            setPicID("");
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+          const fd = new FormData();
+          fd.append("image", pic);
+          await uploadImage(picID, fd);
+          setPic("");
+          setPicID("");
       }
-    },
-    [pic, picID]
-  );
+    };
+    uploadNewImage();
+  }, [pic, picID]);
 
   return (
     <div className="admin-mode">

@@ -1,6 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import axios from "axios";
-import { BASE_URL, STRIPE_PUBLISHABLE_KEY } from "../config";
+import { STRIPE_PUBLISHABLE_KEY } from "../config";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -8,6 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { effectsContext, shoppingContext } from "../contexts";
 
 import CheckoutForm from "./CheckoutForm";
+import { createStripePayment } from "../helper";
 
 function Checkout() {
   const { order, setCheckingOut } = useContext(shoppingContext);
@@ -17,10 +17,11 @@ function Checkout() {
   const options = { clientSecret };
 
   useEffect(() => {
-    axios
-      .post(`${BASE_URL}/stripe/create-payment-intent`, { order })
-      .then((res) => setClientSecret(res.data.client_secret))
-      .catch((err) => console.log(err));
+    const createPayment = async () => {
+      const { secret } = await createStripePayment(order);
+      secret && setClientSecret(secret);
+    };
+    createPayment();
   }, [order, scrollPosition]);
 
   if (!clientSecret) {
