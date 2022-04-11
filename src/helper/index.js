@@ -41,3 +41,14 @@ export const loginAdmin = (code) => {
       return err;
     });
 };
+
+export const getStoreItems = () => {
+  return axios
+    .get(`${BASE_URL}/store`)
+    .then((items) => {
+      return { items: items.data };
+    })
+    .catch((err) => {
+      return err;
+    });
+};

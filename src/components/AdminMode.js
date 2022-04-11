@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../config";
+import { getStoreItems } from "../helper";
 import EditModal from "./EditModal";
 
 function AdminMode({ handleCancelAdmin }) {
@@ -18,20 +19,14 @@ function AdminMode({ handleCancelAdmin }) {
   const handleClickEdit = (item) => {
     setEditItem(item);
   };
-  useEffect(
-    function getStoreItems() {
-      axios
-        .get(`${BASE_URL}/store`)
-        .then((items) => {
-          setStoreItems(items.data);
-          console.log(items.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    [pic, editItem]
-  );
+  useEffect(() => {
+    const getItems = async () => {
+      const { items } = await getStoreItems();
+      items && setStoreItems(items);
+      console.log(items, "items");
+    };
+    getItems()
+  }, [pic, editItem]);
 
   useEffect(
     function uploadImage() {
