@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../config";
 import { getStoreItems, uploadImage } from "../helper";
@@ -18,6 +19,7 @@ function AdminMode({ handleCancelAdmin }) {
   const handleClickEdit = (item) => {
     setEditItem(item);
   };
+
   useEffect(() => {
     const getItems = async () => {
       const { items } = await getStoreItems();
@@ -49,7 +51,7 @@ function AdminMode({ handleCancelAdmin }) {
       </section>
       {editItem && <EditModal item={editItem} setEditItem={setEditItem} />}
       <section id="interface">
-        {storeItems &&
+        {storeItems.length > 1 &&
           storeItems.map((item) => (
             <div className="store-item" key={item.item_id}>
               <h3>{item.name}</h3>

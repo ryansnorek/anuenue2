@@ -25,7 +25,6 @@ function Shop() {
   useEffect(
     function findScrollTarget() {
       const pageSection = document.getElementById(pageTarget);
-      console.log(pageSection.getBoundingClientRect())
       pageSection && setScrollPosition(pageSection.offsetTop);
     },
     [pageTarget, setScrollPosition]

@@ -28,9 +28,12 @@ export default function useAdmin() {
   const handleChangePass = (e) => setPass(e.target.value);
 
   const handleClickOk = async () => {
-    const code = { pass };
-    const auth = await loginAdmin(code);
-    setAdminMode(auth);
+    try {
+      const auth = await loginAdmin({ pass });
+      setAdminMode(auth);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleCancelAdmin = (e) => {

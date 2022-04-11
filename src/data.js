@@ -1,7 +1,7 @@
 export const data = {
   chonky_chip: {
     name: "Chonky Chip",
-    id: 420,
+    id: 1,
     img: "images/chonky_chip.png",
     sizes: ["small"],
     description:
@@ -11,7 +11,7 @@ export const data = {
   },
   all_your_breads: {
     name: "All Your Bread Are Belong To Us",
-    id: 421,
+    id: 2,
     img: "images/bread.jpg",
     sizes: ["small"],
     description:
@@ -21,7 +21,7 @@ export const data = {
   },
   based_brownies: {
     name: "Based Brownies",
-    id: 422,
+    id: 3,
     img: "https://glutenfreeonashoestring.com/wp-content/uploads/2017/09/Fudgy-Gluten-Free-Brownies-stack.jpg",
     sizes: ["small"],
     description:
@@ -31,7 +31,7 @@ export const data = {
   },
   champs_elycakes: {
     name: "Champ's Elycakes",
-    id: 423,
+    id: 4,
     img: "images/cake.jpeg",
     sizes: ["small"],
     description:
@@ -41,7 +41,7 @@ export const data = {
   },
   power_bitch_balls: {
     name: "Power Bitch Balls",
-    id: 425,
+    id: 5,
     img: "images/balls.png",
     sizes: ["small"],
     description:
@@ -49,19 +49,9 @@ export const data = {
     quantity: 0,
     price: 10,
   },
-  green_burrito: {
-    name: "Green Brrrrito",
-    id: 426,
-    img: "images/burrito.jpg",
-    sizes: ["small"],
-    description:
-      "Fed up with your current debts? We've got you covered. All green shit and eggs and cheese and green salsa. No substitutions.",
-    quantity: 0,
-    price: 8,
-  },
   they_cookies: {
     name: "They Cookies",
-    id: 427,
+    id: 6,
     img: "images/they.jpg",
     sizes: ["small"],
     description:
@@ -71,7 +61,7 @@ export const data = {
   },
   cat_hat: {
     name: "Hat",
-    id: 428,
+    id: 7,
     img: "images/cathat.jpeg",
     sizes: ["small"],
     description:
@@ -81,7 +71,7 @@ export const data = {
   },
   cat_sweat: {
     name: "Comfy Swetter",
-    id: 429,
+    id: 8,
     img: "images/cat_sweat.jpeg",
     sizes: ["small"],
     description:
@@ -91,7 +81,7 @@ export const data = {
   },
   cloth: {
     name: "Ellegant Jammies",
-    id: 430,
+    id: 9,
     img: "images/frog_cat.png",
     sizes: ["small"],
     description:
