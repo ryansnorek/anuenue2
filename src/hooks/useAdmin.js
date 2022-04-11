@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../config";
-import { animateUnmount, scrollTo, setPageProperties } from "../helper";
+import { animateUnmount, loginAdmin, scrollTo, setPageProperties } from "../helper";
 
 export default function useAdmin() {
   document.addEventListener("keydown", handleKey);
@@ -24,20 +24,10 @@ export default function useAdmin() {
   };
   const handleChangePass = (e) => setPass(e.target.value);
 
-  const handleClickOk = () => {
+  const handleClickOk = async () => {
     const code = { pass };
-    axios
-      .post(`${BASE_URL}/admin`, code)
-      .then((res) => {
-        if (res.data) {
-          setAdminMode(res.data);
-        } else {
-          console.log("wrong");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const auth = await loginAdmin(code);
+    setAdminMode(auth);
   };
 
   const handleCancelAdmin = (e) => {
