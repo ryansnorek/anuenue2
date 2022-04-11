@@ -13,9 +13,9 @@ function EditModal({ item, setEditItem }) {
     e.preventDefault();
     axios
       .put(`${BASE_URL}/admin/items/${item.item_id}`, values)
-      .then((res) => console.log(res))
+      .then(() => setEditItem(false))
       .catch((err) => console.log(err));
-    setEditItem(false);
+    
   };
   const handleCloseModal = () => {
     setEditItem(false);
