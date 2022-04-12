@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { TOKEN } from "../config";
+import { errorContext } from "../contexts";
 import {
   animateUnmount,
   loginAdmin,
@@ -7,6 +9,7 @@ import {
 } from "../helper";
 
 export default function useAdmin() {
+  const { setErrors, errors } = useContext(errorContext);
   document.addEventListener("keydown", handleKey);
 
   const keyImage = document.getElementById("key");
@@ -30,7 +33,15 @@ export default function useAdmin() {
   const handleClickOk = async () => {
     try {
       const auth = await loginAdmin({ pass });
-      setAdminMode(auth);
+      setAdminMode(auth === TOKEN);
+      if (auth === TOKEN) {
+        setAdminMode(auth);
+      } else {
+        setErrors({
+          ...errors,
+          admin: auth.message,
+        });
+      }
     } catch (err) {
       console.log(err);
     }
@@ -44,6 +55,7 @@ export default function useAdmin() {
       animateUnmount(".admin-mode", "animate-hide", setAdminMode, false);
     }, 300);
   };
+
   useEffect(
     function showOkButton() {
       const okButton = document.getElementById("ok");

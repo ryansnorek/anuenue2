@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "@stripe/stripe-js";
 
-import { effectsContext, shoppingContext } from "./contexts";
+import { effectsContext, shoppingContext, errorContext } from "./contexts";
 
 import Header from "./components/Header";
 import Landing from "./components/Landing";
@@ -17,11 +17,19 @@ import Contact from "./components/Contact";
 import CheckoutModal from "./components/CheckoutModal";
 
 function App() {
+  // Effects
   const [expandSearchBar, setExpandSearchBar] = useState(false);
   const [scrollBreakPoint, setScrollBreakPoint] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [pageTarget, setPageTarget] = useState("");
 
+  // Errors
+  const [errors, setErrors] = useState({
+    admin: "",
+    checkout: "",
+  });
+
+  // Shopping
   const [modalItem, setModalItem] = useState("");
   const [order, setOrder] = useLocalStorage("order", []);
   const [checkingOut, setCheckingOut] = useState("");
@@ -50,36 +58,43 @@ function App() {
         setPageTarget,
       }}
     >
-      <shoppingContext.Provider
+      <errorContext.Provider
         value={{
-          modalItem,
-          setModalItem,
-
-          order,
-          setOrder,
-
-          checkingOut,
-          setCheckingOut,
+          errors,
+          setErrors,
         }}
       >
-        {checkingOut && <CheckoutModal />}
-        <Header />
-        <div
-          className={`wrapper ${scrollBreakPoint && "scrolled-landing"}`}
-          onScroll={handleScroll}
+        <shoppingContext.Provider
+          value={{
+            modalItem,
+            setModalItem,
+
+            order,
+            setOrder,
+
+            checkingOut,
+            setCheckingOut,
+          }}
         >
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/bag" element={<Bag />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/complete" element={<CheckoutComplete />} />
-          </Routes>
-        </div>
-      </shoppingContext.Provider>
+          {checkingOut && <CheckoutModal />}
+          <Header />
+          <div
+            className={`wrapper ${scrollBreakPoint && "scrolled-landing"}`}
+            onScroll={handleScroll}
+          >
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/bag" element={<Bag />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/complete" element={<CheckoutComplete />} />
+            </Routes>
+          </div>
+        </shoppingContext.Provider>
+      </errorContext.Provider>
     </effectsContext.Provider>
   );
 }

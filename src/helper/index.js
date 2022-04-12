@@ -47,7 +47,6 @@ export const getStoreItems = () => {
   return axios
     .get(`${BASE_URL}/store`)
     .then((items) => {
-      console.log(items.data);
       return { items: items.data };
     })
     .catch((err) => {

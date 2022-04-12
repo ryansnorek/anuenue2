@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 
-import { effectsContext } from "../contexts";
+import { effectsContext, errorContext } from "../contexts";
 import { scrollTo } from "../helper";
 import useAdmin from "../hooks/useAdmin";
 import AdminMode from "./AdminMode";
@@ -11,6 +11,7 @@ import Footer from "./Footer";
 function Landing() {
   const navigate = useNavigate();
   const { setPageTarget } = useContext(effectsContext);
+  const { errors } = useContext(errorContext);
 
   const [
     adminMode,
@@ -72,6 +73,7 @@ function Landing() {
                 <button id="ok" className="hide" onClick={handleClickOk}>
                   ok
                 </button>
+                {errors.admin && <p className="error">{errors.admin}</p>}
               </div>
             </div>
           </div>

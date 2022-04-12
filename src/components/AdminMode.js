@@ -1,6 +1,4 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../config";
 import { getStoreItems, uploadImage } from "../helper";
 import EditModal from "./EditModal";
 
@@ -23,6 +21,7 @@ function AdminMode({ handleCancelAdmin }) {
   useEffect(() => {
     const getItems = async () => {
       const { items } = await getStoreItems();
+      console.log(items)
       items && setStoreItems(items);
     };
     getItems();
@@ -32,7 +31,11 @@ function AdminMode({ handleCancelAdmin }) {
     const uploadNewImage = async () => {
       const fd = new FormData();
       fd.append("image", pic);
-      await uploadImage(picID, fd);
+      try {
+        await uploadImage(picID, fd);
+      } catch (err) {
+        console.log(err)
+      }
       setPic("");
       setPicID("");
     };
