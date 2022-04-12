@@ -29,13 +29,11 @@ export default function useAdmin() {
     passInput.focus();
   };
   const handleChangePass = (e) => setPass(e.target.value);
-
   const handleClickOk = async () => {
     try {
       const auth = await loginAdmin({ pass });
-      setAdminMode(auth === TOKEN);
-      if (auth === TOKEN) {
-        setAdminMode(auth);
+      if (auth === "c_o_o_k_i_e_69") {
+        setAdminMode(true);
       } else {
         setErrors({
           ...errors,
@@ -47,7 +45,8 @@ export default function useAdmin() {
     }
   };
 
-  const handleCancelAdmin = (e) => {
+  const handleCancelAdmin = () => {
+    setErrors({ ...errors, admin: "" });
     setTimeout(() => {
       keyImage.classList.add("hide");
       okButton.classList.add("hide");
