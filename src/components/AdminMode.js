@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { getStoreItems, uploadImage } from "../helper";
 import EditModal from "./EditModal";
@@ -44,10 +45,16 @@ function AdminMode({ handleCancelAdmin }) {
     }
   }, [pic, picID]);
 
+  const handleDelete = () => {
+    axios.delete("https://anuenue-backend-v2.herokuapp.com/admin/items/1")
+    .then((res) => console.log(res)
+    .catch(err => console.log(err)))
+  }
   return (
     <div className="admin-mode">
       <section className="top">
         <div className="title">GOBLIN MODE</div>
+        <button onClick={handleDelete}>delete</button>
         <button id="abort" onClick={handleCancelAdmin}>
           abort
         </button>
